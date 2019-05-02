@@ -39,3 +39,5 @@ class NotAnArray {
 
   shift() {}
 }
+
+module.exports = NotAnArray;
