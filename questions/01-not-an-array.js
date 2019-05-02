@@ -30,9 +30,13 @@
 class NotAnArray {
   constructor() {
     this.storage = {};
+    this.length = 0;
   }
 
-  push() {}
+  push(val) {
+    this.storage[this.length] = val;
+    this.length = this.length + 1;
+  }
 
   pop() {}
 
