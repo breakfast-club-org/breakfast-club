@@ -1,7 +1,7 @@
 // Implement a class called notAnArray that has the following methods
 //
 // push
-//  - Accepts a value and places it at the front of the object with the key being an index based on the length and the value being the value passed into the function
+//  - Accepts a value and places it at the end (the next incremented index) of the object with the key being an index based on the length and the value being the value passed into the function
 //  ex:
 //  notAnArray.push('first')
 //  notAnArray.push('second')
@@ -14,7 +14,8 @@
 //  returns 'second' and the object should look like {0: 'first'}
 //
 // unshift
-//  - Accepts a value and places it at the end of the an object with the key being an index based on the length and the value being the value passed into the function
+//  - Accepts a value and places it at the 0th key of the object with the the value being the value passed into the function
+//  - the rest of the values should be shifted over one
 //  ex:
 //  notAnArray.unshift('now I am first');
 //  should result in {0: 'now I am first', 1: 'first'}
