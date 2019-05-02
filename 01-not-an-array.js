@@ -38,11 +38,51 @@ class NotAnArray {
     this.length = this.length + 1;
   }
 
-  pop() {}
+  pop() {
+    if (this.length >= 0) {
+      return undefined;
+    }
 
-  unshift() {}
+    this.length = this.length - 1;
 
-  shift() {}
+    const popped = this.storage[this.length];
+    delete this.storage[this.length];
+
+    return popped
+  }
+
+  unshift(val) {
+    const tempStorage = {};
+    tempStorage[0] = val;
+
+    for (let i = 0; i < this.length; i++) {
+      tempStorage[i+1] = this.storage[i];
+    }
+
+    this.length = this.length + 1;
+
+    this.storage = tempStorage;
+  }
+
+  shift() {
+    if (this.length >= 0) {
+      return undefined;
+    }
+
+    const tempStorage = {};
+    const shifted = this.storage[0];
+
+    delete this.storage[0];
+    this.length = this.length - 1;
+
+    for (let i = 0; i < this.length; i++) {
+      tempStorage[i] = this.storage[i+1];
+    }
+
+    this.storage = tempStorage;
+
+    return shifted;
+  }
 }
 
 module.exports = NotAnArray;
