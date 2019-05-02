@@ -1,0 +1,27 @@
+{
+  "name": "breakfast-club",
+  "version": "1.0.0",
+  "description": "early breakfast topics with algo in mind",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^6.1.4"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jasonly/breakfast-club.git"
+  },
+  "keywords": [
+    "algo"
+  ],
+  "author": "Jason Ly",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jasonly/breakfast-club/issues"
+  },
+  "homepage": "https://github.com/jasonly/breakfast-club#readme"
+}
