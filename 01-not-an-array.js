@@ -29,16 +29,47 @@
 
 class NotAnArray {
   constructor() {
+    this.size = 0;
     this.storage = {};
   }
 
-  push() {}
+  push(v) {
+    this.storage[this.size++] = v;
+  }
 
-  pop() {}
+  pop() {
+    if (this.size === 0) {
+      return undefined;
+    }
+    this.size -= 1;
+    const v = this.storage[this.size];
+    delete this.storage[this.size];
+    return v;
+  }
 
-  unshift() {}
+  unshift(v) {
+    for(let i = this.size - 1; i >= 0; i--) {
+      const v = this.storage[i];
+      this.storage[i+1] = v;
+    }
+    this.storage[0] = v;
+    this.size += 1;
+  }
 
-  shift() {}
+  shift() {
+    const v = this.storage[0];
+
+    for(let i = 1; i < this.size; i++) {
+      this.storage[i-1] = this.storage[i];
+    }
+
+    if (this.size > 0) {
+      delete this.storage[this.size - 1];
+      this.size -= 1;
+    }
+    
+    return v;
+  }
 }
 
 module.exports = NotAnArray;
