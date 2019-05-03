@@ -21,7 +21,6 @@ describe('NotAnArray', () => {
             const o = new NotAnArray();
 
             assert.isUndefined(o.pop());
-            assert.equal(o.size, 0);
             assert.isEmpty(o.storage);
         });
 
