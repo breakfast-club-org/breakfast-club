@@ -78,4 +78,8 @@ class NotAnArray {
 }
 
 
+<<<<<<< HEAD
 module.exports = NotAnArray;
+=======
+module.exports = NotAnArray;
+>>>>>>> adding my solutions
