@@ -72,10 +72,7 @@ class NotAnArray {
 	          delete obj[key];
 	      });
 	      this.storage = nuObj;
-<<<<<<< HEAD
 
-=======
->>>>>>> adding my solutions
 	      return shiftThis;
 
 	  }
