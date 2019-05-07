@@ -72,14 +72,12 @@ class NotAnArray {
 	          delete obj[key];
 	      });
 	      this.storage = nuObj;
+
 	      return shiftThis;
+
 
 	  }
 }
 
 
-<<<<<<< HEAD
 module.exports = NotAnArray;
-=======
-module.exports = NotAnArray;
->>>>>>> adding my solutions
