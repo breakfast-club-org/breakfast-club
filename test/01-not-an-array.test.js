@@ -40,6 +40,7 @@ describe('NotAnArray', () => {
         it('should add an element at the front of the store', () => {
             const o = new NotAnArray();
             o.unshift('a');
+            assert.equal(o.start, 0);
             assert.deepEqual(o.storage, {0: 'a'});
 
             o.unshift('b');

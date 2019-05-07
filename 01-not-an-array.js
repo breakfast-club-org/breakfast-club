@@ -26,91 +26,64 @@
 //  notAnArray.shift();
 //  returns 'now I am first' and the object should look like {0: 'first'}
 //
-class LinkedListNode {
-  constructor(v, prev, next) {
-      this.v = v;
-      this.prev = prev;
-      this.next = next;
-  }
-}
-
 class NotAnArray {
   constructor() {
-    this.head = null;
-    this.tail = null;
+    this.end = 0;
+    this.start = 0;
+    this._storage = {};
   }
 
   // add node to end of the list
   push(v) {
-    const node = new LinkedListNode(v);
-
-    if (this.isEmpty()) {
-      this.head = node;
-      this.tail = node;
-    } else {
-      node.prev = this.tail;
-      this.tail.next = node;
-      this.tail = node;
-    }
+    this._storage[this.end] = v;
+    this.end += 1;
 
     return this;
   }
 
   pop() {
-    let last = this.tail;
+    this.end -= 1;
+    let v = this._storage[this.end];
 
-    if (last) {
-      this.tail = last.prev;
-
-      if (this.tail) {
-        this.tail.next = null;
-      }
-
-      if (this.head === last) {
-        this.head = null;
-      }
+    if (!v) {
+      this.end += 1; // restore end pointer
     }
 
-    return (last) ? last.v : undefined;
+    return v;
   }
 
   unshift(v) {
-    let node = new LinkedListNode(v);
-
-    node.next = this.head;
-    this.head = node;
+    if (!this.isEmpty()) {
+      this.start -= 1;
+    } 
+    this.end += 1;
+    this._storage[this.start] = v;
 
     return this;
   }
 
   shift() {
-    let node;
+    const v = this._storage[this.start];
 
-    if (this.head) {
-      node = this.head;
-      this.head = this.head.next;
-      if (node === this.tail) {
-        // single item
-        this.tail = this.head;
-      }
+    if (v) {
+      this.start +=1;
+      this.end -= 1;
     }
-
-    return (node) ? node.v : undefined;
+    
+    return v;
   }
 
   // auxillaries
   isEmpty() {
-      return this.head == null; // treat undefined as null
+    return this._storage[this.start] == null;
   }
 
   get storage() {
-    let p = this.head;
     let vals = {};
     let i = 0;
-    while(p) {
-        vals[i] = p.v;
-        p = p.next;
-        i += 1;
+
+    for(let j=this.start; i < this.end; i++, j++) {
+      vals[i] = this._storage[j];
     }
 
     return vals;
