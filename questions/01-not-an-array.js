@@ -72,13 +72,10 @@ class NotAnArray {
 	          delete obj[key];
 	      });
 	      this.storage = nuObj;
-
 	      return shiftThis;
-<<<<<<< HEAD
 
-=======
 	      //return this.storage;
->>>>>>> trying to rebase
+
 	  }
 }
 
