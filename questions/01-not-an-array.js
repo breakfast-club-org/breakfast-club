@@ -72,10 +72,9 @@ class NotAnArray {
 	          delete obj[key];
 	      });
 	      this.storage = nuObj;
+	      
 	      return shiftThis;
-
-	      //return this.storage;
-
+	      
 	  }
 }
 
