@@ -28,17 +28,53 @@
 //
 
 class NotAnArray {
-  constructor() {
-    this.storage = {};
-  }
+	constructor() {
+	    this.storage = {};
+	  }
 
-  push() {}
+	  push(val) {
+	    let key = Object.keys(this.storage).length;
+	    this.storage[key]=val;
+	    return this.storage;
+	  }
 
-  pop() {}
+	  pop() {
+	    let key = Object.keys(this.storage).length-1;
+	    let popThis = this.storage[key];
+	    delete this.storage[key];
+	    return popThis;
+	  }
 
-  unshift() {}
+	  unshift(val) {
+	      let obj = this.storage;
+	      let nuObj = {};
+	      nuObj[0] = val
+	      Object.keys(obj).forEach(function(key,index) {
+	          let nukey = index;
+	          nukey++;
+	          nuObj[nukey] = obj[key];
+	          delete obj[key];
+	      });
+	      this.storage = nuObj;
+	      return this.storage;
+	  }
 
-  shift() {}
+	  shift() {
+	      let obj = this.storage;
+	      let nuObj = {};
+	      let shiftThis = this.storage[0];
+	      delete this.storage[0];
+
+	      Object.keys(obj).forEach(function(key,index) {
+	          let nukey = index;
+	          console.log(key +" "+nukey)
+	          nuObj[nukey] = obj[key];
+	          delete obj[key];
+	      });
+	      this.storage = nuObj;
+	      return this.storage;
+	  }
 }
+
 
 module.exports = NotAnArray;
