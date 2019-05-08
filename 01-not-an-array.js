@@ -47,6 +47,8 @@ class NotAnArray {
 
     if (!v) {
       this.end += 1; // restore end pointer
+    } else {
+      this._storage[this.end] = null; // remove the value
     }
 
     return v;
@@ -55,8 +57,9 @@ class NotAnArray {
   unshift(v) {
     if (!this.isEmpty()) {
       this.start -= 1;
-    } 
-    this.end += 1;
+    } else {
+      this.end += 1;
+    }
     this._storage[this.start] = v;
 
     return this;
@@ -66,8 +69,8 @@ class NotAnArray {
     const v = this._storage[this.start];
 
     if (v) {
+      this._storage[this.start] = null; // remove the value
       this.start +=1;
-      this.end -= 1;
     }
     
     return v;
@@ -82,7 +85,7 @@ class NotAnArray {
     let vals = {};
     let i = 0;
 
-    for(let j=this.start; i < this.end; i++, j++) {
+    for(let j=this.start; j < this.end; i++, j++) {
       vals[i] = this._storage[j];
     }
 

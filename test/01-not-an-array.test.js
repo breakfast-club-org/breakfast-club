@@ -22,6 +22,18 @@ describe('NotAnArray', () => {
 
             assert.isUndefined(o.pop());
             assert.isEmpty(o.storage);
+
+            o.push('a');
+            assert.equal(o.end, 1);
+            o.pop();
+            assert.equal(o.end, 0);
+            assert.equal(o.start, 0);
+            let v = o.pop();
+            assert.equal(o.end, 0);
+            assert.equal(o.start, 0);
+            assert.isUndefined(v);
+            assert.isEmpty(o.storage);
+            assert.isTrue(o.isEmpty());
         });
 
         it('should remove an element from the end of the store and return it', () => {
@@ -60,12 +72,35 @@ describe('NotAnArray', () => {
         it('should remove the value from the front of the object and return it', () => {
           const o = new NotAnArray();
           o.unshift('a');
-          o.unshift('b');
-          o.unshift('c');
-          const v = o.shift();
+          assert.equal(o.start, 0);
+          assert.equal(o.end, 1, 'end value is wrong');
 
-          assert.deepEqual(o.storage, { 0: 'b', 1: 'a' });
+          o.unshift('b');
+          assert.equal(o.start, -1);
+          assert.equal(o.end, 1, 'end value is wrong');
+
+          o.unshift('c');
+          assert.equal(o.start, -2);
+          assert.equal(o.end, 1, 'end value is wrong');
+
+          let v = o.shift();
           assert.equal(v, 'c');
+          assert.deepEqual(o.storage, { 0: 'b', 1: 'a' });
+
+          o.push('c');
+          v = o.shift();
+          assert.equal(o.start, 0);
+          assert.equal(o.end, 2);
+          assert.equal(v, 'b');
+          assert.deepEqual(o.storage, {0: 'a', 1: 'c'});
+
+          o.shift();
+          o.shift();
+          o.shift();
+          assert.equal(o.start, 2);
+          assert.equal(o.end, 2);
+          assert.isTrue(o.isEmpty());
+          assert.isEmpty(o.storage);
         });
     });
 });
