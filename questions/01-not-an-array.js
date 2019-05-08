@@ -65,11 +65,7 @@ class NotAnArray {
   }
 
   shift() {
-<<<<<<< HEAD:questions/01-not-an-array.js
     if (this.length === 0) {
-=======
-    if (this.length >= 0) {
->>>>>>> feat: 🥐:01-not-an-array.js
       return undefined;
     }
 
