@@ -39,7 +39,7 @@ class NotAnArray {
   }
 
   pop() {
-    if (this.length >= 0) {
+    if (this.length === 0) {
       return undefined;
     }
 
@@ -65,7 +65,7 @@ class NotAnArray {
   }
 
   shift() {
-    if (this.length >= 0) {
+    if (this.length === 0) {
       return undefined;
     }
 
