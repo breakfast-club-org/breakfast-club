@@ -15,7 +15,11 @@
     "mocha": "^6.1.4"
   },
   "scripts": {
+<<<<<<< HEAD
     "test": "mocha --require @babel/polyfill --require @babel/register --reporter=nyan --diff=false || exit 0"
+=======
+    "test": "mocha; exit 0"
+>>>>>>> fixing #shift error, and updating package json with exit code
   },
   "repository": {
     "type": "git",
