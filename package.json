@@ -9,7 +9,7 @@
     "mocha": "^6.1.4"
   },
   "scripts": {
-    "test": "mocha"
+    "test": "mocha --reporter=nyan --diff=false || exit 0"
   },
   "repository": {
     "type": "git",
