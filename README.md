@@ -27,3 +27,5 @@ This club operates once a week and attendance is optional. I'll typically post t
 | 6/6  |          | [BigO](#) |
 | 6/13 | [Trees](#) |            |
 | 6/29  |          | [Trees](#) |
+
+Want to submit a question?! [Check this out!](https://github.com/jasonly/breakfast-club/issues/9)
