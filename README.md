@@ -19,8 +19,8 @@ This club operates once a week and attendance is optional. I'll typically post t
 
 |      |   Question | Solution |
 |------|------------|----------|
-| 5/2  | [NotAnArray](https://github.com/jasonly/breakfast-club/blob/master/01-not-an-array.js) |            |
-| 5/9  |            | [NotAnArray](https://github.com/jasonly/breakfast-club/blob/solutions/01-not-an-array.js) |
+| 5/2  | [NotAnArray](https://github.com/jasonly/breakfast-club/blob/master/questions/01-not-an-array.js) |            |
+| 5/9  |            | [NotAnArray](https://github.com/jasonly/breakfast-club/blob/solutions/questions/01-not-an-array.js) |
 | 5/16 | [LinkedListBehavior](#) |            |
 | 5/23 |          | [LinkedListBehavior](#) |
 | 5/30 | [BigO](#) |            |
