@@ -86,7 +86,7 @@ describe('NotAnArrayLinkedList', () => {
         });
     });
 
-    // describe('#insert()', () => {
+    // describe('#insertAt()', () => {
     //     it('should have some tests', () => {
     //       // your own test here
     //     });
