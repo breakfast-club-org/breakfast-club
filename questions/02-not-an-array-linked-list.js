@@ -2,7 +2,7 @@
 
 class Node {
   constructor(value) {
-    this.value = value;
+    this.element = value;
     this.next = null;
   }
 }
@@ -34,11 +34,41 @@ class NotAnArrayLinkedList {
     this.length = 0;
   }
 
-  push() {} // add to tail
+  push(value) {
+    var nodeToAdd = new Node(value);
+    if (!this.head) {
+      this.head = nodeToAdd;
+      this.head.next = null;
+    } else {
+      // keep going next until .next is null
+      var currentNode = this.head;
+      while (currentNode.next) {
+        currentNode = currentNode.next;
+      }
 
-  pop() {} // remove from tail
+      currentNode.next = nodeToAdd;
+    }
 
-  unshift() {} // add to head
+    this.length++;
+  } // add to tail
+
+  pop() {
+    var currentNode = this.head;
+    var previousNode = null;
+    // how do i keep track of the previous node?
+    // need to keep track of previous too to reassign .next to null when we get to the last one
+
+    console.log('----------------- STARTED POP -----------------')
+    while (currentNode.next) {
+      previousNode = currentNode;
+      console.log(previousNode);
+      currentNode = currentNode.next;
+    }
+
+    return currentNode;
+  } // remove from tail
+
+  unshift(value) {} // add to head
 
   shift() {} // remove from head
 
