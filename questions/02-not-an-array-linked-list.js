@@ -20,7 +20,7 @@ class Node {
 //  - returns and removes a value from the head of the linked list
 //
 // [if you have time]
-// insert
+// insertAt
 //  - accepts a value and position and inserts a node at the new position
 //
 // [if you have time]
@@ -34,17 +34,17 @@ class NotAnArrayLinkedList {
     this.length = 0;
   }
 
-  push() {}
+  push() {} // add to tail
 
-  shift() {}
+  pop() {} // remove from tail
 
-  unshift() {}
+  unshift() {} // add to head
 
-  pop() {}
+  shift() {} // remove from head
 
-  insert() {}
+  insertAt() {} // adds anywhere based on index
 
-  deleteAt() {}
+  deleteAt() {} // removes anywhere based on index
 }
 
 module.exports = NotAnArrayLinkedList;
