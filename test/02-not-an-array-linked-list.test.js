@@ -13,7 +13,7 @@ describe('NotAnArrayLinkedList', () => {
           o.push('up');
 
           const stringO = JSON.stringify(o);
-          const mock = '{"head":{"element":"never","next":{"element":"gonna","next":{"element":"give","next":{"element":"you","next":{"element":"up","next":null}}}}},"length":5}';
+          const mock = '{"head":{"value":"never","next":{"value":"gonna","next":{"value":"give","next":{"value":"you","next":{"value":"up","next":null}}}}},"length":5}';
 
           assert.equal(o.length, 5);
           assert.equal(stringO, mock);
@@ -21,7 +21,7 @@ describe('NotAnArrayLinkedList', () => {
     });
 
     describe('#pop()', () => {
-        it('should return element from the tail', () => {
+        it('should return value from the tail', () => {
           const o = new NotAnArrayLinkedList();
 
           o.push('never');
@@ -38,7 +38,7 @@ describe('NotAnArrayLinkedList', () => {
           const stringO = JSON.stringify(o);
           const mock = '{"head":null,"length":0}';
 
-          assert.equal(finalElement.element, 'never');
+          assert.equal(finalElement.value, 'never');
           assert.equal(o.length, 0);
           assert.equal(stringO, mock);
         });
@@ -55,7 +55,7 @@ describe('NotAnArrayLinkedList', () => {
           o.unshift('up');
 
           const stringO = JSON.stringify(o);
-          const mock = '{"head":{"element":"up","next":{"element":"you","next":{"element":"give","next":{"element":"gonna","next":{"element":"never","next":null}}}}},"length":5}';
+          const mock = '{"head":{"value":"up","next":{"value":"you","next":{"value":"give","next":{"value":"gonna","next":{"value":"never","next":null}}}}},"length":5}';
 
           assert.equal(o.length, 5);
           assert.equal(stringO, mock);
@@ -63,7 +63,7 @@ describe('NotAnArrayLinkedList', () => {
     });
 
     describe('#shift()', () => {
-        it('should remove the element from the head and return it', () => {
+        it('should remove the value from the head and return it', () => {
           const o = new NotAnArrayLinkedList();
 
           o.unshift('never');
@@ -80,7 +80,7 @@ describe('NotAnArrayLinkedList', () => {
           const stringO = JSON.stringify(o);
           const mock = '{"head":null,"length":0}';
 
-          assert.equal(finalElement.element, 'never');
+          assert.equal(finalElement.value, 'never');
           assert.equal(o.length, 0);
           assert.equal(stringO, mock);
         });
