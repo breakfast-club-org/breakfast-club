@@ -76,9 +76,20 @@ class NotAnArrayLinkedList {
     return toReturnVal;
   } // remove from tail
 
-  unshift(value) {} // add to head
+  unshift(value) {
+    var oldHead = this.head;
+    this.head = new Node(value);
+    this.head.next = oldHead;
+    this.length++;
+  } // add to head
 
-  shift() {} // remove from head
+  shift() {
+    var toReturnVal = this.head;
+    this.head = this.head.next;
+    this.length--;
+
+    return toReturnVal;
+  } // remove from head
 
   insertAt() {} // adds anywhere based on index
 
