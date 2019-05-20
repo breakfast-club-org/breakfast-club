@@ -53,19 +53,28 @@ class NotAnArrayLinkedList {
   } // add to tail
 
   pop() {
+    console.log('----------------- STARTED POP -----------------');
     var currentNode = this.head;
-    var previousNode = null;
-    // how do i keep track of the previous node?
-    // need to keep track of previous too to reassign .next to null when we get to the last one
+    var toReturnVal;
+    this.length--;
 
-    console.log('----------------- STARTED POP -----------------')
+    if (!this.head.next) {
+      toReturnVal = this.head;
+      this.head = null;
+      return toReturnVal;
+    }
+
     while (currentNode.next) {
-      previousNode = currentNode;
-      console.log(previousNode);
+      if (!currentNode.next.next) {
+        toReturnVal = currentNode.next;
+        break;
+      }
+
       currentNode = currentNode.next;
     }
 
-    return currentNode;
+    currentNode.next = null;
+    return toReturnVal;
   } // remove from tail
 
   unshift(value) {} // add to head
