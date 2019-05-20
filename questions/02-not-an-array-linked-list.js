@@ -38,7 +38,6 @@ class NotAnArrayLinkedList {
     var nodeToAdd = new Node(value);
     if (!this.head) {
       this.head = nodeToAdd;
-      this.head.next = null;
     } else {
       // keep going next until .next is null
       var currentNode = this.head;
@@ -91,9 +90,49 @@ class NotAnArrayLinkedList {
     return toReturnVal;
   } // remove from head
 
-  insertAt() {} // adds anywhere based on index
+  insertAt(insertIndex, value) {
+    if (insertIndex > this.length) {
+      throw "Too big of index to insert";
+    } else if (insertIndex === 0) {
+      this.unshift(value);
+    } else if (insertIndex === this.length) {
+      this.push(value);
+    } else {
+      var currentNode = this.head;
+      var nodeToInsert = new Node(value);
+      var count = 0;
 
-  deleteAt() {} // removes anywhere based on index
+      while (count < (insertIndex - 1)) {
+        currentNode = currentNode.next;
+        count++;
+      }
+
+      var restOfList = currentNode.next;
+      currentNode.next = nodeToInsert;
+      currentNode.next.next = restOfList;
+      this.length++;
+    }
+  } // adds anywhere based on index
+
+  deleteAt(deleteIndex) {
+    if (deleteIndex === 0) {
+      this.shift();
+    } else if (deleteIndex === this.length - 1) {
+      this.pop();
+    } else {
+      var currentNode = this.head;
+      var count = 0;
+
+      while (count < (deleteIndex - 1)) {
+        currentNode = currentNode.next;
+        count++;
+      }
+
+      currentNode.next = currentNode.next.next;
+
+      this.length--;
+    }
+  } // removes anywhere based on index
 }
 
 module.exports = NotAnArrayLinkedList;
