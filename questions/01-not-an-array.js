@@ -30,15 +30,41 @@
 class NotAnArray {
   constructor() {
     this.storage = {};
+    this.length = 0;
   }
 
-  push() {}
+  push(value) {
+  	this.storage[this.length] = value;
+  	this.length++;
+  }
 
-  pop() {}
+  pop() {
+  	var toReturnVal = this.storage[this.length - 1];
+  	delete this.storage[this.length - 1];
+  	this.length--;
 
-  unshift() {}
+  	return toReturnVal;
+  }
 
-  shift() {}
+  unshift(value) {
+  	for (var i = 0; i < this.length; i++) {
+  		this.storage[this.length - i] = this.storage[this.length - 1 - i];
+  	}
+  	this.storage[0] = value;
+
+  	this.length++;
+  }
+
+  shift() {
+  	var toReturnVal = this.storage[0];
+  	for (var i = 1; i < this.length; i++) {
+  		this.storage[i - 1] = this.storage[i];
+  	}
+
+  	delete this.storage[this.length - 1];
+
+  	return toReturnVal;
+  }
 }
 
 module.exports = NotAnArray;
