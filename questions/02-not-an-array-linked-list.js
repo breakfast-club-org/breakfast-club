@@ -2,7 +2,7 @@
 
 class Node {
   constructor(value) {
-    this.element = value;
+    this.value = value;
     this.next = null;
   }
 }
@@ -53,7 +53,6 @@ class NotAnArrayLinkedList {
   } // add to tail
 
   pop() {
-    console.log('----------------- STARTED POP -----------------');
     var currentNode = this.head;
     var toReturnVal;
     this.length--;
