@@ -34,13 +34,73 @@ class NotAnArrayLinkedList {
     this.length = 0;
   }
 
-  push() {} // add to tail
+  push(value) { // add to tail
+    const node = new Node(value);
 
-  pop() {} // remove from tail
+    if (this.head === null) {
+      this.head = node;
+    } else {
+      let current = this.head;
 
-  unshift() {} // add to head
+      while (current.next) {
+        current = current.next;
+      }
 
-  shift() {} // remove from head
+      current.next = node;
+    }
+
+    this.length = this.length + 1;
+  }
+
+  pop() { // remove from tail
+    if (!this.head) {
+      return null;
+    }
+
+    if(!this.head.next){
+      let popped = this.head;
+
+      this.head = null;
+      this.length = this.length - 1;
+
+      return popped;
+    }
+
+    let previous = this.head;
+    let tail = this.head.next;
+
+    while (tail.next !== null){
+      previous = tail;
+      tail = tail.next;
+    }
+
+    previous.next = null;
+    this.length = this.length - 1;
+
+    return tail;
+  }
+
+  unshift(value) { // add to head
+    const node = new Node(value);
+
+    node.next = this.head;
+    this.head = node;
+    this.length = this.length + 1;
+  }
+
+
+  shift() { // remove from head
+    if (!this.head) {
+      return null;
+    }
+
+    const unshifted = this.head;
+
+    this.head = this.head.next;
+    this.length = this.length - 1;
+
+    return unshifted;
+  }
 
   insertAt() {} // adds anywhere based on index
 
