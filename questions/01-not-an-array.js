@@ -74,7 +74,11 @@ class NotAnArray {
 	      this.storage = nuObj;
 
 	      return shiftThis;
+<<<<<<< HEAD
 
+=======
+	      //return this.storage;
+>>>>>>> trying to rebase
 	  }
 }
 
