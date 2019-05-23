@@ -102,9 +102,71 @@ class NotAnArrayLinkedList {
     return unshifted;
   }
 
-  insertAt() {} // adds anywhere based on index
+  valueOf(index) { // reverse of indexOf
+    let counter = 0;
+    let node = this.head;
 
-  deleteAt() {} // removes anywhere based on index
+    while (node) {
+      if (counter === index) {
+        return node;
+      }
+
+      counter = counter + 1;
+      node = node.next;
+    }
+
+    return null;
+  }
+
+  insertAt(index, value) { // insert node at target value
+    const node = new Node(value);
+
+    if (!this.head) {
+      this.head = node;
+      this.length = this.length + 1;
+
+      return;
+    }
+
+    if (index === 0) {
+      this.unshift(value);
+
+      return;
+    }
+
+    const previous = this.valueOf(index - 1);
+
+    node.next = previous.next;
+    previous.next = node;
+
+    this.length = this.length + 1;
+  }
+
+  deleteAt(index) { // delete at target index
+    if (index > 0 && index > this.length) {
+      return null;
+    } else {
+      let current = this.head;
+      let prev = current;
+      let item = 0;
+
+      if (index === 0) {
+        this.head = current.next;
+      } else {
+        while (item < index) {
+          item = item + 1;
+          prev = current;
+          current = current.next;
+        }
+
+        prev.next = current.next;
+      }
+
+      this.length = this.length - 1;
+
+      return current.element;
+    }
+  }
 }
 
 module.exports = NotAnArrayLinkedList;
