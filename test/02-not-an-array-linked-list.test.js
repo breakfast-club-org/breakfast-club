@@ -86,15 +86,47 @@ describe('NotAnArrayLinkedList', () => {
         });
     });
 
-    // describe('#insertAt()', () => {
-    //     it('should have some tests', () => {
-    //       // your own test here
-    //     });
-    // });
-    //
-    // describe('#deleteAt()', () => {
-    //     it('should have some tests', () => {
-    //       // your own test here
-    //     });
-    // });
+    describe('#insertAt()', () => {
+        it('should insert a node at a given index', () => {
+          const o = new NotAnArrayLinkedList();
+
+          o.push('gonna');
+          o.push('you');
+
+          o.insertAt(0, 'never');
+          o.insertAt(3, 'down');
+          o.insertAt(2, 'let');
+
+          const string0 = JSON.stringify(o);
+          const mock = '{"head":{"value":"never","next":{"value":"gonna","next":{"value":"let","next":{"value":"you","next":{"value":"down","next":null}}}}},"length":5}';
+          assert.equal(o.length, 5);
+          assert.equal(string0, mock);
+        });
+    });
+
+    describe('#deleteAt()', () => {
+        it('should delete a node at a given index', () => {
+          const o = new NotAnArrayLinkedList();
+
+          o.push('first');
+          o.push('never');
+          o.push('gonna');
+          o.push('run');
+          o.push('middle');
+          o.push('around');
+          o.push('and');
+          o.push('desert');
+          o.push('you');
+          o.push('last');
+
+          o.deleteAt(0);
+          o.deleteAt(3);
+          o.deleteAt(o.length - 1);
+
+          const string0 = JSON.stringify(o);
+          const mock = '{"head":{"value":"never","next":{"value":"gonna","next":{"value":"run","next":{"value":"around","next":{"value":"and","next":{"value":"desert","next":{"value":"you","next":null}}}}}}},"length":7}';
+          assert.equal(o.length, 7);
+          assert.equal(string0, mock);
+        });
+    });
 });
