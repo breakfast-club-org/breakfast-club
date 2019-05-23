@@ -11,13 +11,13 @@ class Node {
 //  - accepts a value and places it at the tail of the linked list
 //
 // pop
-//  - returns and removes a value from the tail of the linked list
+//  - returns and removes a node from the tail of the linked list
 //
 // unshift
 //  - accepts a value and places it at the head of the linked list
 //
 // shift
-//  - returns and removes a value from the head of the linked list
+//  - returns and removes a node from the head of the linked list
 //
 // [if you have time]
 // insertAt

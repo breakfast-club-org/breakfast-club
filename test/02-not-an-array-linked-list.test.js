@@ -21,7 +21,7 @@ describe('NotAnArrayLinkedList', () => {
     });
 
     describe('#pop()', () => {
-        it('should return value from the tail', () => {
+        it('should return node from the tail', () => {
           const o = new NotAnArrayLinkedList();
 
           o.push('never');
@@ -63,7 +63,7 @@ describe('NotAnArrayLinkedList', () => {
     });
 
     describe('#shift()', () => {
-        it('should remove the value from the head and return it', () => {
+        it('should remove the node from the head and return it', () => {
           const o = new NotAnArrayLinkedList();
 
           o.unshift('never');
