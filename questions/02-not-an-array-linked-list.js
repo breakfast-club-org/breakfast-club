@@ -52,7 +52,6 @@ class NotAnArrayLinkedList {
   } // add to tail
 
   pop() {
-
     if(this.head.next === null){
         let thisval = this.head;
         this.head = null;
