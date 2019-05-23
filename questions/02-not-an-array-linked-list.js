@@ -1,9 +1,9 @@
 // Implement a class called NotAnArrayLinkedList using the provided Node class
 
 class Node {
-  constructor(value) {
+  constructor(value, next=null) {
     this.value = value;
-    this.next = null;
+    this.next = next;
   }
 }
 
@@ -34,13 +34,71 @@ class NotAnArrayLinkedList {
     this.length = 0;
   }
 
-  push() {} // add to tail
+  push(value) {
+      let node = new Node(value)
+      if(this.length === 0){
+        this.head = node;
+      }else{
+        let current = this.head;
+        while(current.next){
+          current = current.next;
+        }
+        current.next = node;
+    }
+    this.length++;
+    return this;
 
-  pop() {} // remove from tail
 
-  unshift() {} // add to head
+  } // add to tail
 
-  shift() {} // remove from head
+  pop() {
+    
+    if(this.head.next === null){
+        let thisval = this.head.value;
+        this.head = null;
+        return thisval;
+    }else{
+        let current = this.head;
+        let tail = this.head.next;
+        let n = 0;
+        while(tail.next != null){
+          current = current.next;
+          tail = tail.next;
+          n++;
+        }
+        current.next = null;
+    
+        --this.length;
+        return tail.value;
+    }
+
+  } // remove from tail
+
+  unshift(value) {
+    let node;
+    if(this.length === 0){
+     node = new Node(value)
+    }else{
+      node = new Node(value, this.head);
+    }
+    this.length++;
+    this.head = node;
+    return this;
+
+  } // add to head
+
+  shift() {
+       if(this.length === 0){
+          return 'We have no head'; 
+       }else{
+            let head = this.head;
+            let next = this.head.next;
+            this.head = next;
+             --this.length;
+            return head;
+       }
+
+  } // remove from head
 
   insertAt() {} // adds anywhere based on index
 
