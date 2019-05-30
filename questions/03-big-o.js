@@ -8,8 +8,14 @@
 //
 // For example if you compare;
 //
-// console.log([1,2,3])
-// console.log([1,2,3,…100])
+// const logAllValues = (n) => {
+//   for (let i = 0; i < n.length; i++) {
+//     console.log(n[i])
+//   }
+// }
+//
+// logAllValues([1,2,3])
+// logAllValues([1,2,3,…100])
 //
 // Will the run time stay the same as the input size increases?
 // Will the run time get proportionally larger as the input size increases?
@@ -32,7 +38,12 @@
 // Logarithmic O(log n) [a curving line down]
 // - The size of the input is halfed each time an operation is completed
 //
-// For more on it please read: https://www.interviewcake.com/article/javascript/big-o-notation-time-and-space-complexity
+// For more on it please read:
+//
+////////////////////////////////// READ THIS IT'S AWESOME ///////////////////////////////////////////
+///// https://www.interviewcake.com/article/javascript/big-o-notation-time-and-space-complexity /////
+////////////////////////////////// READ THIS IT'S AWESOME ///////////////////////////////////////////
+//
 // They can explain it way better than I can and they go over the steps for determining time complexity.
 
 // Classify the following statements with what you think the time complexity is and why.
@@ -46,7 +57,7 @@ const logFirstValue = (n) => {
 
 // (2) Time Complexity:
 const logLastValue = (n) => {
-  console.log(n[n.length])
+  console.log(n[n.length - 1])
 }
 
 // (3) Time Complexity:
