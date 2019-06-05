@@ -214,10 +214,10 @@ const subSetsOfAString = (n) => {
 
 // (18) Time Complexity:
 // Write a function that computes all the different words that can be formed given a string
-// permutationsOfAString('a') outputs [ 'a']
-// permutationsOfAString('ab') outputs  [ 'ab', 'ba']
-// permutationsOfAString('abc') outputs [ 'abc', 'acb', 'bac', 'bca', 'cab', 'cba' ]
-const permutationsOfAString = (n) => {
+// permutationsOfAString('a') outputs ['a']
+// permutationsOfAString('ab') outputs  ['ab', 'ba']
+// permutationsOfAString('abc') outputs ['abc', 'acb', 'bac', 'bca', 'cab', 'cba']
+const permutationsOfAString = (string, prefix = '') => {
 
 }
 
