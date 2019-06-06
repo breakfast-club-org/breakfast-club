@@ -76,7 +76,7 @@ const logCombinations = (n) => {
   }
 }
 
-// (5) Time Complexity: O(n log n)
+// (5) Time Complexity: O(log n)
 const binarySearch = (arr, target) => {
   let startIndex = 0;
   let endIndex = arr.length - 1;
@@ -96,7 +96,7 @@ const binarySearch = (arr, target) => {
 }
 
 // (6) Time Complexity: O(n^2)
-const quickSort = list => {
+const quickSort = (list) => {
   if (list.length < 2) {
     return list;
   }
@@ -139,7 +139,7 @@ const hasValue = (array, value) => {
 // (9) Time Complexity: O(n^2)
 const findMatch = (string) => {
   for (var i = 0; i < string.length; i++){
-    for ( var j = i+1; j < string.length; j++){
+    for (var j = i+1; j < string.length; j++){
       if (string[i] === string[j]) {
         return true;
       }
@@ -193,7 +193,8 @@ const mergeSort = (unsortedArray) => {
   const right = unsortedArray.slice(middle);
 
   return merge(
-    mergeSort(left), mergeSort(right)
+    mergeSort(left),
+    mergeSort(right)
   );
 }
 
