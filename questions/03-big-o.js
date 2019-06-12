@@ -53,17 +53,20 @@ const data = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 // (1) Time Complexity:
 const logFirstValue = (n) => {
   console.log(n[0])
+  //Will only ever run once - O(1)
 }
 
 // (2) Time Complexity:
 const logLastValue = (n) => {
   console.log(n[n.length - 1])
+    //Will only ever run once - O(1)
 }
 
 // (3) Time Complexity:
 const logAllValues = (n) => {
   for (let i = 0; i < n.length; i++) {
     console.log(n[i])
+    //Will grow linerally based on the size of the data array - O(n)
   }
 }
 
@@ -72,6 +75,7 @@ const logCombinations = (n) => {
   for (let i = 0; i < n.length; i++) {
     for (let j = 0; j < n.length; j++) {
       console.log(`${n[i]} and ${n[j]}`)
+      //Will grow exponentially / squared based on the size of the data array - O(n^2)
     }
   }
 }
@@ -93,6 +97,7 @@ const binarySearch = (arr, target) => {
   }
 
   return false;
+  // O(log n)
 }
 
 // (6) Time Complexity:
@@ -118,11 +123,14 @@ const quickSort = list => {
     pivot,
     ...quickSort(right)
   ];
+
+    //Worst case scenerio - O(n^2)
 };
 
 // (7) Time Complexity:
 const firstElemEven = (array) => {
   return array[0] % 2 === 0 ? true : false;
+    //Will only ever run once - O(1)
 }
 
 // (8) Time Complexity:
@@ -134,6 +142,8 @@ const hasValue = (array, value) => {
   }
 
   return false;
+
+   //Worst case scenerio - O(n)
 }
 
 // (9) Time Complexity:
@@ -146,20 +156,21 @@ const findMatch = (string) => {
     }
   }
 
+  //Will grow exponentially / squared based on the size of the data array - O(n^2)
   return false;
 }
 
 // (10) Time Complexity:
-data.pop()
+data.pop() //O(1)
 
 // (11) Time Complexity:
-data.shift()
+data.shift() //O(n)
 
 // (12) Time Complexity:
-data.unshift()
+data.unshift() //O(n)
 
 // (13) Time Complexity:
-data.push()
+data.push() //O(1)
 
 // (14) Time Complexity:
 const merge = (left, right) => {
@@ -180,6 +191,8 @@ const merge = (left, right) => {
   return resultArray
     .concat(left.slice(leftIndex))
     .concat(right.slice(rightIndex));
+
+  //Will grow linerally based on the size of the data array - O(n) 
 }
 
 // (15) Time Complexity:
@@ -195,12 +208,21 @@ const mergeSort = (unsortedArray) => {
   return merge(
     mergeSort(left), mergeSort(right)
   );
+
+  //Will grow linerally based on the size of the data array - O(n) 
 }
 
 // (16) Time Complexity:
 // Finding the factorial of a number
-const factorial = (n) => {
 
+const factorial = (n) => {
+  let f = n;
+  while (n > 1) {
+    n--;
+    f = f*n;
+  }
+  return f;
+  //O(n)
 }
 
 // (17) Time Complexity:
@@ -208,7 +230,18 @@ const factorial = (n) => {
 // subSetsOfAString('') outputs  ['']
 // subSetsOfAString('a') outputs ['', 'a']
 // subSetsOfAString('ab') outputs ['', 'a', 'b', 'ab']
+
 const subSetsOfAString = (n) => {
+
+  let arr = [];
+  for (var i = 0; i < n.length; i++){
+    for ( var j = i; j < n.length; j++){
+        
+        arr.push(n.substring(i,j+1));
+    }
+  }
+  return arr;
+  //O(n^2)
 
 }
 
@@ -219,6 +252,7 @@ const subSetsOfAString = (n) => {
 // permutationsOfAString('abc') outputs ['abc', 'acb', 'bac', 'bca', 'cab', 'cba']
 const permutationsOfAString = (string, prefix = '') => {
 
+
 }
 
 module.exports = {
@@ -226,3 +260,4 @@ module.exports = {
   subSetsOfAString: subSetsOfAString,
   permutationsOfAString: permutationsOfAString
 };
+

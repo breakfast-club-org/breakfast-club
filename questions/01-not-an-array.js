@@ -74,15 +74,6 @@ class NotAnArray {
 	      this.storage = nuObj;
 	      return shiftThis;
 
-
-
-
-
-
-
-
-
-
 	  }
 }
 
