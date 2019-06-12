@@ -80,24 +80,24 @@ describe('Generator', () => {
       assert.deepEqual(searchResult, mockData);
     });
 
-    it('preOrderTraversal should traverse depth first from left to right (lowest to highest)', () => {
+    it('postOrderTraversal should traverse depth first from left to right', () => {
       const o = new Generator.binaryTree();
       const treeValues = [100, 2, 111, 3, 1, 122, 200];
       const result = [];
-      const expectedResult = [1, 2, 3, 100, 111, 122, 200];
+      const expectedResult = [1, 3, 2, 200, 122, 111, 100];
 
       for (let value of treeValues) {
         o.insert(value);
       }
 
-      // for (let value of o.preOrderTraversal()) {
+      // for (let value of o.postOrderTraversal()) {
       //   result.push(value);
       // }
 
       assert.deepEqual(result, expectedResult);
     });
 
-    it('postOrderTraversal should traverse depth first from left to right saving each visited value if it has not seen it yet', () => {
+    it('preOrderTraversal should traverse depth first from left to right saving each visited value if it has not seen it yet', () => {
       const o = new Generator.binaryTree();
       const treeValues = [100, 2, 111, 3, 1, 122, 200];
       const result = [];
