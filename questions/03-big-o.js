@@ -214,8 +214,11 @@ const mergeSort = (unsortedArray) => {
 
 // (16) Time Complexity:
 // Finding the factorial of a number
-const factorial = (n) => {
 
+<<<<<<< HEAD
+=======
+const factorial = (n) => {
+>>>>>>> adding my solutions
   let f = n;
   while (n > 1) {
     n--;
