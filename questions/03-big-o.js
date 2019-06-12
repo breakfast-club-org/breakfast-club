@@ -214,8 +214,8 @@ const mergeSort = (unsortedArray) => {
 
 // (16) Time Complexity:
 // Finding the factorial of a number
-
 const factorial = (n) => {
+
   let f = n;
   while (n > 1) {
     n--;
@@ -251,6 +251,7 @@ const subSetsOfAString = (n) => {
 // permutationsOfAString('ab') outputs  ['ab', 'ba']
 // permutationsOfAString('abc') outputs ['abc', 'acb', 'bac', 'bca', 'cab', 'cba']
 const permutationsOfAString = (string, prefix = '') => {
+
 
 
 }
