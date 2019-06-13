@@ -1,7 +1,13 @@
 
 // Using JS Generators write a function that can potentially calculate factorial of 100,000
 const factorial = function * () {
+  var initial = 1;
 
+  for (let i = 1; i <= 100000; i++) {
+    let current = initial *= i;
+
+    yield current;
+  }
 };
 
 // Implement a class called BinarySearchTree using the provided Node class
@@ -23,7 +29,7 @@ class Node {
 //   / \    \
 // (1) (3)  (122)
 //            \
-//            (200)
+//            (209)
 //
 // Insert
 //  - Using the Node class the insert method should add the node in the correct position
@@ -33,26 +39,92 @@ class Node {
 //    - returns the node if it finds the value
 //    - returns false if the value doesn't exist within the tree
 //
-// postOrderTraversal (using generators)
-//  - Is a method that takes a node and traverse/iterates through the tree depth first
-//  - Given the example tree above the function should see the values in this order [1, 3, 2, 200, 122, 111, 100]
-//
-// preOrderTraversal (using generators)
-//  - Is a method that takes a node and traverse/iterates through the tree depth first
-//  - Given the example tree above the function should see the values in this order [100, 2, 1, 3, 111, 122, 200]
-
 class BinarySearchTree {
   constructor() {
     this.root = undefined;
   }
 
-  insert(value) {}
+  insert(value) {
+    let node = new Node(value);
 
-  search(value) {}
+    if (!this.root) {
+      this.root = node;
 
-  * postOrderTraversal(node) {}
+      return;
+    }
 
-  * preOrderTraversal(node) {}
+    let curr = this.root;
+
+    while (value !== curr.value) {
+      if (value < curr.value) {
+        if (!curr.left) {
+          curr.left = node;
+
+          break;
+        }
+        curr = curr.left;
+      } else if (value > curr.value) {
+        if (!curr.right) {
+          curr.right = node;
+
+          break;
+        }
+        curr = curr.right;
+      }
+    }
+  }
+
+  search(value) {
+    if (!this.root)  {
+      return;
+    }
+
+    let curr = this.root;
+
+    if (!curr)  {
+      return;
+    }
+
+    while (curr) {
+      if (value === curr.value) {
+        return curr;
+      } else if (value < curr.value) {
+        curr = curr.left;
+      } else if (value > curr.value) {
+        curr = curr.right;
+      }
+    }
+
+    return false;
+  }
+
+  * preOrderTraversal(node) {
+    if (node === undefined) {
+      node = this.root;
+    }
+
+    if (!node) {
+      return;
+    }
+
+    yield * this.preOrderTraversal(node.left);
+    yield * this.preOrderTraversal(node.right);
+    yield node.value;
+  }
+
+  * postOrderTraversal(node) {
+    if (node === undefined) {
+      node = this.root;
+    }
+
+    if (!node) {
+      return;
+    }
+
+    yield node.value;
+    yield * this.preOrderTraversal(node.left);
+    yield * this.preOrderTraversal(node.right);
+  }
 }
 
 module.exports = {
