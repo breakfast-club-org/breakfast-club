@@ -265,7 +265,13 @@ function permute(s) {
       permute(s.substring(0,i)+s.substring(i+1)).map(partial => (c+partial))
     );
   }
-  return permutedStrings;
+  // handle duplicates, e.g. s = 'aab' => ['aab', 'aba', 'baa']
+  const strSet = new Set();
+  permutedStrings.forEach(str => {
+    strSet.add(str);
+  });
+
+  return Array.from(strSet);
 }
 
 module.exports = {

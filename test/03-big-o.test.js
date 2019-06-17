@@ -40,6 +40,7 @@ describe('test some functions in BigO', () => {
             { s: 'a', exp: ['a'] },
             { s: 'ab', exp: ['ab', 'ba'] },
             { s: 'abc', exp: ['abc', 'bac', 'bca', 'acb', 'cab', 'cba']},
+            { s: 'aab', exp: ['aab', 'aba', 'baa']},
             { s: '1234', exp: ['1234',
                                '1243',
                                '1324',
