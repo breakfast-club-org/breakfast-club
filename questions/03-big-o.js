@@ -199,7 +199,7 @@ const mergeSort = (unsortedArray) => {
 
 // (16) Time Complexity:
 // Finding the factorial of a number
-const factorial => (n) {
+const factorial = (n) => {
 
 }
 
@@ -208,15 +208,21 @@ const factorial => (n) {
 // subSetsOfAString('') outputs  ['']
 // subSetsOfAString('a') outputs ['', 'a']
 // subSetsOfAString('ab') outputs ['', 'a', 'b', 'ab']
-const subSetsOfAString => (n) {
+const subSetsOfAString = (n) => {
 
 }
 
 // (18) Time Complexity:
 // Write a function that computes all the different words that can be formed given a string
-// permutationsOfAString('a') outputs [ 'a']
-// permutationsOfAString('ab') outputs  [ 'ab', 'ba']
-// permutationsOfAString('abc') outputs [ 'abc', 'acb', 'bac', 'bca', 'cab', 'cba' ]
-const permutationsOfAString => (n) {
+// permutationsOfAString('a') outputs ['a']
+// permutationsOfAString('ab') outputs  ['ab', 'ba']
+// permutationsOfAString('abc') outputs ['abc', 'acb', 'bac', 'bca', 'cab', 'cba']
+const permutationsOfAString = (string, prefix = '') => {
 
 }
+
+module.exports = {
+  factorial: factorial,
+  subSetsOfAString: subSetsOfAString,
+  permutationsOfAString: permutationsOfAString
+};
