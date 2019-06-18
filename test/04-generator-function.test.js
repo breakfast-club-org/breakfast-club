@@ -16,7 +16,6 @@ describe('Generator', () => {
 
       assert.equal(o.next().value, 1);  // n = 0
       assert.equal(o.next().value, 1);
-      assert.equal(o.next().value, 1);
       assert.equal(o.next().value, 2);
       assert.equal(o.next().value, 6);
       assert.equal(o.next().value, 24);
