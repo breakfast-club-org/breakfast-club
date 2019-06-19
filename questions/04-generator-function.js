@@ -4,7 +4,13 @@ const factorial = function * () {
   var initial = 1;
 
   for (let i = 1; i <= 100000; i++) {
-    let current = initial *= i;
+    let multiplier = 1;
+
+    if (i > 2) {
+      multiplier = i - 1;
+    }
+
+    let current = initial *= multiplier;
 
     yield current;
   }
