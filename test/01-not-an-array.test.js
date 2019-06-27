@@ -1,5 +1,5 @@
 const assert = require('chai').assert;
-const NotAnArray = require('../01-not-an-array');
+const NotAnArray = require('../questions/01-not-an-array');
 
 describe('NotAnArray', () => {
     describe('#push()', () => {

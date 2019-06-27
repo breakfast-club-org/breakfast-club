@@ -5,11 +5,15 @@
   "main": "index.js",
   "dependencies": {},
   "devDependencies": {
+    "@babel/core": "^7.4.4",
+    "@babel/polyfill": "^7.4.4",
+    "@babel/preset-env": "^7.4.4",
+    "@babel/register": "^7.4.4",
     "chai": "^4.2.0",
     "mocha": "^6.1.4"
   },
   "scripts": {
-    "test": "mocha"
+    "test": "mocha --require @babel/polyfill --require @babel/register --reporter=nyan --diff=false || exit 0"
   },
   "repository": {
     "type": "git",
