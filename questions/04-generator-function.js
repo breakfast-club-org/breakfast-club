@@ -1,8 +1,17 @@
 
 // Using JS Generators write a function that can potentially calculate factorial of 100,000
 const factorial = function * () {
-
+  let f = 1;
+  let n = 1;
+  while (true) {
+    f = f * n++;
+    yield f;
+  };
 };
+
+
+
+
 
 // Implement a class called BinarySearchTree using the provided Node class
 class Node {
