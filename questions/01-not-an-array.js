@@ -75,9 +75,9 @@ class NotAnArray {
 
 		  return shiftThis;
 
-
 	  }
 }
 
 
 module.exports = NotAnArray;
+
