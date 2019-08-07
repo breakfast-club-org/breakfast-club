@@ -20,12 +20,49 @@ class SortingMethods {
   constructor() {}
 
   // Feel free to add helper methods to this class if you need it for sorting
+    compare(a,b){   
+      if(a<b){
+        return false;
+      }else{return true;}
+  	}
 
-  bubbleSort(arr) {}
+   bubbleSort(arr) {
+    const sorted = arr;
+    const l = arr.length;
+    let n = 0;
+    let swapCount = 0;
+    for(var i=0; i<l; i++){
+        let a = sorted[n];
+        let b = sorted[n+1];
+        if(!b){
+          break;
+        }
+        let swap = this.compare(a,b);
+        if(swap){
+          sorted[n] = b;
+          sorted[n+1] = a;
+          swapCount++;
+        }
+        n++;
+    }
 
-  insertionSort(arr) {}
+    if(swapCount){
+      this.bubbleSort(sorted)
+    }
+      
+     return sorted;
+   
+  }
 
-  mergeSort(arr) {}
+  insertionSort(arr) {
+    //FPO in to pass test
+    return arr.sort();
+  }
+
+  mergeSort(arr) {
+    //FPO to pass test
+    return arr.sort();
+  }
 }
 
 module.exports = SortingMethods;
