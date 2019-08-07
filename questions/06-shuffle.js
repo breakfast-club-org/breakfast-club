@@ -7,7 +7,19 @@
 class Shuffle {
   constructor() {}
 
-  nameOfYourFunction(arr) {}
+  fisherYatesShuffle(arr) {
+    let m = arr.length, t, i;
+    while (m) {
+      // randomly choose remaining item
+      i = Math.floor(Math.random() * m--);
+
+      // swap the choose item with the last element on of remaining array
+      t = arr[m];
+      arr[m] = arr[i];
+      arr[i] = t;
+    }
+    return arr;
+  }
 }
 
 module.exports = Shuffle;
