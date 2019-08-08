@@ -5,15 +5,17 @@
 // READ THIS: https://bost.ocks.org/mike/shuffle/
 
 class Shuffle {
-  constructor() {}
+  constructor() {
+    Array.prototype.swap = function(a, b) {
+      [this[a], this[b]] = [this[b], this[a]];
+    }
+  }
 
   shuffleForwards(arr) {
     for (let i = 0; i < arr.length; i++) {
       let position = Math.floor(Math.random() * (i + 1));
 
-      // arr.swap(arr[i], arr[position]);
-
-      [arr[i], arr[position]] = [arr[position], arr[i]];
+      arr.swap(i, position);
     }
 
     return arr;
@@ -23,7 +25,7 @@ class Shuffle {
     for (let i = arr.length - 1; i > 0; i--) {
       let position = Math.floor(Math.random() * (i + 1));
 
-      [arr[i], arr[position]] = [arr[position], arr[i]];
+      arr.swap(i, position);
     }
 
     return arr;
@@ -35,7 +37,7 @@ class Shuffle {
     while (m) {
       let position = Math.floor(Math.random() * m--);
 
-      [arr[m], arr[position]] = [arr[position], arr[m]];
+      arr.swap(m, position);
     }
 
     return arr;
