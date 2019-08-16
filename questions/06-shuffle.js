@@ -4,9 +4,7 @@
 // - What is a meaningful way to test if your input array has been shuffled? Please fill these out in 06-shuffle.test.js
 // READ THIS: https://bost.ocks.org/mike/shuffle/
 
-class Shuffle {
-  constructor() {}
-
+const Shuffle = {
   fisherYatesShuffle(arr) {
     let m = arr.length, t, i;
     while (m) {
