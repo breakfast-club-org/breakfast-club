@@ -7,7 +7,27 @@
 class Shuffle {
   constructor() {}
 
-  nameOfYourFunction(arr) {}
+   getRandomInt(min, max) {
+      min = Math.ceil(min);
+      max = Math.floor(max);
+      return Math.floor(Math.random() * (max - min)) + min;
+  }
+
+  nameOfYourFunction(arr) {
+    let shuffled = [];
+    let l = arr.length;
+    let n = 0;
+    while(n < l){
+      let s = this.getRandomInt(0,l);
+      shuffled.push(arr[s]);
+      arr.splice(s,1);
+      l--;
+    }
+    return shuffled;
+  }
 }
 
 module.exports = Shuffle;
+
+
+
