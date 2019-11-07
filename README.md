@@ -15,6 +15,6 @@ A place for 🍩's and maybe 🍰's
 
 ## Schedule
 
-This club operates once a week and attendance is optional. I'll typically post the question of the week on a Thursday and then on the following week I'll post the answer. Below is a tentative schedule.
+This club operates once a week and attendance is optional. I'll typically post the question of the week on a Thursday and then on the following week I'll post the answer.
 
 Want to submit a question?! [Check this out!](https://github.com/jasonly/breakfast-club/issues/9)
