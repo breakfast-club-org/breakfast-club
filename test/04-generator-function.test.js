@@ -14,7 +14,7 @@ describe('Generator', () => {
     it('should output the factorial of a number with each next function call', () => {
       const o = Generator.factorial();
 
-      assert.equal(o.next().value, 1);
+      assert.equal(o.next().value, 1);  // n = 0
       assert.equal(o.next().value, 1);
       assert.equal(o.next().value, 2);
       assert.equal(o.next().value, 6);
@@ -46,7 +46,7 @@ describe('Generator', () => {
       //   (2)  (111)
 
       for (let value of treeValues) {
-        o.insert(treeValues[i]);
+        o.insert(value);
       }
 
       assert.deepEqual(o.root, mockData);
@@ -57,10 +57,10 @@ describe('Generator', () => {
       const treeValues = [100,2,111];
 
       for (let value of treeValues) {
-        o.insert(treeValues[i]);
+        o.insert(value);
       }
 
-      assert.equal(o.search(99), false);
+      assert.isFalse(o.search(99));
     });
 
     it('search should return the node if it exists within the tree', () => {
@@ -73,12 +73,13 @@ describe('Generator', () => {
       };
 
       for (let value of treeValues) {
-        o.insert(treeValues[i]);
+        o.insert(value);
       }
 
       const searchResult = o.search(111);
 
       assert.deepEqual(searchResult, mockData);
+      assert.isFalse(o.search(3));
     });
 
     it('postOrderTraversal should traverse depth first from left to right', () => {
@@ -91,9 +92,9 @@ describe('Generator', () => {
         o.insert(value);
       }
 
-      // for (let value of o.postOrderTraversal()) {
-      //   result.push(value);
-      // }
+      for (let value of o.postOrderTraversal()) {
+        result.push(value);
+      }
 
       assert.deepEqual(result, expectedResult);
     });
@@ -108,9 +109,9 @@ describe('Generator', () => {
         o.insert(value);
       }
 
-      // for (let value of o.preOrderTraversal()) {
-      //   result.push(value);
-      // }
+      for (let value of o.preOrderTraversal()) {
+        result.push(value);
+      }
 
       assert.deepEqual(result, expectedResult);
     });

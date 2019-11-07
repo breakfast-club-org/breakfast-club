@@ -7,6 +7,7 @@ describe('NotAnArrayLinkedList', () => {
           const o = new NotAnArrayLinkedList();
 
           o.push('never');
+          assert.equal(o._preTail(), null);
           o.push('gonna');
           o.push('give');
           o.push('you');
@@ -94,6 +95,7 @@ describe('NotAnArrayLinkedList', () => {
           o.push('you');
 
           o.insertAt(0, 'never');
+          assert.equal(o.length, 3);
           o.insertAt(3, 'down');
           o.insertAt(2, 'let');
 

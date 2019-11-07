@@ -26,19 +26,73 @@
 //  notAnArray.shift();
 //  returns 'now I am first' and the object should look like {0: 'first'}
 //
-
 class NotAnArray {
   constructor() {
-    this.storage = {};
+    this.end = 0;
+    this.start = 0;
+    this._storage = {};
   }
 
-  push() {}
+  // add node to end of the list
+  push(v) {
+    this._storage[this.end] = v;
+    this.end += 1;
 
-  pop() {}
+    return this;
+  }
 
-  unshift() {}
+  pop() {
+    this.end -= 1;
+    let v = this._storage[this.end];
 
-  shift() {}
+    if (!v) {
+      this.end += 1; // restore end pointer
+    } else {
+      this._storage[this.end] = null; // remove the value
+    }
+
+    return v;
+  }
+
+  unshift(v) {
+    if (!this.isEmpty()) {
+      this.start -= 1;
+    } else {
+      this.end += 1;
+    }
+    this._storage[this.start] = v;
+
+    return this;
+  }
+
+  shift() {
+    const v = this._storage[this.start];
+
+    if (v) {
+      this._storage[this.start] = null; // remove the value
+      this.start +=1;
+    }
+    
+    return v;
+  }
+
+  // auxillaries
+  isEmpty() {
+    return this._storage[this.start] == null;
+  }
+
+  get storage() {
+    let vals = {};
+    let i = 0;
+
+    for(let j=this.start; j < this.end; i++, j++) {
+      vals[i] = this._storage[j];
+    }
+
+    return vals;
+  }
+
+  set storage(o) {}
 }
 
 module.exports = NotAnArray;

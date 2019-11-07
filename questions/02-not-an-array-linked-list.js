@@ -52,39 +52,120 @@ class NotAnArrayLinkedList {
     // remove from tail
     if (this._empty()) { return null; }
 
-    let tail = this.head;
-    let prev = null;
-    while (tail.next) {
-      prev = tail;
-      tail = tail.next;
-    }
+    let prev = this._preTail();
+    let last = null;
 
     this.length -= 1;
     if (prev) {
+      last = prev.next;
       prev.next = null;
     } else {
+      last = this.head;
       this.head = prev; //null
     }
 
-    return tail;
+    return last;
   }
 
-  unshift() {} // add to head
+  // add to head
+  unshift(v) {
+    let node = new Node(v);
 
-  shift() {} // remove from head
+    node.next = this.head;
+    this.head = node;
+    this.length += 1;
+  }
 
-  insertAt() {} // adds anywhere based on index
+  shift() {
+    // remove from head
+    let node = this.head;
 
-  deleteAt() {} // removes anywhere based on index
+    if (node) {
+      this.head = node.next;
+      this.length -= 1;
+    }
+    return node;
+  }
+
+  insertAt(index, v) {
+    // adds anywhere based on index
+    let pre = this.head;
+    let node = new Node(v);
+
+    if (this._empty()) {
+      this.head = node;
+      return;
+    }
+
+    for (let i=1; i < this.length && i < index; i++) {
+      pre = pre.next;
+    }
+
+    if (pre === this.head) {
+      node.next = this.head;
+      this.head = node;
+    } else {
+      node.next = pre.next;
+      pre.next = node;
+    }
+    this.length += 1;
+  }
+
+  deleteAt(index) {
+    // removes anywhere based on index
+    let pre = this.head;
+    let remove = null;
+
+    if (pre && index===0) {
+      remove = pre;
+      this.head = pre.next;
+      this.length -= 1;
+      return remove;
+    }
+
+    let i = 1;
+    for (; i < this.length && i < index; i++) {
+      pre = pre.next;
+    }
+
+    if (pre && i >= index) {
+      remove = pre.next;
+
+      if (remove) {
+        pre.next = remove.next;
+
+        this.length -= 1;
+      }
+    }
+
+    return remove;
+  }
 
   // auxillaries
+
+  /**
+   * get node right before the tail
+   */
+  _preTail() {
+    let node = this.head;
+    let prev = null;
+
+    if (node) {
+      while (node.next) {
+        prev = node;
+        node = node.next;
+      }
+    }
+
+    return prev;
+  }
+
   _tail() {
+    const node = this._preTail();
     let tail = this.head;
 
-    if (tail) {
-      while (tail.next) {
-        tail = tail.next;
-      }
+    if (node) {
+      tail = node.next;
     }
 
     return tail;

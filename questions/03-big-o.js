@@ -51,16 +51,19 @@
 const data = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
 // (1) Time Complexity:
+// O(1): constant time for retrieving the first item in an array
 const logFirstValue = (n) => {
   console.log(n[0])
 }
 
 // (2) Time Complexity:
+// O(1): constant time for retrieving an index item in an array
 const logLastValue = (n) => {
   console.log(n[n.length - 1])
 }
 
 // (3) Time Complexity:
+// O(n): need to walk through each item in the array
 const logAllValues = (n) => {
   for (let i = 0; i < n.length; i++) {
     console.log(n[i])
@@ -68,6 +71,7 @@ const logAllValues = (n) => {
 }
 
 // (4) Time Complexity:
+// O(n^2): n times n loops
 const logCombinations = (n) => {
   for (let i = 0; i < n.length; i++) {
     for (let j = 0; j < n.length; j++) {
@@ -77,6 +81,7 @@ const logCombinations = (n) => {
 }
 
 // (5) Time Complexity:
+// O(log n)
 const binarySearch = (arr, target) => {
   let startIndex = 0;
   let endIndex = arr.length - 1;
@@ -96,6 +101,7 @@ const binarySearch = (arr, target) => {
 }
 
 // (6) Time Complexity:
+// O(n log n)
 const quickSort = list => {
   if (list.length < 2) {
     return list;
@@ -121,11 +127,14 @@ const quickSort = list => {
 };
 
 // (7) Time Complexity:
+// O(1) - constant time operating on single array element
 const firstElemEven = (array) => {
   return array[0] % 2 === 0 ? true : false;
 }
 
 // (8) Time Complexity:
+// O(n) - worst case value not in the array, you have to
+// check every item in the array
 const hasValue = (array, value) => {
   for (var i = 0; i < array.length; i++){
     if (array[i] === value){
@@ -137,6 +146,7 @@ const hasValue = (array, value) => {
 }
 
 // (9) Time Complexity:
+// O(n^2) - for every item compare against n - 1 elements: n * (n - 1) = n^2 - n
 const findMatch = (string) => {
   for (var i = 0; i < string.length; i++){
     for ( var j = i+1; j < string.length; j++){
@@ -150,15 +160,19 @@ const findMatch = (string) => {
 }
 
 // (10) Time Complexity:
+// O(1)
 data.pop()
 
 // (11) Time Complexity:
+// O(n)
 data.shift()
 
 // (12) Time Complexity:
+// O(n)
 data.unshift()
 
 // (13) Time Complexity:
+// O(1) - using array adding to end of it
 data.push()
 
 // (14) Time Complexity:
@@ -199,30 +213,69 @@ const mergeSort = (unsortedArray) => {
 
 // (16) Time Complexity:
 // Finding the factorial of a number
-const factorial = (n) => {
-
-}
+// O(n!)
+const factorial = (n) => ( n < 2 ? 1 : n * factorial(n - 1) );
 
 // (17) Time Complexity:
 // Finding all distinct subsets of a given string
 // subSetsOfAString('') outputs  ['']
 // subSetsOfAString('a') outputs ['', 'a']
 // subSetsOfAString('ab') outputs ['', 'a', 'b', 'ab']
-const subSetsOfAString = (n) => {
+const subSetsOfAString = (s) => {
+  const rs = [''];
+  if (s) {
+    for (let i = 0; i < s.length; i++) {
+      rs.push(s[i]);
+    }
 
+    // O(n^2)
+    for (let i = 0; i < s.length; i++) {
+      for (let j = i+1; j < s.length; j++) {
+        rs.push(`${s[i]}${s[j]}`);
+      }
+    }
+  }
+
+  return rs;
 }
 
 // (18) Time Complexity:
 // Write a function that computes all the different words that can be formed given a string
-// permutationsOfAString('a') outputs ['a']
-// permutationsOfAString('ab') outputs  ['ab', 'ba']
-// permutationsOfAString('abc') outputs ['abc', 'acb', 'bac', 'bca', 'cab', 'cba']
-const permutationsOfAString = (string, prefix = '') => {
+// permutationsOfAString('a') outputs [ 'a']
+// permutationsOfAString('ab') outputs  [ 'ab', 'ba']
+// permutationsOfAString('abc') outputs [ 'abc', 'bac', 'bca', 'acb', 'cab', 'cba' ]
+function permute(s) {
+  if (!s) {
+    return [];
+  }
 
+  if (s.length === 1) {
+    return [s];
+  }
+
+  if (s.length === 2) {
+    return [s, `${s[1]}${s[0]}`];
+  }
+
+  let permutedStrings=[];
+  // O(n!)
+  for(let i=0; i < s.length; i++) {
+    const c = s[i];
+    permutedStrings = permutedStrings.concat(
+      permute(s.substring(0,i)+s.substring(i+1)).map(partial => (c+partial))
+    );
+  }
+  // handle duplicates, e.g. s = 'aab' => ['aab', 'aba', 'baa']
+  const strSet = new Set();
+  permutedStrings.forEach(str => {
+    strSet.add(str);
+  });
+
+  return Array.from(strSet);
 }
 
 module.exports = {
-  factorial: factorial,
-  subSetsOfAString: subSetsOfAString,
-  permutationsOfAString: permutationsOfAString
-};
+  factorial,
+  subSetsOfAString,
+  permutationsOfAString: permute
+}
