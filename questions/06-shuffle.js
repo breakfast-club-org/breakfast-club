@@ -14,16 +14,17 @@ class Shuffle {
   }
 
   nameOfYourFunction(arr) {
-    let shuffled = [];
-    let l = arr.length;
-    let n = 0;
-    while(n < l){
-      let s = this.getRandomInt(0,l);
-      shuffled.push(arr[s]);
-      arr.splice(s,1);
-      l--;
-    }
-    return shuffled;
+      let n = arr.length;
+      let l = arr.length;
+
+       while (n) {
+        let s = this.getRandomInt(0,l);
+        let curr = arr[s];
+        arr[s] = arr[l-1];
+        arr[l-1] = curr;
+        n--;
+      }
+      return arr;
   }
 }
 
