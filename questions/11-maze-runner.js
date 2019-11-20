@@ -13,7 +13,6 @@
 // 	[0, 1, 1, 0, 'f']
 // ] // should return true
 
-
 class MazeRunner {
   constructor() {}
 
