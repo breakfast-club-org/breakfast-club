@@ -5,22 +5,13 @@
 // 1 represents a wall
 // determine if the maze is solveable and return true or false
 
-// const solveableMaze = [
+// const exampleMaze = [
 // 	['s', 0, 0, 0, 0],
 // 	[1, 1, 1, 1, 0],
-// 	[0, 0, 0, 0, 0],
-// 	[0, 1, 1, 1, 1],
-// 	[0, 0, 0, 0, 'f']
+// 	[0, 0, 1, 0, 0],
+// 	[0, 1, 0, 0, 1],
+// 	[0, 1, 1, 0, 'f']
 // ] // should return true
-//
-// const impossibleMaze = [
-// 	['s', 0, 0, 0, 0],
-// 	[1, 1, 1, 1, 1],
-// 	[0, 0, 0, 0, 0],
-// 	[0, 0, 0, 0, 0],
-// 	[0, 0, 0, 0, 'f']
-// ] // should return false
-
 
 
 class MazeRunner {
