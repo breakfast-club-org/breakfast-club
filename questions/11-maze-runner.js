@@ -14,10 +14,10 @@
 // ] // should return true
 
 class MazeRunner {
-  constructor() {}
+	constructor() {}
 
 	// return true if the maze is solveable
-  findEnd(arr) {}
+	findEnd(arr) {}
 }
 
 module.exports = MazeRunner;
