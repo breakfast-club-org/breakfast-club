@@ -4,7 +4,10 @@
   "description": "early breakfast topics with algo in mind",
   "main": "index.js",
   "dependencies": {
-    "babel": "^6.23.0"
+    "babel": "^6.23.0",
+    "express": "^4.17.1",
+    "mocha-logger": "^1.0.6",
+    "nodemon": "^1.19.4"
   },
   "devDependencies": {
     "@babel/core": "^7.4.4",
@@ -15,7 +18,8 @@
     "mocha": "^6.1.4"
   },
   "scripts": {
-    "test": "mocha --require @babel/polyfill --require @babel/register --reporter=nyan --diff=false || exit 0"
+    "test": "mocha --require @babel/polyfill --require @babel/register --reporter=nyan --diff=false || exit 0",
+    "start": "nodemon index.js"
   },
   "repository": {
     "type": "git",

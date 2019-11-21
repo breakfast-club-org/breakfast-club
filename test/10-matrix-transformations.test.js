@@ -1,3 +1,4 @@
+import mlog from 'mocha-logger';
 const assert = require('chai').assert;
 const matrixTransforms = require('../questions/10-matrix-transformations');
 
@@ -15,7 +16,7 @@ describe('Matrix Transformations', () => {
 				[2, 5, 8],
 				[3, 6, 9]
 			]
-
+			
 			assert.deepEqual(matrixTransforms(input), expectedOutputForThreebyThree);
     });
 
@@ -32,7 +33,7 @@ describe('Matrix Transformations', () => {
 				[3, 7, 11],
 				[4, 8, 12]
 			]
-
+		
 			assert.deepEqual(matrixTransforms(fourbythree), threebyfour);
 		});
 

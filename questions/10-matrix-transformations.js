@@ -14,6 +14,32 @@
 
 
 const matrixTransformation = (arr) => {
+	
+let pop = [];
+let store = [];
+
+	let l = arr.length - 1;
+	let a = arr;
+	let al = a[l].length;
+	let n = 0, i = 0;
+	
+	while(n<al){
+		pop.push([]);
+		
+		a.forEach(function(e){	
+			let [one, ...rest] = e;
+			pop[n].push(one);
+			store.push(rest);
+
+		});
+
+		a = store;
+		store=[];
+		n++;
+	}
+	
+
+	return pop;
 
 }
 
