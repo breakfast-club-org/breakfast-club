@@ -14,7 +14,30 @@
 
 
 const matrixTransformation = (arr) => {
+	let transformed = [];
+	let columnLength = 0;
 
+	arr.forEach(row => {
+		if (row.length > columnLength) {
+			columnLength = row.length;
+		}
+	})
+
+	arr.forEach(row => {
+		row.forEach((column, r) => {
+			if (transformed[r]) {
+				// create a row
+				transformed[r].push(column);
+			} else {
+				transformed[r]=[column];
+			}
+		});
+		for (let i=0; i < columnLength - row.length; i++) {
+			transformed[transformed.length-1].push(null);
+		}
+	});
+
+	return transformed;
 }
 
 module.exports = matrixTransformation;
