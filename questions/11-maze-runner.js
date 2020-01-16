@@ -25,7 +25,7 @@ class MazeRunner {
 			if (maze[col][row] === 'f') { // goal
 				isSolveable = true;
 			} else if (maze[col][row] === 's' || maze[col][row] === 0) { // path
-				maze[col][row] = 'visited';
+				maze[col][row] = 'Visited';
 
 				if (col > 0) {
 					traverseMaze(col - 1, row); // check up
