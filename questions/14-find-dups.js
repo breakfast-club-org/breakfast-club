@@ -8,6 +8,38 @@
 
 const findDups = (arr) => {
 
+	const l = arr.length; 
+	let nuArr = [];
+	let n = 0;
+	let i = 0;
+	while(n<l){
+		
+		if(i != n && arr[i] == arr[n] && !nuArr.includes(arr[i])){
+			nuArr.push(arr[i]);
+			n = i;
+			i++;
+		}
+		if(n == l-1 && i<l-1){
+			n = i;
+			i++;
+		}
+        
+		n++;
+		
+
+		// for (let i = 0; i < l; i++) {
+  //            console.log(i +" "+ n)
+		// 	if(i!=n && arr[i] == arr[n] && !nuArr.includes(arr[i])){
+		// 		nuArr.push(arr[i]);
+		// 	}
+		// }
+
+		// n++;
+
+	}
+
+	 return nuArr;
+	
 }
 
 module.exports = findDups;
