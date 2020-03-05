@@ -7,7 +7,19 @@
 // [2, 1, 6, 4]
 
 const findDups = (arr) => {
+  const dups = [];
 
+  for (let i = 0; i < arr.length; i++) {
+    const value = arr[Math.abs(arr[i])];
+
+    if (value > 0) {
+      arr[Math.abs(arr[i])] = -arr[Math.abs(arr[i])];
+    } else {
+      dups.push(Math.abs(arr[i]));
+    }
+  }
+
+  return dups;
 }
 
 module.exports = findDups;
