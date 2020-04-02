@@ -7,7 +7,6 @@
 // [2, 1, 6, 4]
 
 const findDups = (arr) => {
-<<<<<<< HEAD
 	const dups = [];
 
 	for (let i = 0; i < arr.length; i++) {
@@ -21,21 +20,6 @@ const findDups = (arr) => {
 	}
 
 	return dups;
-=======
-  const dups = [];
-
-  for (let i = 0; i < arr.length; i++) {
-    const value = arr[Math.abs(arr[i])];
-
-    if (value > 0) {
-      arr[Math.abs(arr[i])] = -arr[Math.abs(arr[i])];
-    } else {
-      dups.push(Math.abs(arr[i]));
-    }
-  }
-
-  return dups;
->>>>>>> a9a0c8e485e89d2b483f2ef6abeca09b0c190329
 }
 
 module.exports = findDups;
