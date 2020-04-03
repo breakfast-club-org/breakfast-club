@@ -7,7 +7,17 @@
 // [2, 1, 6, 4]
 
 const findDups = (arr) => {
+	const map = {};
+	const result = [];
 
+	arr.forEach(n => {
+		if (!map[n]) {
+			map[n] = 1;
+		} else {
+			result.push(n);
+		}
+	});
+	return result;
 }
 
 module.exports = findDups;
