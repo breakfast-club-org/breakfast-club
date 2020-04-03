@@ -6,7 +6,20 @@
 // const parens = "()(())(" // should be false
 
 const balancedParens = (expression) => {
+	const itor = expression[Symbol.iterator]();
+	let next = itor.next();
+	let count = 0;
 
+	while (!next.done) {
+		if (next.value === '(') {
+			count++;
+		} else {
+			count--;
+		}
+		next = itor.next();
+	}
+
+	return count === 0;
 }
 
 module.exports = balancedParens;
