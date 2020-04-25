@@ -27,15 +27,6 @@ const findDups = (arr) => {
 		n++;
 		
 
-		// for (let i = 0; i < l; i++) {
-  //            console.log(i +" "+ n)
-		// 	if(i!=n && arr[i] == arr[n] && !nuArr.includes(arr[i])){
-		// 		nuArr.push(arr[i]);
-		// 	}
-		// }
-
-		// n++;
-
 	}
 
 	 return nuArr;
