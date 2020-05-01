@@ -10,7 +10,7 @@ const balancedParens = (expression) => {
 	let next = itor.next();
 	let count = 0;
 
-	while (!next.done) {
+	while (!next.done && count > -1) {
 		if (next.value === '(') {
 			count++;
 		} else {

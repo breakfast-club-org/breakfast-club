@@ -8,8 +8,10 @@ describe('Is Balanced', () => {
 			assert.isTrue(balancedParens(''));
 		});
 
-		it('Not balanced', () => {			
+		it('Not balanced', () => {
 			assert.isFalse(balancedParens("()(())("));
+			assert.isFalse(balancedParens(')('));
+			assert.isFalse(balancedParens('())('));
 		});
 	});
 });
