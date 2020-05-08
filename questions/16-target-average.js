@@ -14,7 +14,7 @@
 // targetAverage([1,2,3,4,5,6,7], 3);
 // should return [1.5,2,3,4,5,6,6.5];
 
-const targetAverage = (arr, range) => {
+const targetAverage = (arr, r) => {
 
 }
 
