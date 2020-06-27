@@ -4,9 +4,31 @@
 // get should retrieve the value associated with the node that was stored
 
 class StorageCenter {
-  constructor(){}
+  constructor(){
+    this.store = {};
+  }
 
-  set(node, val) {}
-  has(node) {}
-  get(node) {}
+  set(node, val) {
+    let key = this.toKey(node);
+    this.store[key] = val;
+  }
+  has(node) {
+    let key = this.toKey(node);
+    return !!this.store[key];
+  }
+
+  get(node) {
+    return this.store[this.toKey(node)];
+  }
+
+  toKey(node) {
+    let key = node + '';
+    if (key === '[object Object]') {
+      key = Object.entries(node) + '';
+    }
+
+    return key;
+  }
 }
+
+module.exports = StorageCenter;
