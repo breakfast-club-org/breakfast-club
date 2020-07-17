@@ -4,9 +4,28 @@
 // get should retrieve the value associated with the node that was stored
 
 class StorageCenter {
-  constructor(){}
+  constructor(){
+    this.nodeKey = [];
+    this.nodeValue = [];
+  }
 
-  set(node, val) {}
-  has(node) {}
-  get(node) {}
+  set(node, val) {
+    const index = this.nodeKey.indexOf(node);
+
+    if (index === -1) {
+      this.nodeKey.push(node);
+      this.nodeValue.push(val);
+    } else {
+      this.nodeKey[index] = node;
+      this.nodeValue[index] = val
+    }
+  }
+  has(node) {
+    return this.nodeKey.includes(node);
+  }
+  get(node) {
+    const index = this.nodeKey.indexOf(node);
+
+    return this.nodeValue[index] || null;
+  }
 }
