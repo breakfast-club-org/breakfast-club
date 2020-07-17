@@ -29,3 +29,5 @@ class StorageCenter {
     return this.nodeValue[index] || null;
   }
 }
+
+module.exports = StorageCenter;
