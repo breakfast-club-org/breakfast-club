@@ -3,10 +3,42 @@
 // has should check if the node exists within your data store
 // get should retrieve the value associated with the node that was stored
 
-class StorageCenter {
-  constructor(){}
+ class StorageCenter {
+  constructor(){
+    this.storage = [];
 
-  set(node, val) {}
-  has(node) {}
-  get(node) {}
+  }
+
+  set(node, val) {
+  	let obj = {}
+    obj.node = node;
+    obj.val = val;
+    this.storage.push(obj);
+    return obj.val;
+  }
+  has(node) {
+  	let hasNode = this.storage.find(function(store){
+  
+  		return store.node === node;
+  	});
+  	
+  	if(hasNode){
+  		return hasNode.node;
+      }
+     else{return false}
+  }
+  get(node) {
+  	let getNode = this.storage.find(function(store){
+  		if(store.node === node){
+  			return store.val;
+  		}else{return false};
+  	});
+  	 if(getNode){return  getNode.val;}
+     else{return false;}
+
+  }
+
 }
+
+
+module.exports = StorageCenter;

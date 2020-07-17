@@ -10,12 +10,12 @@
     "nodemon": "^1.19.4"
   },
   "devDependencies": {
-    "@babel/core": "^7.4.4",
-    "@babel/polyfill": "^7.4.4",
-    "@babel/preset-env": "^7.4.4",
-    "@babel/register": "^7.4.4",
+    "@babel/core": "^7.10.5",
+    "@babel/polyfill": "^7.10.4",
+    "@babel/preset-env": "^7.10.4",
+    "@babel/register": "^7.10.5",
     "chai": "^4.2.0",
-    "mocha": "^6.1.4"
+    "mocha": "^6.2.3"
   },
   "scripts": {
     "test": "mocha --require @babel/polyfill --require @babel/register --reporter=nyan --diff=false || exit 0",
