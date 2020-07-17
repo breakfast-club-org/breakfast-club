@@ -23,7 +23,7 @@
   	});
   	
   	if(hasNode){
-  		return hasNode.node;
+  		return true;
       }
      else{return false}
   }
@@ -34,7 +34,7 @@
   		}else{return false};
   	});
   	 if(getNode){return  getNode.val;}
-     else{return false;}
+     else{return null;}
 
   }
 
