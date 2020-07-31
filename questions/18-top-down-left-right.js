@@ -16,7 +16,9 @@
 // ]
 
 const tdlr = (x, y) => {
-
+	if (x !== y || x === 1) {
+		return null;
+	}
 }
 
 module.exports = tdlr;
