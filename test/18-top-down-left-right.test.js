@@ -1,27 +1,27 @@
 const assert = require('chai').assert;
 const tdlr = require('../questions/18-top-down-left-right');
 
-describe('Storage Center!', () => {
+describe('tdlr!', () => {
 
   it('tdlr(1, 1) should be null', () => {
-    assert.equal(tdlr(1, 1), null);
+    assert.isNull(tdlr(1, 1));
   });
 
 	it('x and y should return an array', () => {
-    assert.equal(Array.isArray(tdlr(2, 2)), true);
-    assert.equal(Array.isArray(tdlr(3, 3)), true);
-    assert.equal(Array.isArray(tdlr(4, 4)), true);
+    assert.isTrue(Array.isArray(tdlr(2, 2)));
+    assert.isTrue(Array.isArray(tdlr(3, 3)));
+    assert.isTrue(Array.isArray(tdlr(4, 4)));
 
-    assert.notEqual(Array.isArray(tdlr(2, 3)), false);
+    assert.isFalse(Array.isArray(tdlr(2, 3)));
 	});
 
-  it('tdlr(2, 2) should be in the correct order', () => {
+  it('tdlr(2, 2) should be in the correct order', function() {
     const output = [
       [1, 3],
       [2, 4]
     ];
 
-    assert.equal(tdlr(2, 2), output);
+    assert.deepEqual(tdlr(2, 2), output);
   });
 
   it('tdlr(3, 3) should be in the correct order', () => {
@@ -31,6 +31,6 @@ describe('Storage Center!', () => {
       [3, 6, 9]
     ];
 
-    assert.equal(tdlr(3, 3), output);
+    assert.deepEqual(tdlr(3, 3), output);
   });
 });
