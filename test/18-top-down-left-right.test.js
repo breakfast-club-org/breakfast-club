@@ -21,7 +21,7 @@ describe('tdlr!', () => {
       [2, 4]
     ];
 
-    assert.equal(tdlr(2, 2), output);
+    assert.deepEqual(tdlr(2, 2), output);
   });
 
   it('tdlr(3, 3) should be in the correct order', () => {
@@ -31,6 +31,6 @@ describe('tdlr!', () => {
       [3, 6, 9]
     ];
 
-    assert.equal(tdlr(3, 3), output);
+    assert.deepEqual(tdlr(3, 3), output);
   });
 });
