@@ -34,40 +34,9 @@ class NotAnArrayLinkedList {
     this.length = 0;
   }
 
-  push(v) {
-    // add to tail
-    const node = new Node(v);
-    this.length += 1;
+  push(v) {}
 
-    let tail = this._tail();
-    if (tail) {
-      tail.next = node;
-    } else {
-      this.head = node;
-    }
-    return this;
-  }
-
-  pop() {
-    // remove from tail
-    if (this._empty()) { return null; }
-
-    let tail = this.head;
-    let prev = null;
-    while (tail.next) {
-      prev = tail;
-      tail = tail.next;
-    }
-
-    this.length -= 1;
-    if (prev) {
-      prev.next = null;
-    } else {
-      this.head = prev; //null
-    }
-
-    return tail;
-  }
+  pop() {}
 
   unshift() {} // add to head
 
@@ -76,23 +45,6 @@ class NotAnArrayLinkedList {
   insertAt() {} // adds anywhere based on index
 
   deleteAt() {} // removes anywhere based on index
-
-  // auxillaries
-  _tail() {
-    let tail = this.head;
-
-    if (tail) {
-      while (tail.next) {
-        tail = tail.next;
-      }
-    }
-
-    return tail;
-  }
-
-  _empty() {
-    return this.head === null;
-  }
 }
 
 module.exports = NotAnArrayLinkedList;
