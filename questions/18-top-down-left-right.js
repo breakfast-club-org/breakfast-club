@@ -19,4 +19,4 @@ const tdlr = (x, y) => {
 
 }
 
-module.exports = tldr;
+module.exports = tdlr;
