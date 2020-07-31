@@ -5,13 +5,13 @@ describe('Storage Center!', () => {
 	describe('x and y should return an array', () => {
     assert.equal(Array.isArray(tdlr(2, 2)), true);
     assert.equal(Array.isArray(tdlr(3, 3)), true);
-    assert.equal(Array.isArray(tdlr(3, 3)), true);
+    assert.equal(Array.isArray(tdlr(4, 4)), true);
 
     assert.notEqual(Array.isArray(tdlr(2, 3)), false);
 	});
 
   describe('tdlr(1, 1) should be null', () => {
-    assert.equal(Array.isArray(tdlr(1, 1)), null);
+    assert.equal(tdlr(1, 1), null);
   });
 
   describe('tdlr(2, 2) should be in the correct order', () => {
