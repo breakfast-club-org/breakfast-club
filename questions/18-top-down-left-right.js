@@ -16,14 +16,11 @@
 // ]
 
 const makeRow = (row, itemsInRow) => {
-	const r = Array(itemsInRow).fill(0);
 
-	r.forEach((v, i, a) => {
+	return [...Array(itemsInRow)].map((v, i) => (
 		// row is zero based
-		a[i] = (row + 1) + i * itemsInRow;
-	});
-
-	return r;
+		(row + 1) + i * itemsInRow
+	));
 }
 
 const tdlr = (x, y) => {
