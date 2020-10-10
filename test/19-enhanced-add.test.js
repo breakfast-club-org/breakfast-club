@@ -16,6 +16,7 @@ describe('enhanced add function tests', function() {
 
 		it('should support multiple calls', function() {
 			assert.equal(add(1)(2)(3)(), 6);
+			assert.equal(add(4)(5)(6)(), 15);
 		});
 	});
 
@@ -23,6 +24,7 @@ describe('enhanced add function tests', function() {
 
 		it('should return the sum of the arugment list', function() {
 			assert.equal(add(1, 2, 3), 6);
+			assert.equal(add(6, 4, 6), 16);
 		});
 	});
 });
