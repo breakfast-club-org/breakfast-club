@@ -9,8 +9,8 @@ describe('enhanced add function tests', function() {
 			assert.equal(add(), 0);
 		});
 
-		it('should return n when called once', function() {
-			assert.equal(add(1)(), 1);
+		it('should support calling with one number', function() {
+			assert.equal(add(10)(), 10);
 			assert.equal(add(2)(), 2);
 		});
 
