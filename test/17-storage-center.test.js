@@ -2,7 +2,7 @@ const assert = require('chai').assert;
 const StorageCenter = require('../questions/17-storage-center');
 
 describe('Storage Center!', () => {
-	describe('should have a value', () => {
+	it('should have a value', () => {
     const o = new StorageCenter();
     const thing = o.set('wow unique', 'hello');
 
@@ -10,7 +10,7 @@ describe('Storage Center!', () => {
     assert.equal(o.has(), false);
 	});
 
-  describe('should get a value', () => {
+  it('should get a value', () => {
     const o = new StorageCenter();
     const thing = o.set('wow unique', 'hello');
 
