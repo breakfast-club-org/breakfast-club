@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "early breakfast topics with algo in mind",
   "main": "index.js",
-  "dependencies": {},
+  "dependencies": {
+    "lodash": "^4.17.20"
+  },
   "devDependencies": {
     "@babel/core": "^7.4.4",
     "@babel/polyfill": "^7.4.4",
