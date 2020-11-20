@@ -5,12 +5,11 @@ describe('Browser History', function() {
   it('should return an object with some methods on it', function() {
     const bh = new BrowserHistory();
 
-    // assert.equal(TypeOf bh.historyStore, 'some storage'); // this one is up to you
+    assert.isArray(bh.history); // this one is up to you
   });
 
   it('should visit a page', function() {
     const bh = new BrowserHistory();
-    bh.visit('www.apple.com');
 
     assert.equal(bh.visit('www.apple.com'), 'You are at www.apple.com');
   });
