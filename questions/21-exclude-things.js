@@ -23,8 +23,19 @@
  *   }
  * ]
  */
-const excludedFilters = (items, excludes) => {
-	/** your implementation */
-}
+// const any = (item, tests) =>
+// 	tests.reduce(
+// 		(a, t) => a || item[t.k] === t.v,
+// 		false
+// 	);
+const any = (item, [check, ...rest]) =>
+	(item[check.k] === check.v)
+	? true
+	: rest.length
+	? any(item, rest)
+	: false;
+
+const excludedFilters = (items, excludes) =>
+	items.filter(item => !any(item, excludes));
 
 module.exports = excludedFilters;
