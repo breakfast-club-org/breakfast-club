@@ -23,19 +23,17 @@
  *   }
  * ]
  */
-// const any = (item, tests) =>
-// 	tests.reduce(
-// 		(a, t) => a || item[t.k] === t.v,
-// 		false
-// 	);
-const any = (item, [check, ...rest]) =>
-	(item[check.k] === check.v)
-	? true
-	: rest.length
-	? any(item, rest)
-	: false;
+const matchAny = rules => subject =>
+	rules.reduce(
+		(a, t) => a || subject[t.k] === t.v,
+		false
+	);
 
-const excludedFilters = (items, excludes) =>
-	items.filter(item => !any(item, excludes));
+const excludedFilters = (items, excludes) => {
+	const exclude = matchAny(excludes);
+	const notExclude = v => !exclude(v);
+
+	return items.filter(notExclude);
+}
 
 module.exports = excludedFilters;
