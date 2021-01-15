@@ -40,11 +40,6 @@ describe('Exclude Things', function() {
     const output = [
       {
         genre: 'comedy',
-        title: 'ace ventura pet detective',
-        rating: 1
-      },
-      {
-        genre: 'comedy',
         title: 'the mask',
         rating: 4
       }
@@ -52,6 +47,6 @@ describe('Exclude Things', function() {
 
     const excluded = excludeThings(items, excludes);
 
-    assert.equals(JSON.stringify(excluded), JSON.stringify(output));
+    assert.deepEqual(excluded, output);
   });
 });
