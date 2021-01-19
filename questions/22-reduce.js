@@ -1,7 +1,7 @@
 /**
  * Assume there is no Array.prototype.reduce()
  *
- * write a reduce(collectin, reducer, initial)
+ * write a reduce(collection, reducer, initial)
  * where:
  *   collection - array like data structure
  * 	 reducer - function
