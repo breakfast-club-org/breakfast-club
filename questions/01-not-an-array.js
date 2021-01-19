@@ -32,13 +32,44 @@ class NotAnArray {
     this.storage = {};
   }
 
-  push() {}
+  length() {
+    return Object.keys(this.storage).length;
+  }
 
-  pop() {}
+  push(value) {
+    const i = this.length();
+    this.storage[i] = value;
+  }
 
-  unshift() {}
+  pop() {
+    if (this.length() === 0) return undefined;
+    const lastItem = this.length() - 1;
+    let removedLastItem = this.storage[lastItem];
+    delete this.storage[lastItem];
+    return removedLastItem;
+  }
 
-  shift() {}
+  unshift(value) {
+    let duplicateObj = {};
+    duplicateObj[0] = value;
+    Object.keys(this.storage).map((key, i) => {
+      duplicateObj[i + 1] = this.storage[i]
+    });
+    this.storage = {...duplicateObj}
+  }
+
+  shift() {
+    if (this.length() === 0) return undefined;
+    let firstItem = this.storage[0];
+    let lastItem = this.length() - 1;
+    Object.keys(this.storage).map((key, i) => {
+      this.storage[i] = this.storage[i + 1]
+    });
+    delete this.storage[lastItem];
+    return firstItem;
+  }
 }
 
 module.exports = NotAnArray;
+
+const o = new NotAnArray();
