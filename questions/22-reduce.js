@@ -5,10 +5,18 @@
  * where:
  *   collection - array like data structure
  * 	 reducer - function
- *   initial - optional intial value
+ *   initial - optional initial value
  */
-const reduce = (collection, reducer, intial) => {
-	/* implmentation */
+const reduce = (collection, reducer, initial) => {
+  for (let i = 0; i < collection.length; i++) {
+    if (initial === undefined) {
+      initial = collection[i];
+    } else {
+      initial = reducer(initial, collection[i]);
+    }
+  }
+
+  return initial;
 }
 
 module.exports = reduce;
