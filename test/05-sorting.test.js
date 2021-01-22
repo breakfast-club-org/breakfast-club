@@ -1,7 +1,7 @@
 const assert = require('chai').assert;
 const SortingMethods = require('../questions/05-sorting');
 
-describe('SortingMethods', () => {
+describe.skip('SortingMethods', () => {
   describe('bubbleSort()', () => {
     it('sort an array of numbers and return the sorted array', () => {
       const o = new SortingMethods;

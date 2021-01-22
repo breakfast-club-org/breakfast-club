@@ -1,7 +1,7 @@
 const assert = require('chai').assert;
 const DeckOfCards = require('../questions/07-deck');
 
-describe('DeckOfCards', () => {
+describe.skip('DeckOfCards', () => {
   // Depending on how you construct your deck how do you think it would be best to write tests for it?
 
   // describe('createDeck()', () => {

@@ -1,7 +1,7 @@
 const assert = require('chai').assert;
 const BigO = require('../questions/03-big-o');
 
-describe('BigO', () => {
+describe.skip('BigO', () => {
   describe('factorial()', () => {
     it('should output the factorial of a number', () => {
       const o = BigO.factorial;

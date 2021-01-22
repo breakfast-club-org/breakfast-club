@@ -1,7 +1,7 @@
 const assert = require('chai').assert;
 const StorageCenter = require('../questions/17-storage-center');
 
-describe('Storage Center!', () => {
+describe.skip('Storage Center!', () => {
 	it('should have a value', () => {
     const o = new StorageCenter();
     const thing = o.set('wow unique', 'hello');

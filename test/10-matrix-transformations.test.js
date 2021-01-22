@@ -1,7 +1,7 @@
 const assert = require('chai').assert;
 const matrixTransforms = require('../questions/10-matrix-transformations');
 
-describe('Matrix Transformations', () => {
+describe.skip('Matrix Transformations', () => {
   describe('matrixTransform', () => {
     it('should transform a 3x3', () => {
 			const input = [
