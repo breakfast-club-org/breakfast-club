@@ -21,7 +21,7 @@
 
 const reduce = (collection, reducer, initial) => {
   if (collection === undefined) {
-    // Error 'Reduce of empty array with no initial value';
+    throw new TypeError('Reduce of empty array with no initial value');
   }
 
   collection.forEach((item) => {
