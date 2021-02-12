@@ -7,16 +7,32 @@
  * 	 reducer - function
  *   initial - optional initial value
  */
+// const reduce = (collection, reducer, initial) => {
+//   for (let i = 0; i < collection.length; i++) {
+//     if (initial === undefined) {
+//       initial = collection[i];
+//     } else {
+//       initial = reducer(initial, collection[i]);
+//     }
+//   }
+//
+//   return initial;
+// }
+
 const reduce = (collection, reducer, initial) => {
-  for (let i = 0; i < collection.length; i++) {
-    if (initial === undefined) {
-      initial = collection[i];
-    } else {
-      initial = reducer(initial, collection[i]);
-    }
+  if (collection === undefined) {
+    // Error 'Reduce of empty array with no initial value';
   }
 
-  return initial;
+  collection.forEach((item) => {
+    if (initial === undefined) {
+      initial = collection[0];
+    } else {
+      initial = reducer(initial, item)
+    }
+  })
+
+  return initial
 }
 
 module.exports = reduce;
