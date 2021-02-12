@@ -1,7 +1,7 @@
 const assert = require('chai').assert;
 const NotAnArrayLinkedList = require('../questions/02-not-an-array-linked-list');
 
-describe('NotAnArrayLinkedList', () => {
+describe.skip('NotAnArrayLinkedList', () => {
     describe('#push()', () => {
         it('should add to the tail', () => {
           const o = new NotAnArrayLinkedList();

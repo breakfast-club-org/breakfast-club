@@ -40,7 +40,6 @@ const excludedFilters = (items, excludes) => {
 		!excludedItemValues.includes(item.title) &&
 		!excludedItemValues.includes(item.rating));
 
-	console.log('filteredItemValues', filteredItemValues);
 	return filteredItemValues;
 }
 

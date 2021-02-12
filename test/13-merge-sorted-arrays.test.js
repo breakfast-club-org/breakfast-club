@@ -1,7 +1,7 @@
 const assert = require('chai').assert;
 const mergeSortedArrays = require('../questions/13-merge-sorted-arrays');
 
-describe('Merge Sorted Arrays', () => {
+describe.skip('Merge Sorted Arrays', () => {
 	describe('findEnd', () => {
 		it('it should return a 2d array with the shortest possible path', () => {
       const arr1 = [1, 2, 3, 4, 5, 6, 6, 7, 8, 9, 23, 23];

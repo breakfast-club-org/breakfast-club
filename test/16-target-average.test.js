@@ -1,7 +1,7 @@
 const assert = require('chai').assert;
 const targetAverage = require('../questions/16-target-average');
 
-describe('Target Average How Exciting!', () => {
+describe.skip('Target Average How Exciting!', () => {
 	it('Given a range of 1', () => {
 		const input = [1, 2, 3, 4, 5, 6, 7];
 		const expectedResult = [1, 2, 3, 4, 5, 6, 7];

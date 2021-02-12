@@ -1,7 +1,7 @@
 const assert = require('chai').assert;
 const tdlr = require('../questions/18-top-down-left-right');
 
-describe('tdlr!', () => {
+describe.skip('tdlr!', () => {
 
   it('tdlr(1, 1) should be null', () => {
     assert.isNull(tdlr(1, 1));

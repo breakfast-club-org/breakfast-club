@@ -13,6 +13,7 @@ describe('Method: reduce tests', function() {
 			add
 		);
 		const expected = a.reduce(add);
+		console.log('expected', expected);
 
 		assert.equal(rs, expected);
 	});

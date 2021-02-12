@@ -1,7 +1,7 @@
 const assert = require('chai').assert;
 const Generator = require('../questions/04-generator-function');
 
-describe('Generator', () => {
+describe.skip('Generator', () => {
   describe('factorial()', () => {
     it('the yielded element from factorial should be an object with keys of value and done', () => {
       const o = Generator.factorial();
