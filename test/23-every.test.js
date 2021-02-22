@@ -3,13 +3,14 @@ const assert = chai.assert;
 const expect = chai.expect;
 const every = require('../questions/23-every');
 
-const isEven = (n) => n % 2;
+const isEven = (n) => n % 2 === 0;
 
 describe('Method: every tests', function() {
   it('should return false if collection fails truth test', function() {
     const a = [];
     const errthang = every(
-      a
+      a,
+      isEven
     );
 
     assert.isTrue(errthang);

@@ -8,6 +8,7 @@
  */
 const every = (collection, cb) => {
 	/* implmentation */
+	return Array.from(collection).reduce((prev, curr) => prev && cb(curr), true);
 }
 
 module.exports = every;
