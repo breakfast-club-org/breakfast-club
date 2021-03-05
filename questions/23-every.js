@@ -7,15 +7,11 @@
  * 	 cb - function
  */
 
-const collection = [0, 2, 4];
+const collection = [1,3,5];
 const isEven = n => n % 2 === 0;
 
 const every = (collection, cb) => {
-	if (collection.every(cb)) {
-		return true; // return true if even
-	} else {
-		return false; // return false if not even
-	}
+	return collection.every(cb)
 }
 
 module.exports = every;
