@@ -22,8 +22,8 @@ const budgetClearInterval = (cb) => {
 class budgetInterval {
   constructor(){}
 
-  setInterval(cb, countdown) {}
-  clearInterval(cb) {}
+  budgetSetInterval(cb, countdown) {}
+  budgetClearInterval(cb) {}
 }
 
 // module.exports = ___; // <- feel free to export whichever you want!
