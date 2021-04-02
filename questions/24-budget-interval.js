@@ -1,3 +1,5 @@
+const { should } = require("chai");
+
 /**
  * Given the two methods recreate the functionality of both setInterval and clearInterval
  * Example usage:
@@ -5,25 +7,39 @@
  * budgetClearInterval(thing) // should immediately end the logs
  */
 const budgetSetInterval = (cb, countdown) => {
+  let targetTime = Date.now() + countdown;
+  const handle = {};
 
+  function run() {
+    const now = Date.now();
+    let shouldRun = false;
+
+    if (targetTime >= now) {
+      shouldRun = true;
+    } else {
+      countdown = targetTime - now;
+      shouldRun = false;
+    }
+
+    targetTime = now + countdown;
+    handle.id = setTimeout(run, countdown);
+    if (shouldRun) {
+      // in case cb needs to clear timer
+      cb();
+    }
+  }
+
+
+  handle.id = setTimeout(run, countdown);
+
+  return handle;
 }
 
-const budgetClearInterval = (cb) => {
-
+const budgetClearInterval = (handle) => {
+  clearTimeout(handle.id);
 }
 
-/**
- * Turn it into a class! Get creative with it!
- * option 1: expose two methods
- * option 2: setInterval has the clearInterval method on it
- * option 3: can you think of anything else?
- */
-
-class budgetInterval {
-  constructor(){}
-
-  budgetSetInterval(cb, countdown) {}
-  budgetClearInterval(cb) {}
+module.exports = {
+  budgetSetInterval,
+  budgetClearInterval
 }
-
-// module.exports = ___; // <- feel free to export whichever you want!
