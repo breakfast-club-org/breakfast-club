@@ -1,5 +1,3 @@
-const { should } = require("chai");
-
 /**
  * Given the two methods recreate the functionality of both setInterval and clearInterval
  * Example usage:
