@@ -6,7 +6,19 @@
  *   str - string
  */
 const firstCharacterNotRepeated = (str) => {
-  /* implmentation */
+  const map = {};
+
+  for (let c of str) {
+    (map[c])
+      ? map[c] = map[c] + 1
+      : map[c] = 1;
+  }
+
+  for (c in map) {
+    if (map[c] === 1) {
+      return c;
+    }
+  }
 }
 
 module.exports = firstCharacterNotRepeated;
