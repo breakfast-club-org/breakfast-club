@@ -5,21 +5,13 @@
  * where:
  *   str - string
  */
-const firstCharacterNotRepeated = (str) => {
+ const firstCharacterNotRepeated = (str) => {
+  // Gut the string of all white space
   let haystack = str.replace(/\s+/g, '');
-  let haystackSorted = haystack;
-  let haystackLength = {
-    initial: haystack.length,
-    before: null,
-    after: null
-  };
 
-  for (let i = 0; i < haystackLength.initial; i++) {
-    haystackLength.before = haystackSorted.length;
-    haystackSorted = haystackSorted.replace(new RegExp(haystack[i], 'g'), '');
-    haystackLength.after = haystackSorted.length;
-
-    if (haystackLength.before - haystackLength.after === 1) {
+  // Check for a second index instance of each char in string starting from the beginning - return once a second index is not found -1
+  for (let i = 0, len = haystack.length; i < len; i++) {
+    if(haystack.indexOf(haystack[i], haystack.indexOf(haystack[i]) + 1) === -1) {
       return haystack[i];
     }
   }
