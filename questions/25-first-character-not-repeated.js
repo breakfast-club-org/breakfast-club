@@ -6,7 +6,7 @@
  *   str - string
  */
 const firstCharacterNotRepeated = (str) => {
-	/* implmentation */
+  /* implmentation */
 }
 
 module.exports = firstCharacterNotRepeated;
