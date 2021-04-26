@@ -29,13 +29,18 @@ const budgetClearInterval = (cb) => {
  * option 3: can you think of anything else?
  */
 
-class budgetInterval {
-  constructor(){}
+const budgetInterval = {
 
-  budgetSetInterval(cb, countdown) {}
-  budgetClearInterval(cb) {}
+  budgetSetInterval(cb, countdown) {
+
+  },
+
+  budgetClearInterval(cb) {
+
+  }
 }
 
-// module.exports = ___; // <- feel free to export whichever you want!
 
 budgetSetInterval(budgetSetInterval, countdown);
+
+module.exports = budgetInterval;
