@@ -4,12 +4,22 @@
  * const thing = budgetSetInterval(() => console.log('wow'), 5000 ) // should log 'wow' every 5 seconds
  * budgetClearInterval(thing) // should immediately end the logs
  */
-const budgetSetInterval = (cb, countdown) => {
 
+//  function doStuff() {
+//   console.log("hello!");
+//   setTimeout(doStuff, 5000);
+// }
+// setTimeout(doStuff, 5000);
+
+const countdown = 5000;
+
+const budgetSetInterval = () => {
+  console.log('wow');
+  setTimeout(budgetSetInterval, countdown);
 }
 
 const budgetClearInterval = (cb) => {
-
+  clearTimeout(cb)
 }
 
 /**
@@ -27,3 +37,5 @@ class budgetInterval {
 }
 
 // module.exports = ___; // <- feel free to export whichever you want!
+
+budgetSetInterval(budgetSetInterval, countdown);
