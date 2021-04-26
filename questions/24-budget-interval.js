@@ -41,6 +41,6 @@ const budgetInterval = {
 }
 
 
-budgetSetInterval(budgetSetInterval, countdown);
+// budgetSetInterval(budgetSetInterval, countdown);
 
 module.exports = budgetInterval;

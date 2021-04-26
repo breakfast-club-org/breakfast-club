@@ -4,7 +4,7 @@ const assert = chai.assert;
 const every = require('../questions/24-budget-interval').budgetSetInterval;
 
 
-describe('Budget Interval', function() {
+describe.skip('Budget Interval', function() {
 
   function counter() {
     return this.count++;
