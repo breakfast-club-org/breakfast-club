@@ -17,11 +17,11 @@ const firstCharacterNotRepeated = (str) => {
     } else {
       storage[character] = 1;
     }
-
-    for (character in storage) {
-      if (storage[character] === 1) {
-        return character;
-      }
+  }
+  
+  for (character in storage) {
+    if (storage[character] === 1) {
+      return character;
     }
   }
 }
