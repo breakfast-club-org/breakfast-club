@@ -7,8 +7,13 @@
  *   str - string
  *   target - string
  */
-const lastOccurrence = (str, target) => {
-  /* implmentation */
-}
+ const lastOccurrence = (str, target) => {   
+  if (str.includes(target)) {
+    const len = str.match(new RegExp(target, 'g')).length;
+    return len === 1 ? str.indexOf(target) : str.indexOf(target, (str.indexOf(target) + len - 1));
+  }
+
+  return -1;
+};
 
 module.exports = lastOccurrence;
