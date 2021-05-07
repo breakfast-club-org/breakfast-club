@@ -17,18 +17,15 @@
 // };
 
 const lastOccurrence = (str, target) => {   
-  if (str.includes(target)) {
-  	let indexOf = 0;
-    
-    for (let i = 0, len = str.length; i < len; i++) {
-    	indexOf = (str[i] === target && i > indexOf) ? i : indexOf;
-    }
+  let indexOf = -1;
 
-    return indexOf;
+  if (str.includes(target)) {
+    for (let i = 0, len = str.length; i < len; i++) {
+      indexOf = (str[i] === target && i > indexOf) ? i : indexOf;
+    }
   }
 
-  return -1;
+  return indexOf;
 };
-
 
 module.exports = lastOccurrence;
