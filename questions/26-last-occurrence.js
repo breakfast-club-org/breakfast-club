@@ -7,8 +7,28 @@
  *   str - string
  *   target - string
  */
+// const lastOccurrence = (str, target) => {
+//   let i=str.length - 1;
+//   for (; i > -1; i-- ) {
+//     if (str.charAt(i) === target) {
+//       break;
+//     }
+//   }
+
+//   return i;
+// }
+
 const lastOccurrence = (str, target) => {
-  /* implmentation */
+
+  function check(index) {
+    if (index === -1 || str.charAt(index) === target) {
+      return index;
+    }
+
+    return check(index - 1);
+  }
+
+  return check(str.length - 1);
 }
 
 module.exports = lastOccurrence;
