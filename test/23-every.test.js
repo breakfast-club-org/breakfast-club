@@ -5,7 +5,7 @@ const every = require('../questions/23-every');
 
 const isEven = (n) => n % 2 === 0;
 
-describe('Method: every tests', function() {
+describe.skip('Method: every tests', function() {
   it('should return true for empty collection', function() {
     const a = [];
     const errthang = every(

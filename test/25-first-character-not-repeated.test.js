@@ -3,7 +3,7 @@ const assert = chai.assert;
 const expect = chai.expect;
 const firstCharacterNotRepeated = require('../questions/25-first-character-not-repeated');
 
-describe('Method: firstCharacterNotRepeated tests', function() {
+describe.skip('Method: firstCharacterNotRepeated tests', function() {
   it('string "wow" should return string "o"', function() {
     const result = firstCharacterNotRepeated('wow');
     const expected = 'o';

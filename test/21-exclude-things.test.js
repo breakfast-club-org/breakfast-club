@@ -1,7 +1,7 @@
 const assert = require('chai').assert;
 const excludeThings = require('../questions/21-exclude-things');
 
-describe('Exclude Things', function() {
+describe.skip('Exclude Things', function() {
   it('should exclude values from given inputs', function() {
     const items = [
       {
