@@ -1,7 +1,7 @@
 const assert = require('chai').assert;
 const BrowserHistory = require('../questions/20-browser-history');
 
-describe('Browser History', function() {
+describe.skip('Browser History', function() {
   it('should return an object with some methods on it', function() {
     const bh = new BrowserHistory();
 
