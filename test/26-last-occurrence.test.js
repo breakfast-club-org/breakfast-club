@@ -3,7 +3,7 @@ const assert = chai.assert;
 const expect = chai.expect;
 const lastOccurrence = require('../questions/26-last-occurrence');
 
-describe('Method: lastOccurrence tests', function() {
+describe.skip('Method: lastOccurrence tests', function() {
   it('string "wow" target "w" should return 2', function() {
     const result = lastOccurrence('wow', 'w');
     const expected = 2;
