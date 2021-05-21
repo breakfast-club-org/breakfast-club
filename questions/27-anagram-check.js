@@ -13,7 +13,15 @@
 // }
 
 const anagramCheck = (strOne, strTwo) => {
-  /* implmentation */
+  if (typeof strOne !== 'string' || typeof strTwo !== 'string') {
+    return false;
+  }
+
+  const sortedOne = [...strOne].sort().join('');
+  const sortedTwo = [...strTwo].sort().join('');
+
+  return (strOne !== strTwo) &&
+    (sortedOne === sortedTwo)
 }
 
 module.exports = anagramCheck;
