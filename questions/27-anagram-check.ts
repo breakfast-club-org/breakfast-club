@@ -12,15 +12,12 @@
 var sortString = function (str) {
     return str.split('').sort().join('');
 };
-var anagramCheck = function (strOne, strTwo) {
-    if (typeof strOne !== 'string' && typeof strTwo !== 'string')
-        return false;
+var anagramCheck = function (strOne: string, strTwo: string) {
+    if (typeof strOne !== 'string' && typeof strTwo !== 'string') return false;
     strOne = strOne.replace(/[^\w]/g, "").toLowerCase();
     strTwo = strTwo.replace(/[^\w]/g, "").toLowerCase();
-    if (strOne === strTwo)
-        return false;
-    if (strOne.length !== strTwo.length)
-        return false;
+    if (strOne === strTwo) return false;
+    if (strOne.length !== strTwo.length) return false;
     return (sortString(strOne) === sortString(strTwo));
 };
 module.exports = anagramCheck;
