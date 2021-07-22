@@ -12,7 +12,7 @@ interface AnagramProps {
 //   /* implmentation */
 // }
 
-const mapCharacters = (str: String) => {
+const mapCharacters = (str: String): Object => {
   let storage = {};
 
   for (let character of str) {
@@ -22,7 +22,7 @@ const mapCharacters = (str: String) => {
   return storage;
 }
   
-const anagramCheck = ({strOne, strTwo}: AnagramProps) => {
+const anagramCheck = ({strOne, strTwo}: AnagramProps): Boolean => {
   const strOneMap = mapCharacters(strOne);
   const strTwoMap = mapCharacters(strTwo);
 
