@@ -20,4 +20,5 @@ var anagramCheck = function (strOne: string, strTwo: string) {
     if (strOne.length !== strTwo.length) return false;
     return (sortString(strOne) === sortString(strTwo));
 };
+
 module.exports = anagramCheck;
