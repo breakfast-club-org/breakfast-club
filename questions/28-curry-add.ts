@@ -50,6 +50,18 @@ const curryChain = (f: Function): Function => {
     return curryFunc;
 };
 
+// const curryChain = (f) => {
+//   return (a) => {
+//     return (b) => {
+//       return (c) => {
+//         f(a,b,c)
+//       }
+//     }
+//   }
+// }
+
+// const curryChain = (f) => (a) => (b) => (c) => { return f(a, b, c) }
+
 const addChain = curryChain(add);
 
 module.exports = addChain;
