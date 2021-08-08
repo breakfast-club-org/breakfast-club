@@ -1,17 +1,15 @@
 {
   "name": "breakfast-club",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "early breakfast topics with algo in mind",
-  "main": "index.js",
+  "main": "index.ts",
   "engines": {
     "node": ">=8.9.4"
   },
   "dependencies": {},
   "devDependencies": {
-    "@babel/core": "^7.4.4",
-    "@babel/polyfill": "^7.4.4",
-    "@babel/preset-env": "^7.4.4",
-    "@babel/register": "^7.4.4",
+    "@types/chai": "^4.2.21",
+    "@types/mocha": "^9.0.0",
     "@types/node": "^16.4.0",
     "@typescript-eslint/eslint-plugin": "^4.28.4",
     "@typescript-eslint/parser": "^4.28.4",
@@ -19,11 +17,13 @@
     "eslint": "^7.31.0",
     "mocha": "^6.1.4",
     "sinon": "^10.0.0",
+    "ts-node": "^10.1.0",
     "typescript": "^4.3.5",
     "yargs-parser": ">=13.1.2"
   },
   "scripts": {
-    "test": "mocha --require @babel/polyfill --require @babel/register --reporter=nyan --diff=false || exit 0",
+    "test": "mocha -r ts-node/register --reporter=nyan --diff=false test/*.ts || exit 0",
+    "test-one": "mocha -r ts-node/register --reporter=nyan --diff=false",
     "lint": "eslint . --ext .ts"
   },
   "repository": {
