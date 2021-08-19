@@ -25,11 +25,11 @@ describe('Memoized Factorial', function() {
         assert.equal(memoizedFactorial(5), 120);
 
         // these called should be faster
-        assert.equal(memoizedFactorial(0), 1);
-        assert.equal(memoizedFactorial(1), 1);
-        assert.equal(memoizedFactorial(2), 2);
-        assert.equal(memoizedFactorial(3), 6);
-        assert.equal(memoizedFactorial(4), 24);
-        assert.equal(memoizedFactorial(5), 120);
+        assert.equal(memoizedFactorial(0), factorial(0));
+        assert.equal(memoizedFactorial(1), factorial(1));
+        assert.equal(memoizedFactorial(2), factorial(2));
+        assert.equal(memoizedFactorial(3), factorial(3));
+        assert.equal(memoizedFactorial(4), factorial(4));
+        assert.equal(memoizedFactorial(5), factorial(5));
     })
 })
