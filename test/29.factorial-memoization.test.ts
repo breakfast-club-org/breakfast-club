@@ -9,27 +9,39 @@ describe('Factorial', function() {
         assert.equal(factorial(3), 6);
         assert.equal(factorial(4), 24);
         assert.equal(factorial(5), 120);
+        console.time('factorial');
+        factorial(6);
+        console.timeEnd('factorial');
     })
 })
 
 describe('Memoized Factorial', function() {
-    it('memoizing a function should return a function', function() {
-        const memoizedFactorial = memoize(factorial);
+    let mf;
 
-        assert.equal(typeof memoizedFactorial, "function");
+    before(function() {
+        mf = memoize((n) => (n < 2)
+            ? 1
+            : n * mf(n - 1))
+    })
+
+    after(function() {
+        mf = null;
+    })
+
+    it('memoizing a function should return a function', function() {
+        assert.equal(typeof mf, "function");
     })
 
     it('should return the memoized factorial of a number but faster', function() {
-        const memoizedFactorial = memoize(factorial);
-
-        assert.equal(memoizedFactorial(5), 120);
-
         // these called should be faster
-        assert.equal(memoizedFactorial(0), 1);
-        assert.equal(memoizedFactorial(1), 1);
-        assert.equal(memoizedFactorial(2), 2);
-        assert.equal(memoizedFactorial(3), 6);
-        assert.equal(memoizedFactorial(4), 24);
-        assert.equal(memoizedFactorial(5), 120);
+        assert.equal(mf(0), 1);
+        assert.equal(mf(1), 1);
+        assert.equal(mf(2), 2);
+        assert.equal(mf(3), 6);
+        assert.equal(mf(4), 24);
+        assert.equal(mf(5), 120);
+        console.time('memoized');
+        mf(6);
+        console.timeEnd('memoized');
     })
 })
