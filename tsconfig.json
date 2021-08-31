@@ -1,0 +1,6 @@
+{
+    "compilerOptions": {
+        "types": ["mocha"],
+        "lib": ["es2020", "DOM"]
+    }
+}
