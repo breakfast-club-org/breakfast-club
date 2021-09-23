@@ -22,6 +22,24 @@
  * }
  */
 
-export function consolidateObjects(objOne, objTwo) {
-
+interface ConsolidateObjectsProp {
+    objOne: object;
+    objTwo: object;
 }
+
+export function consolidateObjects({objOne, objTwo}: ConsolidateObjectsProp): object  {
+    const obj = {};
+
+    for (let key in objOne) {
+        if (objTwo[key]) {
+            obj[key] = [];
+            obj[key].push(objOne[key])
+            obj[key].push(objTwo[key])
+        } else {
+            obj[key] = objOne[key]
+        }
+    }
+
+    return obj;
+};
+
