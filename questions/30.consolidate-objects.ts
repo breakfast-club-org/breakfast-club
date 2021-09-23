@@ -23,7 +23,7 @@
  */
 type Primitives = string | number | boolean;
 type PrimObj = Record<string, Primitives>;
-export default function consolidateObjects(objOne: PrimObj, objTwo: PrimObj): Record<string, unknown> {
+export default function consolidateObjects(objOne: PrimObj, objTwo: PrimObj): Record<string, Primitives | Primitives[] > {
     const ro: Record<string, unknown> = {...objOne};
 
     Object
