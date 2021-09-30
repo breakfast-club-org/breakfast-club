@@ -33,14 +33,18 @@ const obj2 = {
 	other: 2
 }
 
-export function consolidateObjects(...arr) {
+export function consolidateObjects(objOne: object, objTwo: object): object  {
 	const result = {};
-	arr.forEach(item => {
-		Object.keys(item).forEach(key => {
-			if (!result[key]) result[key] = [];
-			result[key].push(item[key]);
-		});
-	});
+
+	for (const key in objOne) {
+		if (objTwo[key]) {
+			result[key] = [];
+			result[key].push(objOne[key]);
+			result[key].push(objTwo[key])
+		} else {
+			result[key] = objOne[key]
+		}
+	}
 	return result;
 }
 
