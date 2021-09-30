@@ -33,19 +33,18 @@ var obj2 = {
     thing: 'huh ok',
     other: 2
 };
-function consolidateObjects() {
-    var arr = [];
-    for (var _i = 0; _i < arguments.length; _i++) {
-        arr[_i] = arguments[_i];
-    }
+function consolidateObjects(objOne, objTwo) {
     var result = {};
-    arr.forEach(function (item) {
-        Object.keys(item).forEach(function (key) {
-            if (!result[key])
-                result[key] = [];
-            result[key].push(item[key]);
-        });
-    });
+    for (var key in objOne) {
+        if (objTwo[key]) {
+            result[key] = [];
+            result[key].push(objOne[key]);
+            result[key].push(objTwo[key]);
+        }
+        else {
+            result[key] = objOne[key];
+        }
+    }
     return result;
 }
 exports.consolidateObjects = consolidateObjects;
