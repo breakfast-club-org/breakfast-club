@@ -24,11 +24,9 @@ function memoize(fn) {
     var cache = {};
     return function (n) {
         if (n in cache) {
-            console.log('fetching from cache');
             return cache[n];
         }
         else {
-            console.log('creating result and adding to cache');
             var result = fn(n);
             cache[n] = result;
             return result;
@@ -36,12 +34,3 @@ function memoize(fn) {
     };
 }
 exports.memoize = memoize;
-var memoizeFactorial = memoize(factorial);
-console.log('memoizeFactorial(5)', memoizeFactorial(5));
-console.log('memoizeFactorial(5)', memoizeFactorial(10));
-console.log('memoizeFactorial(5)', memoizeFactorial(4));
-console.log('memoizeFactorial(5)', memoizeFactorial(22));
-console.log('memoizeFactorial(5)', memoizeFactorial(5));
-console.log('memoizeFactorial(5)', memoizeFactorial(4));
-console.log('memoizeFactorial(5)', memoizeFactorial(22));
-console.log('memoizeFactorial(5)', memoizeFactorial(10));

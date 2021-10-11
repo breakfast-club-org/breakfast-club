@@ -48,5 +48,3 @@ export function consolidateObjects(objOne: object, objTwo: object): object  {
 	return result;
 }
 
-console.log('consolidateObjects(obj1, obj2)', consolidateObjects(obj1, obj2));
-
