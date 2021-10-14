@@ -13,8 +13,8 @@
  */
 
 interface toTheFrontProps {
-    objOne: number[];
-    objTwo: number;
+    arr: number[];
+    rotations: number;
 }
 
 export function toTheFront({arr, rotations}: toTheFrontProps): number[] {
