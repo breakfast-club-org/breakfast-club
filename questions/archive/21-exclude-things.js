@@ -24,7 +24,22 @@
  * ]
  */
 const excludedFilters = (items, excludes) => {
-	/** your implementation */
+  const excludedItems = [...items];
+
+  for (let i = 0; i < excludes.length; i++) {
+    const {
+      k,
+      v
+    } = excludes[i];
+
+    for (let j = 0; j < excludedItems.length; j++) {
+      if (excludedItems[j][k] === v) {
+        excludedItems.splice(j, 1)
+      }
+    }
+  }
+
+  return excludedItems;
 }
 
 module.exports = excludedFilters;
