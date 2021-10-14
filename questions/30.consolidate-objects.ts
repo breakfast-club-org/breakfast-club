@@ -42,4 +42,3 @@ export function consolidateObjects({objOne, objTwo}: ConsolidateObjectsProp): ob
 
     return obj;
 };
-
