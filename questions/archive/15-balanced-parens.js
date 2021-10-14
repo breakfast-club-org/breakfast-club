@@ -5,8 +5,14 @@
 // const parens = "()(())()" // should be true
 // const parens = "()(())(" // should be false
 
-const balancedParens = (expression) => {
-
+const balancedParens = ([...expression]) => {
+	return 0 === expression.reduce((acc, curr) => {
+		if (curr === '(') {
+			return acc = acc + 1;;
+		} else if (curr === ')') {
+			return acc = acc - 1;
+		}
+	}, 0);
 }
 
 module.exports = balancedParens;
