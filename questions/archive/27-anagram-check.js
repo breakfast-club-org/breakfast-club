@@ -9,18 +9,28 @@
 // const anagramCheck = ({strOne, strTwo}: AnagramProps): Boolean => {
 //   /* implmentation */
 // }
-var sortString = function (str) {
-    return str.split('').sort().join('');
-};
-var anagramCheck = function (strOne, strTwo) {
-    if (typeof strOne !== 'string' && typeof strTwo !== 'string')
+
+const mapCharacters = (str) => {
+  let storage = {};
+
+  for (let character of str) {
+    storage[character] = storage[character] + 1 || 1;
+  }
+
+  return storage;
+}
+
+const anagramCheck = (strOne, strTwo) => {
+  const strOneMap = mapCharacters(strOne);
+  const strTwoMap = mapCharacters(strTwo);
+
+  for (let char in strOneMap) {
+    if (strOneMap[char] !== strTwoMap[char]) {
         return false;
-    strOne = strOne.replace(/[^\w]/g, "").toLowerCase();
-    strTwo = strTwo.replace(/[^\w]/g, "").toLowerCase();
-    if (strOne === strTwo)
-        return false;
-    if (strOne.length !== strTwo.length)
-        return false;
-    return (sortString(strOne) === sortString(strTwo));
-};
+    }
+  }
+
+  return true;
+}
+
 module.exports = anagramCheck;

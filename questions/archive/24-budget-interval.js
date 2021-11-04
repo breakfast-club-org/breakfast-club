@@ -4,23 +4,24 @@
  * const thing = budgetSetInterval(() => console.log('wow'), 5000 ) // should log 'wow' every 5 seconds
  * budgetClearInterval(thing) // should immediately end the logs
  */
-
-//  function doStuff() {
-//   console.log("hello!");
-//   setTimeout(doStuff, 5000);
+// const data = new Map();
+//
+// const budgetSetInterval = (cb, countdown, context, ...args) => {
+//   const uuid = `${Math.floor(Math.random() * 10000)}-${Math.floor(Math.random() * 10000)}-${Math.floor(Math.random() * 10000)}`;
+//
+//   const thing = () => {
+//     data.set(uuid, setTimeout(thing, countdown));
+//     cb.apply(context, args);
+//   }
+//
+//   data.set(uuid, setTimeout(thing, countdown))
+//
+//   return uuid;
 // }
-// setTimeout(doStuff, 5000);
-
-const countdown = 5000;
-
-const budgetSetInterval = () => {
-  console.log('wow');
-  setTimeout(budgetSetInterval, countdown);
-}
-
-const budgetClearInterval = (cb) => {
-  clearTimeout(cb)
-}
+//
+// const budgetClearInterval = (cb) => {
+//   clearTimeout(data.get(cb))
+// }
 
 /**
  * Turn it into a class! Get creative with it!
@@ -29,18 +30,34 @@ const budgetClearInterval = (cb) => {
  * option 3: can you think of anything else?
  */
 
-const budgetInterval = {
+class budgetInterval {
+  constructor(){
+    this.data = new Map();
+  }
 
-  budgetSetInterval(cb, countdown) {
+  budgetSetInterval(cb, countdown, that, ...args) {
+    const uuid = `${Math.floor(Math.random() * 10000)}-${Math.floor(Math.random() * 10000)}-${Math.floor(Math.random() * 10000)}`;
 
-  },
+    const thing = () => {
+      this.data.set(uuid, setTimeout(thing, countdown));
+      cb.apply(that, args);
+    }
+
+    this.data.set(uuid, setTimeout(thing, countdown))
+
+    return uuid;
+  }
 
   budgetClearInterval(cb) {
-
+    clearTimeout(data.get(cb))
   }
 }
 
+<<<<<<< HEAD
 
 // budgetSetInterval(budgetSetInterval, countdown);
 
 module.exports = budgetInterval;
+=======
+module.exports = budgetInterval; // <- feel free to export whichever you want!
+>>>>>>> master

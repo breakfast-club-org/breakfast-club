@@ -33,14 +33,22 @@ const excludes = [
 ];
 
 const excludedFilters = (items, excludes) => {
-	const excludedItemValues = excludes.map(item => item.v); // [ 'action', 'matrix', 1 ]
+  const excludedItems = [...items];
 
-	const filteredItemValues = items.filter(item =>
-		!excludedItemValues.includes(item.genre) &&
-		!excludedItemValues.includes(item.title) &&
-		!excludedItemValues.includes(item.rating));
+  for (let i = 0; i < excludes.length; i++) {
+    const {
+      k,
+      v
+    } = excludes[i];
 
-	return filteredItemValues;
+    for (let j = 0; j < excludedItems.length; j++) {
+      if (excludedItems[j][k] === v) {
+        excludedItems.splice(j, 1)
+      }
+    }
+  }
+
+  return excludedItems;
 }
 
 module.exports = excludedFilters;

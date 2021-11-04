@@ -1,3 +1,4 @@
+const reduce = require('./questions/22-reduce');
 /**
  * Check if all elements of a collection match a boolean test
  *
@@ -11,7 +12,13 @@ const collection = [1,3,5];
 const isEven = n => n % 2 === 0;
 
 const every = (collection, cb) => {
-	return collection.every(cb)
+  const test = reduce(collection, cb, collection[0])
+
+  if (test === undefined) {
+    return true;
+  }
+
+  return test
 }
 
 module.exports = every;

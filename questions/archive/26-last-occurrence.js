@@ -8,13 +8,15 @@
  *   target - string
  */
 const lastOccurrence = (str, target) => {
-  let lastIndex = -1
-  for (let i = 0; i < str.length; i++) {
-    if (str[i] === target) {
-      lastIndex = i
+  const end = str.length - 1;
+
+  for (let i = end; i >= 0; i--) {
+    if (target === str[i]) {
+      return i;
     }
   }
-  return lastIndex
+
+  return -1;
 }
 
 module.exports = lastOccurrence;

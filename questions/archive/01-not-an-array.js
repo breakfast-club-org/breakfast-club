@@ -30,43 +30,58 @@
 class NotAnArray {
   constructor() {
     this.storage = {};
+    this.length = 0;
   }
 
-  length() {
-    return Object.keys(this.storage).length;
-  }
-
-  push(value) {
-    const i = this.length();
-    this.storage[i] = value;
+  push(val) {
+    this.storage[this.length] = val;
+    this.length = this.length + 1;
   }
 
   pop() {
-    if (this.length() === 0) return undefined;
-    const lastItem = this.length() - 1;
-    let removedLastItem = this.storage[lastItem];
-    delete this.storage[lastItem];
-    return removedLastItem;
+    if (this.length === 0) {
+      return undefined;
+    }
+
+    this.length = this.length - 1;
+
+    const popped = this.storage[this.length];
+    delete this.storage[this.length];
+
+    return popped
   }
 
-  unshift(value) {
-    let duplicateObj = {};
-    duplicateObj[0] = value;
-    Object.keys(this.storage).map((key, i) => {
-      duplicateObj[i + 1] = this.storage[i]
-    });
-    this.storage = {...duplicateObj}
+  unshift(val) {
+    const tempStorage = {};
+    tempStorage[0] = val;
+
+    for (let i = 0; i < this.length; i++) {
+      tempStorage[i+1] = this.storage[i];
+    }
+
+    this.length = this.length + 1;
+
+    this.storage = tempStorage;
   }
 
   shift() {
-    if (this.length() === 0) return undefined;
-    let firstItem = this.storage[0];
-    let lastItem = this.length() - 1;
-    Object.keys(this.storage).map((key, i) => {
-      this.storage[i] = this.storage[i + 1]
-    });
-    delete this.storage[lastItem];
-    return firstItem;
+    if (this.length === 0) {
+      return undefined;
+    }
+
+    const tempStorage = {};
+    const shifted = this.storage[0];
+
+    delete this.storage[0];
+    this.length = this.length - 1;
+
+    for (let i = 0; i < this.length; i++) {
+      tempStorage[i] = this.storage[i+1];
+    }
+
+    this.storage = tempStorage;
+
+    return shifted;
   }
 }
 

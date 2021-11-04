@@ -21,11 +21,70 @@ class SortingMethods {
 
   // Feel free to add helper methods to this class if you need it for sorting
 
-  bubbleSort(arr) {}
+  bubbleSort(arr) {
+    const len = arr.length;
 
-  insertionSort(arr) {}
+    for (let i = 0; i < len; i++) {
+      for (let j = 0; j < (len - i - 1); j++) {
+        if(arr[j] > arr[j+1]) {
+          [arr[j], arr[j+1]] = [arr[j+1], arr[j]]
+        }
+      }
+    }
 
-  mergeSort(arr) {}
+    return arr;
+  }
+
+  insertionSort(arr) {
+    for(var i = 0; i < arr.length; i++) {
+      var tmp = arr[i];
+      var pointer = i - 1;
+
+      while (pointer >= 0 && arr[pointer] > tmp) {
+        arr[pointer + 1] = arr[pointer];
+        pointer--;
+      }
+
+      arr[pointer + 1] = tmp;
+    }
+    return arr;
+  }
+
+  merge(left, right) {
+    let resultArray = [];
+    let leftIndex = 0
+    let rightIndex = 0;
+
+    while (leftIndex < left.length && rightIndex < right.length) {
+      if (left[leftIndex] < right[rightIndex]) {
+        resultArray.push(left[leftIndex]);
+        leftIndex = leftIndex + 1;
+      } else {
+        resultArray.push(right[rightIndex]);
+        rightIndex = rightIndex + 1;
+      }
+    }
+
+    return resultArray
+      .concat(left.slice(leftIndex))
+      .concat(right.slice(rightIndex));
+  }
+
+  mergeSort(arr) {
+    if (arr.length <= 1) {
+      return arr;
+    }
+
+    const middle = Math.floor(arr.length / 2);
+    const left = arr.slice(0, middle);
+    const right = arr.slice(middle);
+
+    return this.merge(
+      this.mergeSort(left),
+      this.mergeSort(right)
+    );
+  }
+
 }
 
 module.exports = SortingMethods;

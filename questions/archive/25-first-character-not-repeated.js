@@ -8,13 +8,24 @@
 let str = "aaacdcbede"
 
 const firstCharacterNotRepeated = (str) => {
+  /* implmentation */
+  const storage = {};
+
   for (let i = 0; i < str.length; i++) {
-    let char = str.charAt(i);
-    if (str.indexOf(char) === i && str.indexOf(char, i + 1) === -1) {
-      return char;
+    let character = str[i];
+
+    if (storage[character]) {
+      storage[character] = storage[character] + 1;
+    } else {
+      storage[character] = 1;
     }
   }
-  return console.log('no single characters');;
+
+  for (character in storage) {
+    if (storage[character] === 1) {
+      return character;
+    }
+  }
 }
 
 firstCharacterNotRepeated(str);
