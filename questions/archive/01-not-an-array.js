@@ -72,7 +72,7 @@ class NotAnArray {
       this._storage[this.start] = null; // remove the value
       this.start +=1;
     }
-    
+
     return v;
   }
 
@@ -95,4 +95,4 @@ class NotAnArray {
   set storage(o) {}
 }
 
-module.exports = NotAnArray;
+modules.export = NotAnArray;

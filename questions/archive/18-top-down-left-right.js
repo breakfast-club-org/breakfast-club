@@ -1,4 +1,4 @@
-// given table size definition of NxN, populate a 2d array with numbers in ascending order from top to bottom then left to right
+// given table size definition of NxN, populate a 2d array with numbers in ascending order from top to bottom then left to rightat
 // sizeDefinition: 1, 1
 // output: null;
 //
