@@ -5,6 +5,8 @@
  * // should return #FFFFFF
  */
 
-export function convertToHex(r, g, b) {
+function convertToHex(r: number, g: number, b: number): string {
+    return [r, g, b].reduce((a, d) => a + (d).toString(16).padStart(2, '0').toUpperCase(), '#');
+}
 
-};
+export default convertToHex;
