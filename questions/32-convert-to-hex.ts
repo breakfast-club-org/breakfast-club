@@ -5,6 +5,11 @@
  * // should return #FFFFFF
  */
 
-export function convertToHex(r, g, b) {
+export function valueToHex(v: number): string {
+	const value = v.toString(16);
+	return value.length === 1 ? '0' + value : value
+}
 
-};
+export function convertToHex(r: number, g: number, b: number): string {
+	return `#${valueToHex(r)}${valueToHex(g)}${valueToHex(b)}`
+}
