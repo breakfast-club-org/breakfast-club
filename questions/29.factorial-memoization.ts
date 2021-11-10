@@ -3,9 +3,15 @@
  * ex: factorial(5), 5 * 4 * 3 * 2 * 1  = 120
  */
 export function factorial(n: number): number {
-	if (n < 0) return -1;
-	else if (n === 0) return 1;
-	else return (n * factorial(n - 1))
+    if (n === 0 || n === 1) {
+        return 1;
+    }
+
+    for (let i = n - 1; i >= 1; i--) {
+        n = n * i;
+    }
+
+    return n;
 }
 
 /**
@@ -14,16 +20,16 @@ export function factorial(n: number): number {
  * const memoizeFactorial = memoize(factorial);
  * ex: memoizedFactorial(5), 5 * 4 * 3 * 2 * 1  = 120 // should be faster the second time it's called in comparison
  */
-export function memoize(fn) {
-	const cache = {};
+export function memoize(fn: Function): Function {
+    const storage = {};
 
-	return function(n: number): number {
-		if (n in cache) {
-			return cache[n];
-		} else {
-			const result = fn(n);
-			cache[n] = result;
-			return result;
-		}
-	}
+    return (...args: any[]) => {
+        const item = args[0];
+
+        if (storage[item] === undefined) {
+            storage[item] = fn(...args);
+        }
+
+        return storage[item];
+    }
 }

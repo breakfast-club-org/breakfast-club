@@ -7,27 +7,32 @@
  * 	 reducer - function
  *   initial - optional initial value
  */
-
-const collection = [1, 2, 3];
-const sumReducer = (acc, val) => acc + val;
+// const reduce = (collection, reducer, initial) => {
+//   for (let i = 0; i < collection.length; i++) {
+//     if (initial === undefined) {
+//       initial = collection[i];
+//     } else {
+//       initial = reducer(initial, collection[i]);
+//     }
+//   }
+//
+//   return initial;
+// }
 
 const reduce = (collection, reducer, initial) => {
-	// no initial value or items in collection, throw error
-	if (typeof initial === 'undefined' && collection.length === 0) {
-		throw 'Reduce of empty array with no initial value';
-	}
-	// set initial value if value is undefined
-	if (typeof initial === 'undefined') {
-		initial = 0;
-	}
+  if (collection === undefined) {
+    throw new TypeError('Reduce of empty array with no initial value');
+  }
 
-	let value = initial;
-	for (let i = 0; i < collection.length; i++) {
-		let currentValue = collection[i];
-		value = reducer(value, currentValue);
-	}
+  collection.forEach((item) => {
+    if (initial === undefined) {
+      initial = collection[0];
+    } else {
+      initial = reducer(initial, item)
+    }
+  })
 
-	return value;
+  return initial
 }
 
 module.exports = reduce;
