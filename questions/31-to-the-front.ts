@@ -12,16 +12,5 @@
  * 4th: [4,5,6,7,1,2,3] <- result
  */
 
-interface toTheFrontProps {
-    arr: number[];
-    rotations: number;
-}
-
-export function toTheFront({arr, rotations}: toTheFrontProps): number[] {
-    const n = rotations;
-
-    const front = arr.slice(arr.length - n, arr.length)
-    const back = arr.slice(0, arr.length - n)
-
-    return [...front, ...back]
+export function toThefront(arr, rotations) {
 }
