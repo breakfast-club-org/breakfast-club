@@ -149,7 +149,7 @@ const hasValue = (array, value) => {
 // O(n^2) - for every item compare against n - 1 elements: n * (n - 1) = n^2 - n
 const findMatch = (string) => {
   for (var i = 0; i < string.length; i++){
-    for ( var j = i+1; j < string.length; j++){
+    for (var j = i+1; j < string.length; j++){
       if (string[i] === string[j]) {
         return true;
       }
@@ -175,7 +175,7 @@ data.unshift()
 // O(1) - using array adding to end of it
 data.push()
 
-// (14) Time Complexity:
+// (14) Time Complexity: O(n)
 const merge = (left, right) => {
   let resultArray = [];
   let leftIndex = 0
@@ -196,7 +196,7 @@ const merge = (left, right) => {
     .concat(right.slice(rightIndex));
 }
 
-// (15) Time Complexity:
+// (15) Time Complexity: O(n log n)
 const mergeSort = (unsortedArray) => {
   if (unsortedArray.length <= 1) {
     return unsortedArray;
@@ -207,16 +207,29 @@ const mergeSort = (unsortedArray) => {
   const right = unsortedArray.slice(middle);
 
   return merge(
-    mergeSort(left), mergeSort(right)
+    mergeSort(left),
+    mergeSort(right)
   );
 }
 
 // (16) Time Complexity:
+// if run for the first time then O(n!) or like O(n^2)
+// all subsequent times that are below the largest run time are O(n) if you memoize
 // Finding the factorial of a number
 // O(n!)
 const factorial = (n) => ( n < 2 ? 1 : n * factorial(n - 1) );
 
-// (17) Time Complexity:
+  if (x === 0) {
+  	return 1;
+  } else {
+    let result = x * factorial(x - 1);
+    cache[x] = result;
+
+  	return result;
+  }
+};
+
+// (17) Time Complexity: O(n^2)
 // Finding all distinct subsets of a given string
 // subSetsOfAString('') outputs  ['']
 // subSetsOfAString('a') outputs ['', 'a']
@@ -239,7 +252,8 @@ const subSetsOfAString = (s) => {
   return rs;
 }
 
-// (18) Time Complexity:
+
+// (18) Time Complexity: O(n!) or like O(n^2)
 // Write a function that computes all the different words that can be formed given a string
 // permutationsOfAString('a') outputs [ 'a']
 // permutationsOfAString('ab') outputs  [ 'ab', 'ba']
