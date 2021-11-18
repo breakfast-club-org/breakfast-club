@@ -21,7 +21,7 @@ const mapCharacters = (str: String): Object => {
 
   return storage;
 }
-  
+
 const anagramCheck = ({strOne, strTwo}: AnagramProps): Boolean => {
   const strOneMap = mapCharacters(strOne);
   const strTwoMap = mapCharacters(strTwo);
@@ -36,4 +36,4 @@ const anagramCheck = ({strOne, strTwo}: AnagramProps): Boolean => {
 }
 
 module.exports = anagramCheck;
-  
+

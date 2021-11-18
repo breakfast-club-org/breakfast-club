@@ -8,13 +8,11 @@ describe('Method: anagramCheck tests', function() {
 
     assert.isTrue(result);
   });
-
   it('string "knee" vs "knee" should return false', function() {
     const result = anagramCheck('knee', 'knee');
 
     assert.isFalse(result);
   });
-
   it('number 1 vs 1 should return false', function() {
     const result = anagramCheck(1, 1);
 
