@@ -36,7 +36,7 @@ class Node {
 //   / \    \
 // (1) (3)  (122)
 //            \
-//            (200)
+//            (209)
 //
 // Insert
 //  - Using the Node class the insert method should add the node in the correct position

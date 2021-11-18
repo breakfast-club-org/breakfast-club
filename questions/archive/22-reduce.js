@@ -5,7 +5,7 @@
  * where:
  *   collection - array like data structure
  * 	 reducer - function
- *   initial - optional intial value
+ *   initial - optional initial value
  */
 const withValue = v => fn => arr => {
 	function recur([acc, current, ...rest]) {

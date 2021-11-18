@@ -1,3 +1,4 @@
+const reduce = require('./questions/22-reduce');
 /**
  * Check if all elements of a collection match a boolean test
  *
