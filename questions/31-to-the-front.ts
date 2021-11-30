@@ -13,5 +13,4 @@
  */
 
 export function toThefront(arr, rotations) {
-
 }

@@ -6,62 +6,12 @@
  * addChain(1)(2)(3)
  */
 
-
-// const add = (a, b, c) => {
-//     return a + b + c;
-// }
-
-// const curryChain = (f) => {
-//     const curryFunc = (...args) => {
-//         console.log(...args)
-//         if (args.length >= f.length) {
-//             return f.apply(this, args);
-//         } else {
-//             return function(...args2) {
-//                 return curryFunc.apply(this, args.concat(args2));
-//             }
-//         }
-//     }
-//     return curryFunc;
-// };
-
-interface AddProps {
-    a: number,
-    b: number,
-    c: number
-}
-
-const add = ({a, b, c}: AddProps): number => {
+const add = (a, b, c) => {
     return a + b + c;
 }
 
-const curryChain = (f: Function): Function => {
+const curryChain = (f) => {
 
-    const curryFunc = (...args: [number]): Function | number => {
-        if (args.length >= f.length) {
-            return f.apply(this, args);
-        } else {
-            return function(...args2) {
-                return curryFunc.apply(this, args.concat(args2));
-            }
-        }
-    }
-
-    return curryFunc;
 };
-
-// const curryChain = (f) => {
-//   return (a) => {
-//     return (b) => {
-//       return (c) => {
-//         f(a,b,c)
-//       }
-//     }
-//   }
-// }
-
-// const curryChain = (f) => (a) => (b) => (c) => { return f(a, b, c) }
-
-const addChain = curryChain(add);
 
 module.exports = addChain;

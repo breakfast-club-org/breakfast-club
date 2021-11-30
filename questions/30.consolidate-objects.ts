@@ -22,6 +22,6 @@
  * }
  */
 
-export function consolidateObjects() {
+export function consolidateObjects(objOne, objTwo) {
 
 };
