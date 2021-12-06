@@ -1,6 +1,6 @@
 ## Basic Calculator
 
-Implement the basic caculator from MacOS calculator app.
+Implement the basic calculator from MacOS calculator app.
 
 ### Env
 
