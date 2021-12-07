@@ -1,0 +1,19 @@
+:root {
+	--calculator-width: 233px;
+	--calculator-height: 325px;
+	--calculator-bg-color: rgba(85, 85, 85, 1);
+}
+
+.calculator {
+	position: relative;
+	background: var(--calculator-bg-color);
+	width: var(--calculator-width);
+	height: var(--calculator-height);
+	clip-path: inset(0 round 12px);
+}
+
+.calculator .buttons {
+	display: grid;
+	grid-template-columns: 3fr 1fr;
+	height: calc(325px - 84px);
+}

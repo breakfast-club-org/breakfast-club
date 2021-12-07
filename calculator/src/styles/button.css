@@ -1,0 +1,37 @@
+:root {
+	/* Button */
+	--button-font-size: 20px;
+	--button-line-height: 1;
+	--button-width: 100%;
+	--button-height: 100%;
+	--button-bg-color: #eee;
+	--button-color: #fff;
+}
+
+.button {
+	font-family: 'Open Sans', 'Helvetica Neue', sans-serif;
+	font-size: var(--button-font-size);
+	line-height: var(--button-line-height);
+	width: var(--button-width);
+	height: var(--button-height);
+	background-color: var(--button-bg-color);
+	color: var(--button-color);
+	padding: 0;
+	border: none;
+}
+
+.button-double {
+	grid-column: span 2;
+}
+
+.button-dark-gray {
+	--button-bg-color: rgba(102, 102, 102, 1);
+}
+
+.button-gray {
+	--button-bg-color: rgba(127, 127, 127, 1);
+}
+
+.button-orange {
+	--button-bg-color: rgba(255, 153, 51, 1);
+}
