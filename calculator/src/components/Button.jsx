@@ -8,9 +8,9 @@ class Button extends React.Component {
 
   onClick(e) {
     const calculator = document.querySelector('.calculator');
-    const expandBtn = document.querySelector('.button-expand');
+    const btnExpand = e.target.classList.contains('button-expand');
 
-    if (expandBtn) {
+    if (btnExpand) {
       calculator.classList.toggle('is-expanded');
     }
 

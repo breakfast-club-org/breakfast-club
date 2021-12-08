@@ -13,6 +13,7 @@ class ButtonsGroup extends React.Component {
 				return (
 					<Button
 					key={i}
+					hideValue={button.hideValue}
 					value={button.value}
 					className={button.className}
 					/>
