@@ -1,17 +1,17 @@
 import React from 'react'
 import Button from './Button'
-import '../styles/controls.css'
-import controls from '../data/controls.json'
+import '../styles/math.css'
+import math from '../data/math.json'
 
-class Controls extends React.Component {
+class Math extends React.Component {
   constructor(props) {
     super(props)
   }
 
- render() {
-  return (
-    <div className="controls">
-      {controls.map((button, i) => {
+  render() {
+    return (
+      <div className="math">
+        {math.map((button, i) => {
           return (
             <Button
               key={i}
@@ -21,9 +21,9 @@ class Controls extends React.Component {
             />
           )
         })}
-    </div>
-  );
- }
+      </div>
+    );
+  }
 }
 
-export default Controls
+export default Math

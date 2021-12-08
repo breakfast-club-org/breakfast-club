@@ -1,0 +1,17 @@
+[
+	{
+		"hideValue": true,
+	  	"value": "×",
+	  	"className": "button-close"
+	},
+	{
+		"hideValue": true,
+	  	"value": "-",
+	  	"className": "button-minimize"
+	},
+	{
+		"hideValue": true,
+	  	"value": "+",
+	  	"className": "button-expand"
+	}
+  ]

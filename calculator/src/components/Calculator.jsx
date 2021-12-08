@@ -2,7 +2,7 @@ import React from 'react'
 import Controls from './Controls'
 import Result from './Result'
 import Numbers from './Numbers'
-import MathSymbols from './MathSymbols'
+import Math from './Math'
 import Scientific from './Scientific'
 import '../styles/calculator.css'
 
@@ -19,7 +19,7 @@ class Calculator extends React.Component {
         <div className="buttons">
           <Scientific />
           <Numbers />
-          <MathSymbols />
+          <Math />
         </div>
       </div>
     );

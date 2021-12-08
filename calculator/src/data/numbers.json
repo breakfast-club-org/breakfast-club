@@ -1,0 +1,58 @@
+[
+	{
+	  	"value": "AC",
+	  	"className": "button-dark-gray"
+	},
+	{
+	  	"value": "+/-",
+	  	"className": "button-dark-gray"
+	},
+	{
+	  	"value": "%",
+	  	"className": "button-dark-gray"
+	},
+	{
+		"value": "7",
+		"className": "button-number button-gray"
+	},
+	{
+	  	"value": "8",
+	  	"className": "button-number button-gray"
+	},
+	{
+	  	"value": "9",
+	  	"className": "button-number button-gray"
+	},
+	{
+	  	"value": "4",
+	  	"className": "button-number button-gray"
+	},
+	{
+	  	"value": "5",
+	  	"className": "button-number button-gray"
+	},
+	{
+	  	"value": "6",
+	  	"className": "button-number button-gray"
+	},
+	{
+	  	"value": "1",
+	  	"className": "button-number button-gray"
+	},
+	{
+	  	"value": "2",
+	  	"className": "button-number button-gray"
+	},
+	{
+	  	"value": "3",
+	  	"className": "button-number button-gray"
+	},
+	{
+	  "value": "0",
+	  "className": "button-number button-gray button-double"
+	},
+	{
+	  "value": ".",
+	  "className": "button-gray"
+	}
+  ]

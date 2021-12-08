@@ -1,0 +1,122 @@
+[
+	{
+	  	"value": "(",
+	  	"className": "button-dark-gray"
+	},
+	{
+	  	"value": ")",
+	  	"className": "button-dark-gray"
+	},
+	{
+	  	"value": "mc",
+	  	"className": "button-dark-gray"
+	},
+	{
+		"value": "m+",
+		"className": "button-dark-gray"
+	},
+	{
+		"value": "m-",
+		"className": "button-dark-gray"
+	},
+	{
+		"value": "mr",
+		"className": "button-dark-gray"
+	},
+	{
+		"value": "2nd",
+		"className": "button-dark-gray"
+	},
+	{
+		"value": "x2",
+		"className": "button-dark-gray"
+	},
+	{
+		"value": "x3",
+		"className": "button-dark-gray"
+	},
+	{
+		"value": "xy",
+		"className": "button-dark-gray"
+	},
+	{
+		"value": "ex",
+		"className": "button-dark-gray"
+	},
+	{
+		"value": "10x",
+		"className": "button-dark-gray"
+	},
+	{
+		"value": "1/x",
+		"className": "button-dark-gray"
+	},
+	{
+		"value": "2√x",
+		"className": "button-dark-gray"
+	},
+	{
+		"value": "3√x",
+		"className": "button-dark-gray"
+	},
+	{
+		"value": "y√x",
+		"className": "button-dark-gray"
+	},
+	{
+		"value": "In",
+		"className": "button-dark-gray"
+	},
+	{
+		"value": "log10",
+		"className": "button-dark-gray"
+	},
+	{
+		"value": "x!",
+		"className": "button-dark-gray"
+	},
+	{
+		"value": "sin",
+		"className": "button-dark-gray"
+	},
+	{
+		"value": "cos",
+		"className": "button-dark-gray"
+	},
+	{
+		"value": "tan",
+		"className": "button-dark-gray"
+	},
+	{
+		"value": "e",
+		"className": "button-dark-gray"
+	},
+	{
+		"value": "EE",
+		"className": "button-dark-gray"
+	},
+	{
+		"value": "Rad",
+		"className": "button-dark-gray"
+	},
+	{
+		"value": "sinh",
+		"className": "button-dark-gray"
+	},
+	{
+		"value": "cosh",
+		"className": "button-dark-gray"
+	},
+	{
+		"value": "tanh",
+		"className": "button-dark-gray"
+	},
+	{
+		"value": "π",
+		"className": "button-dark-gray"
+	},
+	{
+		"value": "Rand",
+		"className": "button-dark-gray"
+	}
+]
