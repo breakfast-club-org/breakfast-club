@@ -1,7 +1,7 @@
 import React from 'react'
-import Button from './Button'
-import '../styles/math.css'
+import ButtonsGroup from './ButtonsGroup'
 import math from '../data/math.json'
+import '../styles/math.css'
 
 class Math extends React.Component {
   constructor(props) {
@@ -11,16 +11,7 @@ class Math extends React.Component {
   render() {
     return (
       <div className="math">
-        {math.map((button, i) => {
-          return (
-            <Button
-              key={i}
-              value={button.value}
-              className={button.className}
-              hideValue={button.hideValue}
-            />
-          )
-        })}
+        <ButtonsGroup data={math} />
       </div>
     );
   }

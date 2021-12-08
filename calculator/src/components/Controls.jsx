@@ -1,7 +1,7 @@
 import React from 'react'
-import Button from './Button'
-import '../styles/controls.css'
+import ButtonsGroup from './ButtonsGroup'
 import controls from '../data/controls.json'
+import '../styles/controls.css'
 
 class Controls extends React.Component {
   constructor(props) {
@@ -11,16 +11,7 @@ class Controls extends React.Component {
  render() {
   return (
     <div className="controls">
-      {controls.map((button, i) => {
-          return (
-            <Button
-              key={i}
-              value={button.value}
-              className={button.className}
-              hideValue={button.hideValue}
-            />
-          )
-        })}
+      <ButtonsGroup data={controls} />
     </div>
   );
  }

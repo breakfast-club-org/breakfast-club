@@ -1,8 +1,7 @@
 import React from 'react'
-import Button from './Button'
-import '../styles/numbers.css'
+import ButtonsGroup from './ButtonsGroup'
 import numbers from '../data/numbers.json'
-
+import '../styles/numbers.css'
 class Numbers extends React.Component {
   constructor(props) {
     super(props)
@@ -11,15 +10,7 @@ class Numbers extends React.Component {
   render() {
     return (
       <div className="numbers">
-        {numbers.map((button, i) => {
-          return (
-            <Button
-              key={i}
-              value={button.value}
-              className={button.className}
-            />
-          )
-        })}
+        <ButtonsGroup data={numbers} />
       </div>
     );
   }
