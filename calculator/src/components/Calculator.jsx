@@ -1,8 +1,9 @@
 import React from 'react'
-import AppControls from './Controls'
+import Controls from './Controls'
 import Result from './Result'
 import Numbers from './Numbers'
 import MathSymbols from './MathSymbols'
+import Scientific from './Scientific'
 import '../styles/calculator.css'
 
 class Calculator extends React.Component {
@@ -13,9 +14,10 @@ class Calculator extends React.Component {
   render() {
     return (
       <div className="calculator">
-        <AppControls />
+        <Controls />
         <Result />
         <div className="buttons">
+          <Scientific />
           <Numbers />
           <MathSymbols />
         </div>

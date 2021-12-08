@@ -10,7 +10,7 @@ class Controls extends React.Component {
  render() {
   return (
     <div className="controls">
-      <Button value="x" className="button-close" hideValue="true" />
+      <Button value="×" className="button-close" hideValue="true" />
       <Button value="-" className="button-minimize" hideValue="true" />
       <Button value="+" className="button-expand" hideValue="true" />
     </div>

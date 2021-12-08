@@ -1,5 +1,6 @@
 :root {
 	--calculator-width: 233px;
+	--calculator-width-expanded: 575px;
 	--calculator-height: 325px;
 	--calculator-bg-color: rgba(85, 85, 85, 1);
 }
@@ -12,8 +13,26 @@
 	clip-path: inset(0 round 12px);
 }
 
+.calculator.is-expanded {
+	width: var(--calculator-width-expanded);
+}
+
+.calculator.is-expanded .buttons {
+	grid-template-columns: 6fr 3fr 1fr;
+}
+
+.calculator.is-expanded .scientific {
+	display: grid;
+}
+
 .calculator .buttons {
 	display: grid;
+	grid-gap: 1px;
 	grid-template-columns: 3fr 1fr;
 	height: calc(325px - 84px);
 }
+
+.calculator .scientific {
+	display: none;
+}
+

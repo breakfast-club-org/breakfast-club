@@ -7,7 +7,13 @@ class Button extends React.Component {
   }
 
   onClick(e) {
-    console.log(e.target);
+    const calculator = document.querySelector('.calculator');
+    const expandBtn = document.querySelector('.button-expand');
+
+    if (expandBtn) {
+      calculator.classList.toggle('is-expanded');
+    }
+
   }
 
   render() {
