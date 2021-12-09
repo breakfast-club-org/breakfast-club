@@ -1,0 +1,59 @@
+:root {
+	/* Buttons */
+	--buttons-position-top: 8px;
+	--buttons-position-left: 10px;
+	--buttons-z-index: 10;
+
+	/* Button */
+	--button-border-radius: 50%;
+	--button-margin-right: 8px;
+}
+
+.controls {
+	display: flex;
+	position: absolute;
+	top: var(--buttons-position-top);
+	left: var(--buttons-position-left);
+	z-index: var(--buttons-z-index);
+}
+
+.controls .button {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-right: var(--button-margin-right);
+	border-radius: var(--button-border-radius);
+}
+
+.controls button,
+.controls span {
+	--button-font-size: 10px;
+	--button-line-height: 1;
+	--button-width: 12px;
+	--button-height: 12px;
+	--button-color: #000;
+}
+
+.controls span {
+	pointer-events: none;
+}
+
+.controls .is-hidden {
+	display: none;
+}
+
+.controls .button:hover .is-hidden {
+	display: block;
+}
+
+.controls .button-close {
+	--button-bg-color: #ff6666;
+}
+
+.controls .button-minimize {
+	--button-bg-color: #ffcc66;
+}
+
+.controls .button-expand {
+	--button-bg-color: #66cc66;
+}

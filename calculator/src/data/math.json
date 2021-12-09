@@ -1,0 +1,22 @@
+[
+	{
+	  	"value": "÷",
+	  	"className": "button-orange"
+	},
+	{
+	  	"value": "×",
+	  	"className": "button-orange"
+	},
+	{
+	  	"value": "-",
+	  	"className": "button-orange"
+	},
+	{
+		"value": "+",
+		"className": "button-orange"
+  },
+  {
+		"value": "=",
+		"className": "button-orange"
+  }
+  ]
