@@ -1,6 +1,5 @@
 import React from 'react'
 import ButtonsGroup from './ButtonsGroup'
-import numbers from '../data/numbers.json'
 import '../styles/numbers.css'
 class Numbers extends React.Component {
   constructor(props) {
@@ -10,7 +9,7 @@ class Numbers extends React.Component {
   render() {
     return (
       <div className="numbers">
-        <ButtonsGroup data={numbers} />
+        <ButtonsGroup data={this.props.data} />
       </div>
     );
   }

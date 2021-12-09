@@ -1,6 +1,5 @@
 import React from 'react'
 import ButtonsGroup from './ButtonsGroup'
-import scientific from '../data/scientific.json'
 import '../styles/scientific.css'
 class Scientific extends React.Component {
   constructor(props) {
@@ -10,7 +9,7 @@ class Scientific extends React.Component {
   render() {
     return (
       <div className="scientific">
-        <ButtonsGroup data={scientific} />
+        <ButtonsGroup data={this.props.data} />
       </div>
     );
   }

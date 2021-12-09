@@ -4,6 +4,12 @@ import Result from './Result'
 import Numbers from './Numbers'
 import Math from './Math'
 import Scientific from './Scientific'
+
+import controls from '../data/controls.json'
+import numbers from '../data/numbers.json'
+import math from '../data/math.json'
+import scientific from '../data/scientific.json'
+
 import '../styles/calculator.css'
 
 class Calculator extends React.Component {
@@ -14,12 +20,12 @@ class Calculator extends React.Component {
   render() {
     return (
       <div className="calculator">
-        <Controls />
+        <Controls data={controls} />
         <Result />
         <div className="buttons">
-          <Scientific />
-          <Numbers />
-          <Math />
+          <Scientific data={scientific} />
+          <Numbers data={numbers}/>
+          <Math data={math} />
         </div>
       </div>
     );
