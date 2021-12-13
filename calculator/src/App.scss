@@ -1,0 +1,126 @@
+
+// General
+.App {
+	/* button size variable */
+	--btn-width: 56px;
+	--btn-height: 47px;
+	--gap-size: 1px;
+
+	// color variables
+	--orange: #fa9f0c;
+	--dk-grey: #323232;
+	--md-grey: #565656;
+	--lt-grey: #8a8888;
+
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+
+
+	/* Calculator */
+	.calc-container {
+		color: #fff;
+		width: 227px;
+		height: 320px;
+		padding: 1px;
+		border-radius: 10px;
+		background-color: var(--dk-grey);
+
+		.results-container {
+			font-size: 46px;
+			height: 81px;
+			display: flex;
+			justify-content: flex-end;
+			align-items: flex-end;
+			padding: 0 10px;
+		}
+		
+		.calc-btns-container {
+			display: inline-grid;
+			grid-template-areas: "adv adv adv operation"
+													"num num num operation"
+													"num num num operation"
+													"num num num operation"
+													"num num num operation";
+			gap: var(--gap-size);
+		}
+		
+		.two-col {
+			grid-column: 1 / span 2;
+		}
+
+		.left-corner {
+			border-bottom-left-radius: 8px
+		}
+
+		.right-corner {
+			border-bottom-right-radius: 8px
+		}
+	}
+
+
+	/* Advance buttons */
+	.advanced-btns-container {
+		grid-area: adv;
+
+		.advanced-btns {
+			display: inline-grid;
+			grid-template-columns: repeat(3, var(--btn-width));
+			grid-template-rows: var(--btn-height);
+			gap: var(--gap-size);
+		}
+		
+		.advanced-btn {
+			font-size: 18px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			background-color: var(--md-grey);
+		}
+	}
+
+
+	/* Operation buttons */
+	.operation-btns-container {
+		grid-area: operation;
+
+		.operation-btns {
+			display: inline-grid;
+			grid-template-columns: var(--btn-width);
+			grid-template-rows: repeat(5, var(--btn-height));
+			gap: var(--gap-size);
+		}
+		
+		.operation-btn {
+			font-size: 28px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			background-color: var(--orange);
+		}
+	}
+
+
+	/* Numeric buttons */
+	.numeric-btns-container {
+		grid-area: num;
+
+		.numeric-btns {
+			display: inline-grid;
+			grid-template-columns: repeat(3, var(--btn-width));
+			grid-template-rows: repeat(4, var(--btn-height));
+			gap: var(--gap-size);
+		}
+		
+		.numeric-btn {
+			font-size: 22px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			background-color: var(--lt-grey);
+		}
+	}
+}
