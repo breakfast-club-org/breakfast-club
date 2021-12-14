@@ -1,0 +1,19 @@
+
+.operation-btns-container {
+	grid-area: operation;
+
+	.operation-btns {
+		display: inline-grid;
+		grid-template-columns: var(--btn-width);
+		grid-template-rows: repeat(5, var(--btn-height));
+		gap: var(--gap-size);
+	}
+	
+	.operation-btn {
+		font-size: 28px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		background-color: var(--orange);
+	}
+}

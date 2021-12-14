@@ -1,5 +1,7 @@
 
+@import './components/advanced-buttons/AdvancedButtons.scss';
 @import './components/numeric-buttons/NumericButtons.scss';
+@import './components/operation-buttons/OperationButtons.scss';
 
 // General
 .App {
@@ -21,6 +23,10 @@
 	justify-content: center;
 	align-items: center;
 
+	button {
+		border: 0px solid transparent;
+		color: #fff;
+	}
 
 	/* Calculator */
 	.calc-container {
@@ -60,48 +66,6 @@
 
 		.rounded-right-corner {
 			border-bottom-right-radius: 8px
-		}
-	}
-
-
-	/* Advance buttons */
-	.advanced-btns-container {
-		grid-area: adv;
-
-		.advanced-btns {
-			display: inline-grid;
-			grid-template-columns: repeat(3, var(--btn-width));
-			grid-template-rows: var(--btn-height);
-			gap: var(--gap-size);
-		}
-		
-		.advanced-btn {
-			font-size: 18px;
-			display: flex;
-			align-items: center;
-			justify-content: center;
-			background-color: var(--md-grey);
-		}
-	}
-
-
-	/* Operation buttons */
-	.operation-btns-container {
-		grid-area: operation;
-
-		.operation-btns {
-			display: inline-grid;
-			grid-template-columns: var(--btn-width);
-			grid-template-rows: repeat(5, var(--btn-height));
-			gap: var(--gap-size);
-		}
-		
-		.operation-btn {
-			font-size: 28px;
-			display: flex;
-			align-items: center;
-			justify-content: center;
-			background-color: var(--orange);
 		}
 	}
 }

@@ -65,7 +65,7 @@ function NumericButtons() {
 		let numericClass = "numeric-btn";
 		btn.isTwoCol ? numericClass += " two-col" : numericClass;
 		btn.cornerType ? numericClass += ` ${btn.cornerType}` : numericClass;
-		return <btn className={numericClass} key={idx}>{btn.value}</btn>
+		return <button className={numericClass} key={idx}>{btn.value}</button>
 	});
 	
   return (

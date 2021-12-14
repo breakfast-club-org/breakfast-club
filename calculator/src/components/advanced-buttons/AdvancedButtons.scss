@@ -1,0 +1,19 @@
+
+.advanced-btns-container {
+	grid-area: adv;
+
+	.advanced-btns {
+		display: inline-grid;
+		grid-template-columns: repeat(3, var(--btn-width));
+		grid-template-rows: var(--btn-height);
+		gap: var(--gap-size);
+	}
+	
+	.advanced-btn {
+		font-size: 18px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		background-color: var(--md-grey);
+	}
+}
