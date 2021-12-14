@@ -1,0 +1,19 @@
+
+.numeric-btns-container {
+	grid-area: num;
+
+	.numeric-btns {
+		display: inline-grid;
+		grid-template-columns: repeat(3, var(--btn-width));
+		grid-template-rows: repeat(4, var(--btn-height));
+		gap: var(--gap-size);
+	}
+	
+	.numeric-btn {
+		font-size: 22px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		background-color: var(--lt-grey);
+	}
+}
