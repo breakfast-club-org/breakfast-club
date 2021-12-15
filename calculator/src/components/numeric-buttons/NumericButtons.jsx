@@ -59,13 +59,18 @@ const numericData = [
   },
 ];
 
-function NumericButtons() {
+function NumericButtons(props) {
 	const numericButtons = numericData.map((btn, idx) => {
 		// adding classes as needed
 		let numericClass = "numeric-btn";
 		btn.isTwoCol ? numericClass += " two-col" : numericClass;
 		btn.cornerType ? numericClass += ` ${btn.cornerType}` : numericClass;
-		return <button className={numericClass} key={idx}>{btn.value}</button>
+		return <button 
+						className={numericClass} 
+						key={idx} 
+						onClick={() => props.displayHandler(btn.value)}>
+							{btn.value}
+					</button>
 	});
 	
   return (

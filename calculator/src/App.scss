@@ -2,6 +2,7 @@
 @import './components/advanced-buttons/AdvancedButtons.scss';
 @import './components/numeric-buttons/NumericButtons.scss';
 @import './components/operation-buttons/OperationButtons.scss';
+@import './components/results/Result.scss';
 
 // General
 .App {
@@ -37,15 +38,6 @@
 		border-radius: 10px;
 		background-color: var(--dk-grey);
 
-		.results-container {
-			font-size: 46px;
-			height: 81px;
-			display: flex;
-			justify-content: flex-end;
-			align-items: flex-end;
-			padding: 0 10px;
-		}
-		
 		.calc-btns-container {
 			display: inline-grid;
 			grid-template-areas: "adv adv adv operation"
