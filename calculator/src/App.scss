@@ -1,4 +1,5 @@
 
+@import './components/button/Button.scss';
 @import './components/advanced-buttons/AdvancedButtons.scss';
 @import './components/numeric-buttons/NumericButtons.scss';
 @import './components/operation-buttons/OperationButtons.scss';
@@ -23,11 +24,6 @@
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-
-	button {
-		border: 0px solid transparent;
-		color: #fff;
-	}
 
 	/* Calculator */
 	.calc-container {

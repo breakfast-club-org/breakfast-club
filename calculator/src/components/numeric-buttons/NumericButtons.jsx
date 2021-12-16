@@ -1,5 +1,5 @@
 
-// import { useState } from 'react'
+import Button from "../button/Button";
 
 const numericData = [
   {
@@ -60,23 +60,16 @@ const numericData = [
 ];
 
 function NumericButtons(props) {
-	const numericButtons = numericData.map((btn, idx) => {
-		// adding classes as needed
-		let numericClass = "numeric-btn";
-		btn.isTwoCol ? numericClass += " two-col" : numericClass;
-		btn.cornerType ? numericClass += ` ${btn.cornerType}` : numericClass;
-		return <button 
-						className={numericClass} 
-						key={idx} 
-						onClick={() => props.displayHandler(btn.value)}>
-							{btn.value}
-					</button>
-	});
-	
   return (
 		<section className="numeric-btns-container">
 			<div className="numeric-btns">
-				{numericButtons}
+				{numericData.map((btn, idx) => (
+					<Button
+						key={idx}
+						btn={btn}
+						displayHandler={props.displayHandler}
+					/>
+				))}
 			</div>
 		</section>
   )
