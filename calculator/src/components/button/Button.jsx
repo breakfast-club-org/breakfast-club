@@ -1,18 +1,30 @@
 
-// import { useState } from 'react'
+import { useState } from 'react'
 
 function Button(props) {
-	const getNumericClass = (btn) => {
-		let numericClass = "btn numeric-btn";
-		btn.isTwoCol ? numericClass += " two-col" : numericClass;
-		btn.cornerType ? numericClass += ` ${btn.cornerType}` : numericClass;
-		return numericClass;
+	const [pressed, setPressed] = useState('');
+
+	const onMouseDownHandler = () => {
+		setPressed(' pressed');
+	}
+	
+	const onMouseUpHandler = () => {
+		setPressed('');
+	}
+
+	const getButtonClasses = (btn) => {
+		let buttonClasses = "btn numeric-btn";
+		btn.isTwoCol ? buttonClasses += " two-col" : buttonClasses;
+		btn.cornerType ? buttonClasses += ` ${btn.cornerType}` : buttonClasses;
+		return buttonClasses;
 	};
 	
   return (
 		<button 
-			className={`${getNumericClass(props.btn)}` } 
-			onClick={() => props.displayHandler(props.btn.value)}>
+			className={`${getButtonClasses(props.btn)}${pressed}` }
+			onClick={() => props.displayHandler(props.btn.value)}
+			onMouseDown={onMouseDownHandler}
+			onMouseUp={onMouseUpHandler}>
 				{props.btn.value}
 		</button>
 	)

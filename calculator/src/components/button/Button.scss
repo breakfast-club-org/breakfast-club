@@ -3,4 +3,8 @@ button,
 .btn {
 	border: 0px solid transparent;
 	color: #fff;
+
+	&.pressed {
+		transition: background-color 100ms ease-in-out;
+	}
 }

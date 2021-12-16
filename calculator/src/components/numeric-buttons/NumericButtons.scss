@@ -15,5 +15,9 @@
 		align-items: center;
 		justify-content: center;
 		background-color: var(--lt-grey);
+
+		&.pressed {
+			background-color: var(--ltest-grey);
+		}
 	}
 }
