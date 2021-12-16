@@ -7,13 +7,13 @@ function Button(props) {
 	const onMouseDownHandler = () => {
 		setPressed(' pressed');
 	}
-	
+
 	const onMouseUpHandler = () => {
 		setPressed('');
 	}
 
 	const getButtonClasses = (btn) => {
-		let buttonClasses = "btn numeric-btn";
+		let buttonClasses = `btn ${btn.type}-btn`;
 		btn.isTwoCol ? buttonClasses += " two-col" : buttonClasses;
 		btn.cornerType ? buttonClasses += ` ${btn.cornerType}` : buttonClasses;
 		return buttonClasses;

@@ -11,14 +11,10 @@ function App() {
 
   return (
     <div className="App">
-      {/* <h1>Calculator</h1> */}
       <main className="calc-container">
-        {/* <div className="results-container">
-          <div className="results">{display}</div>
-        </div> */}
         <Results display={display}/>
         <div className="calc-btns-container">
-          <AdvancedButtons />
+          <AdvancedButtons displayHandler={display => setDisplay(display)} />
           <OperationButtons />
           <NumericButtons displayHandler={display => setDisplay(display)} />
         </div>

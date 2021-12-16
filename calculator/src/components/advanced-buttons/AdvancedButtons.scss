@@ -8,12 +8,16 @@
 		grid-template-rows: var(--btn-height);
 		gap: var(--gap-size);
 	}
-	
+
 	.advanced-btn {
 		font-size: 18px;
 		display: flex;
 		align-items: center;
 		justify-content: center;
 		background-color: var(--md-grey);
+
+		&.pressed {
+			background-color: var(--lt-grey);
+		}
 	}
 }

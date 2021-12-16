@@ -1,28 +1,32 @@
 
-// import { useState } from 'react'
+import Button from "../button/Button";
 
 const advancedData = [
 	{
+		type: 'advanced',
 		value: 'AC',
 	},
 	{
+		type: 'advanced',
 		value: '+/-',
 	},
 	{
+		type: 'advanced',
 		value: '%',
 	},
 ];
 
-function AdvancedButtons() {
-	const advancedButtons = advancedData.map((btn, idx) => {
-		let advancedClass = "advanced-btn";
-		return <button key={idx} className={advancedClass}>{btn.value}</button>
-	});
-	
+function AdvancedButtons(props) {
   return (
 		<section className="advanced-btns-container">
 			<div className="advanced-btns">
-				{advancedButtons}
+				{advancedData.map((btn, idx) => (
+					<Button
+						key={idx}
+						btn={btn}
+						displayHandler={props.displayHandler}
+					/>
+				))}
 			</div>
 		</section>
 	)
