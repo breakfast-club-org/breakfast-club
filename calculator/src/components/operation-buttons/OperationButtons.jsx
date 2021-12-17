@@ -1,46 +1,50 @@
 
-// import { useState } from 'react'
+import Button from "../button/Button";
 
 const operationData = [
 	{
-		value: '&divide;',
+		type: 'operation',
+		value: '/',
+		markup: '&divide;',
 		cornerType: null
 	},
 	{
-		value: '&times;',
+		type: 'operation',
+		value: '*',
+		markup: '&times;',
 		cornerType: null
 	},
 	{
-		value: '&minus;',
+		type: 'operation',
+		value: '-',
+		markup: '&minus;',
 		cornerType: null
 	},
 	{
-		value: '&plus;',
+		type: 'operation',
+		value: '+',
+		markup: '&plus;',
 		cornerType: null
 	},
 	{
+		type: 'operation',
 		value: '=',
+		markup: '=',
 		cornerType: 'rounded-right-corner'
 	},
 ];
 
-function OperationButtons() {
-	function createMarkup(value) {
-		return {__html: value};
-	}
-
-	const operationButtons = operationData.map((btn, idx) => {
-		let operationClass = "operation-btn";
-		btn.cornerType ? operationClass += ` ${btn.cornerType}` : operationClass;
-		return <button key={idx} 
-								className={operationClass} 
-								dangerouslySetInnerHTML={createMarkup(btn.value)}></button>
-	});
-	
+function OperationButtons(props) {
   return (
 		<section className="operation-btns-container">
 			<div className="operation-btns">
-				{operationButtons}
+				{operationData.map((btn, idx) => (
+					<Button
+						key={idx}
+						btn={btn}
+						displayHandler={props.displayHandler}
+					/>
+				))}
 			</div>
 		</section>
 	)

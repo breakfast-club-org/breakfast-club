@@ -15,5 +15,9 @@
 		align-items: center;
 		justify-content: center;
 		background-color: var(--orange);
+
+		&.is-pressed {
+			background-color: var(--dk-orange);
+		}
 	}
 }

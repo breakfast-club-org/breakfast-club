@@ -15,7 +15,7 @@ function App() {
         <Results display={display}/>
         <div className="calc-btns-container">
           <AdvancedButtons displayHandler={display => setDisplay(display)} />
-          <OperationButtons />
+          <OperationButtons displayHandler={display => setDisplay(display)} />
           <NumericButtons displayHandler={display => setDisplay(display)} />
         </div>
       </main>

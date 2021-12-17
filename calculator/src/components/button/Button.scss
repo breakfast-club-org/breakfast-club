@@ -1,10 +1,10 @@
 
-button,
 .btn {
 	border: 0px solid transparent;
+	margin: 0;
 	color: #fff;
 
-	&.pressed {
+	&.is-pressed {
 		transition: background-color 100ms ease-in-out;
 	}
 }

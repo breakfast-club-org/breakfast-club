@@ -2,14 +2,18 @@
 import { useState } from 'react'
 
 function Button(props) {
-	const [pressed, setPressed] = useState('');
+	const [isPressed, setIsPressed] = useState('');
 
 	const onMouseDownHandler = () => {
-		setPressed(' pressed');
+		setIsPressed(' is-pressed');
 	}
 
 	const onMouseUpHandler = () => {
-		setPressed('');
+		setIsPressed('');
+	}
+
+	function createMarkup(value) {
+		return {__html: value};
 	}
 
 	const getButtonClasses = (btn) => {
@@ -21,11 +25,11 @@ function Button(props) {
 	
   return (
 		<button 
-			className={`${getButtonClasses(props.btn)}${pressed}` }
+			className={`${getButtonClasses(props.btn)}${isPressed}` }
 			onClick={() => props.displayHandler(props.btn.value)}
 			onMouseDown={onMouseDownHandler}
-			onMouseUp={onMouseUpHandler}>
-				{props.btn.value}
+			onMouseUp={onMouseUpHandler}
+			dangerouslySetInnerHTML={props.btn.markup ? createMarkup(props.btn.markup) : createMarkup(props.btn.value)}>
 		</button>
 	)
 }
