@@ -1,4 +1,4 @@
-.result {
+.display {
 	display: flex;
 	align-items: flex-end;
 	justify-content: flex-end;
@@ -9,7 +9,7 @@
 	z-index: 1;
 }
 
-.result .value {
+.display .value {
 	font-size: 48px;
 	font-weight: 300;
 	padding-right: 15px;

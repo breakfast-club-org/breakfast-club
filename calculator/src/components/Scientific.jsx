@@ -1,18 +1,23 @@
 import React from 'react';
-import ButtonsGroup from './ButtonsGroup';
+import Button from './Button';
 import '../styles/scientific.css';
-class Scientific extends React.Component {
-	constructor(props) {
-		super(props);
-	}
 
-	render() {
-		return (
-			<div className="scientific">
-				<ButtonsGroup {...this.props} />
-			</div>
-		);
-	}
+const Scientific = ({ data, handleClick }) => {
+
+	return (
+		<div className="scientific">
+			{data.map((button, i) => {
+					return (
+						<Button
+							key={i}
+							value={button.value}
+							className={button.className}
+							handleClick={handleClick}
+						/>
+					);
+				})}
+		</div>
+	);
 }
 
 export default Scientific;

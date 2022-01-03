@@ -1,19 +1,22 @@
 import React from 'react';
-import ButtonsGroup from './ButtonsGroup';
+import Button from './Button';
 import '../styles/controls.css';
 
-class Controls extends React.Component {
-	constructor(props) {
-		super(props);
-	}
+const Controls = ({ data }) => {
 
-	render() {
-		return (
-			<div className="controls">
-				<ButtonsGroup {...this.props} />
-			</div>
-		);
-	}
+	return (
+		<div className="controls">
+			{data.map((button, i) => {
+					return (
+						<Button
+							key={i}
+							value={button.value}
+							className={button.className}
+						/>
+					);
+				})}
+		</div>
+	);
 }
 
 export default Controls;

@@ -1,19 +1,23 @@
 import React from 'react';
-import ButtonsGroup from './ButtonsGroup';
+import Button from './Button';
 import '../styles/math.css';
 
-class Math extends React.Component {
-	constructor(props) {
-		super(props);
-	}
+const Math = ({ data, handleClick }) => {
 
-	render() {
-		return (
-			<div className="math">
-				<ButtonsGroup {...this.props} />
-			</div>
-		);
-	}
+	return (
+		<div className="math">
+			{data.map((button, i) => {
+					return (
+						<Button
+							key={i}
+							value={button.value}
+							className={button.className}
+							handleClick={handleClick}
+						/>
+					);
+				})}
+		</div>
+	);
 }
 
 export default Math;
