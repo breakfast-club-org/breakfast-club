@@ -16,6 +16,7 @@ class ButtonsGroup extends React.Component {
 							hideValue={button.hideValue}
 							value={button.value}
 							className={button.className}
+							{...this.props}
 						/>
 					);
 				})}

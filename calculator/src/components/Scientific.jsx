@@ -9,7 +9,7 @@ class Scientific extends React.Component {
 	render() {
 		return (
 			<div className="scientific">
-				<ButtonsGroup data={this.props.data} />
+				<ButtonsGroup {...this.props} />
 			</div>
 		);
 	}

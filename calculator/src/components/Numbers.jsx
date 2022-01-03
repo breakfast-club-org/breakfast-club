@@ -9,7 +9,7 @@ class Numbers extends React.Component {
 	render() {
 		return (
 			<div className="numbers">
-				<ButtonsGroup data={this.props.data} />
+				<ButtonsGroup {...this.props} />
 			</div>
 		);
 	}
