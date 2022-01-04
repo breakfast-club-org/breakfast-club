@@ -2,8 +2,7 @@ import React from 'react';
 import Button from './Button';
 import '../styles/numbers.css';
 
-const Numbers = ({ data, handleClick }) => {
-
+export default function Numbers({ data, handleClick }) {
 	return (
 		<div className="numbers">
 			{data.map((button, i) => {
@@ -19,5 +18,3 @@ const Numbers = ({ data, handleClick }) => {
 		</div>
 	);
 }
-
-export default Numbers;

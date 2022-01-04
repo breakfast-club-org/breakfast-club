@@ -1,7 +1,7 @@
 import React from 'react';
 import '../styles/button.css';
 
-const Button = ({ value, className, handleClick }) => {
+export default function Button({ value, className, handleClick }) {
 	return (
 		<button
 			type="button"
@@ -12,5 +12,3 @@ const Button = ({ value, className, handleClick }) => {
 		</button>
 	);
 }
-
-export default Button;

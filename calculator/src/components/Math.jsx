@@ -2,8 +2,7 @@ import React from 'react';
 import Button from './Button';
 import '../styles/math.css';
 
-const Math = ({ data, handleClick }) => {
-
+export default function Math({ data, handleClick }) {
 	return (
 		<div className="math">
 			{data.map((button, i) => {
@@ -19,5 +18,3 @@ const Math = ({ data, handleClick }) => {
 		</div>
 	);
 }
-
-export default Math;

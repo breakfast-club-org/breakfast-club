@@ -2,8 +2,7 @@ import React from 'react';
 import Button from './Button';
 import '../styles/controls.css';
 
-const Controls = ({ data }) => {
-
+export default function Controls({ data }) {
 	return (
 		<div className="controls">
 			{data.map((button, i) => {
@@ -18,5 +17,3 @@ const Controls = ({ data }) => {
 		</div>
 	);
 }
-
-export default Controls;

@@ -2,8 +2,7 @@ import React from 'react';
 import Button from './Button';
 import '../styles/scientific.css';
 
-const Scientific = ({ data, handleClick }) => {
-
+export default function Scientific({ data, handleClick }) {
 	return (
 		<div className="scientific">
 			{data.map((button, i) => {
@@ -19,5 +18,3 @@ const Scientific = ({ data, handleClick }) => {
 		</div>
 	);
 }
-
-export default Scientific;

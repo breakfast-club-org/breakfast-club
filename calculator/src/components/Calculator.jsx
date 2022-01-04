@@ -13,7 +13,7 @@ import scientific from '../data/scientific.json';
 import '../styles/calculator.css';
 
 
-const Calculator = () => {
+export default function Calculator() {
 	const [result, setResult] = useState(0);
 
 	const handleNumberClick = (e) => {
@@ -37,5 +37,3 @@ const Calculator = () => {
 		</div>
 	);
 }
-
-export default Calculator;
