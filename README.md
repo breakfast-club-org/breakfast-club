@@ -8,8 +8,8 @@ A place for 🍩's and maybe 🍰's
 - Clone it down
 - Ensure your pushes use your personal github information:
   1. cd into the repo directory
-  1. git config --local user.name="first last"
-  1. git config --local user.email="your@email.address"
+  1. git config --local user.name "first last"
+  1. git config --local user.email "your@email.address"
 - `npm install`
 - `npm run test`
   - Try to get all the tests to pass!
