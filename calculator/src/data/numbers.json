@@ -5,11 +5,11 @@
 	},
 	{
 	  	"value": "+/-",
-	  	"className": "button-dark-gray"
+	  	"className": "button-dark-gray button-positive-negative"
 	},
 	{
 	  	"value": "%",
-	  	"className": "button-dark-gray"
+	  	"className": "button-dark-gray button-percentage"
 	},
 	{
 		"value": "7",

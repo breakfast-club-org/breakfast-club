@@ -1,17 +1,17 @@
 import React from 'react';
 import Button from './Button';
-import '../styles/controls.css';
+import '../styles/aux.css';
 
-export default function Controls(props) {
+export default function Aux({ data, handleClick }) {
 	return (
-		<div className="controls">
-			{props.data.map((button, i) => {
+		<div className="aux">
+			{data.map((button, i) => {
 					return (
 						<Button
 							key={i}
 							value={button.value}
 							className={button.className}
-							handleClick={props.handleClick}
+							handleClick={handleClick}
 						/>
 					);
 				})}

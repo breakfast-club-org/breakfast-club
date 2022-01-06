@@ -3,6 +3,7 @@
 	--calculator-width-expanded: 575px;
 	--calculator-height: 325px;
 	--calculator-bg-color: rgba(85, 85, 85, 1);
+	--calculator-grid-gap: 1px;
 }
 
 .calculator {
@@ -27,7 +28,7 @@
 
 .calculator .buttons {
 	display: grid;
-	grid-gap: 1px;
+	grid-gap: var(--calculator-grid-gap);
 	grid-template-columns: 3fr 1fr;
 	height: calc(325px - 84px);
 }

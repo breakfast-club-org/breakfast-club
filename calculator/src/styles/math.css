@@ -1,6 +1,7 @@
 .math {
+	order: 4;
 	display: grid;
-	grid-gap: 1px;
+	grid-gap: var(--calculator-grid-gap);
 	grid-template-columns: 1fr;
 	grid-template-rows: repeat(5, 1fr);
 }
