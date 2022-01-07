@@ -26,7 +26,7 @@ function Button(props) {
   return (
 		<button 
 			className={`${getButtonClasses(props.btn)}${isPressed}` }
-			onClick={() => props.displayHandler(props.btn.value)}
+			onClick={() => props.resultHandler(props.btn.value)}
 			onMouseDown={onMouseDownHandler}
 			onMouseUp={onMouseUpHandler}
 			dangerouslySetInnerHTML={props.btn.markup ? createMarkup(props.btn.markup) : createMarkup(props.btn.value)}>

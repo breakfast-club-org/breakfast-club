@@ -4,14 +4,14 @@ import Button from "../button/Button";
 const operationData = [
 	{
 		type: 'operation',
-		value: '/',
-		markup: '&divide;',
+		value: '÷',
+		markup: '÷',
 		cornerType: null
 	},
 	{
 		type: 'operation',
-		value: '*',
-		markup: '&times;',
+		value: '×',
+		markup: '×',
 		cornerType: null
 	},
 	{
@@ -42,7 +42,7 @@ function OperationButtons(props) {
 					<Button
 						key={idx}
 						btn={btn}
-						displayHandler={props.displayHandler}
+						resultHandler={props.resultHandler}
 					/>
 				))}
 			</div>

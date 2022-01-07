@@ -78,7 +78,7 @@ function NumericButtons(props) {
 					<Button
 						key={idx}
 						btn={btn}
-						displayHandler={props.displayHandler}
+						resultHandler={props.resultHandler}
 					/>
 				))}
 			</div>

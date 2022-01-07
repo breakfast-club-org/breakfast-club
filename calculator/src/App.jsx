@@ -7,16 +7,23 @@ import OperationButtons from './components/operation-buttons/OperationButtons';
 import Results from "./components/results/Results";
 
 function App() {
-  const [display, setDisplay] = useState(0);
+	const [result, setResult] = useState('');
+
+	const calculate = (value) => {
+		value = value.toString();
+		// using useState with Previous State
+		setResult(preValue => preValue + value);
+		return result;
+	}
 
   return (
     <div className="App">
       <main className="calc-container">
-        <Results display={display}/>
+        <Results result={result}/>
         <div className="calc-btns-container">
-          <AdvancedButtons displayHandler={display => setDisplay(display)} />
-          <OperationButtons displayHandler={display => setDisplay(display)} />
-          <NumericButtons displayHandler={display => setDisplay(display)} />
+          <AdvancedButtons resultHandler={value => calculate(value)} />
+          <OperationButtons resultHandler={value => calculate(value)} />
+          <NumericButtons resultHandler={value => calculate(value)} />
         </div>
       </main>
     </div>
