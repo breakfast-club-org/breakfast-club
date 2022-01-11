@@ -9,6 +9,7 @@ export default function Controls(props) {
 					return (
 						<Button
 							key={i}
+							buttonType={button.buttonType}
 							value={button.value}
 							className={button.className}
 							handleClick={props.handleClick}

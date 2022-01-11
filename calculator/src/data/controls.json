@@ -1,13 +1,16 @@
 [
 	{
+		"buttonType": "close",
 	  	"value": "×",
 	  	"className": "button-close"
 	},
 	{
+		"buttonType": "minimize",
 	  	"value": "-",
 	  	"className": "button-minimize"
 	},
 	{
+		"buttonType": "expand",
 	  	"value": "+",
 	  	"className": "button-expand"
 	}

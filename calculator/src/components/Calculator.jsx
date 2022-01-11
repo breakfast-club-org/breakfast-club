@@ -17,25 +17,33 @@ import '../styles/calculator.css';
 
 export default function Calculator() {
 	const [result, setResult] = useState(0);
+	const [isExpanded, setIsExpanded] = useState(false);
 	const calculator = useRef(null);
 
 	const handleControlClick = (e) => {
-		if (e.target.classList.contains('button-expand')) {
+		const expandBtn = e.target.dataset.buttonType === 'expand';
+
+		if (expandBtn) {
 			calculator.current.classList.toggle('is-expanded');
+			setIsExpanded(!isExpanded); // toggles state when clicked
 		}
 	}
 
-	const handleAuxclick = (e) => {
-		if (e.target.classList.contains('button-all-clear')) {
+	const handleAuxClick = (e) => {
+		const allClearBtn = e.target.dataset.buttonType === 'all-clear';
+		const positiveNegativeBtn = e.target.dataset.buttonType === 'positive-negative';
+		const percentageBtn = e.target.dataset.buttonType === 'percentage';
+
+		if (allClearBtn) {
 			return setResult(0);
 		}
 
-		if (e.target.classList.contains('button-positive-negative')) {
+		if (positiveNegativeBtn) {
 			let n = result * -1;
 			return setResult(n);
 		}
 
-		if (e.target.classList.contains('button-percentage')) {
+		if (percentageBtn) {
 			let n = result / 100;
 			return setResult(n);
 		}
@@ -43,12 +51,11 @@ export default function Calculator() {
 
 	const handleNumberClick = (e) => {
 		// combine result with prevState
-		setResult(prevState => prevState !== 0 ? prevState + e.target.innerHTML : e.target.innerHTML);
+		setResult(prevState => prevState !== 0 ? prevState + e.target.dataset.value : e.target.dataset.value);
 	}
 
 	const handleMathClick = (e) => {
 		console.log('you clicked a math button');
-		console.log('result', result);
 	}
 
 	return (
@@ -57,7 +64,7 @@ export default function Calculator() {
 			<div className="buttons">
 				<Controls data={controls} handleClick={handleControlClick} />
 				<Scientific data={scientific} />
-				<Aux data={aux} handleClick={handleAuxclick} />
+				<Aux data={aux} handleClick={handleAuxClick} />
 				<Numbers data={numbers} handleClick={handleNumberClick} />
 				<Math data={math} handleClick={handleMathClick} />
 			</div>

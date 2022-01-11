@@ -9,6 +9,7 @@ export default function Scientific({ data, handleClick }) {
 					return (
 						<Button
 							key={i}
+							buttonType={button.buttonType}
 							value={button.value}
 							className={button.className}
 							handleClick={handleClick}
