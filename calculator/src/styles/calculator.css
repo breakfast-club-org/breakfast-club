@@ -37,7 +37,7 @@
 	display: grid;
 	grid-gap: var(--calculator-grid-gap);
 	grid-template-columns: repeat(4, 1fr);
-	grid-template-rows: 1.25fr 5fr;
+	grid-template-rows: 1fr 4fr;
 	grid-template-areas:
 	"aux aux aux math"
 	"numbers numbers numbers math"
