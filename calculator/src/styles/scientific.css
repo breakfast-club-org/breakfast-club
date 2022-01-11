@@ -1,7 +1,6 @@
 .scientific {
-	order: 1;
 	display: grid;
+	grid-area: scientific;
 	grid-gap: var(--calculator-grid-gap);
 	grid-template-columns: repeat(6, 1fr);
-	grid-template-rows: repeat(5, 1fr);
 }

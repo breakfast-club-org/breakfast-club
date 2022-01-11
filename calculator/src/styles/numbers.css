@@ -1,9 +1,8 @@
 .numbers {
-	order: 3;
 	display: grid;
+	grid-area: numbers;
 	grid-gap: var(--calculator-grid-gap);
 	grid-template-columns: repeat(3, 1fr);
-	grid-template-rows: repeat(5, 1fr);
 }
 
 .numbers .button-number {

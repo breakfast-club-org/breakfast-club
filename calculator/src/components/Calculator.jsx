@@ -2,13 +2,13 @@ import React, { useState, useRef } from 'react';
 import Display from './Display';
 import Controls from './Controls';
 import Numbers from './Numbers';
-// import Aux from './Aux';
+import Aux from './Aux';
 import Math from './Math';
 import Scientific from './Scientific';
 
 import controls from '../data/controls.json';
 import numbers from '../data/numbers.json';
-// import aux from '../data/aux.json';
+import aux from '../data/aux.json';
 import math from '../data/math.json';
 import scientific from '../data/scientific.json';
 
@@ -25,7 +25,7 @@ export default function Calculator() {
 		}
 	}
 
-	const handleNumberClick = (e) => {
+	const handleAuxclick = (e) => {
 		if (e.target.classList.contains('button-all-clear')) {
 			return setResult(0);
 		}
@@ -39,7 +39,9 @@ export default function Calculator() {
 			let n = result / 100;
 			return setResult(n);
 		}
+	}
 
+	const handleNumberClick = (e) => {
 		// combine result with prevState
 		setResult(prevState => prevState !== 0 ? prevState + e.target.innerHTML : e.target.innerHTML);
 	}
@@ -55,6 +57,7 @@ export default function Calculator() {
 			<div className="buttons">
 				<Controls data={controls} handleClick={handleControlClick} />
 				<Scientific data={scientific} />
+				<Aux data={aux} handleClick={handleAuxclick} />
 				<Numbers data={numbers} handleClick={handleNumberClick} />
 				<Math data={math} handleClick={handleMathClick} />
 			</div>

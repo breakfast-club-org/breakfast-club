@@ -1,7 +1,5 @@
 .math {
-	order: 4;
 	display: grid;
+	grid-area: math;
 	grid-gap: var(--calculator-grid-gap);
-	grid-template-columns: 1fr;
-	grid-template-rows: repeat(5, 1fr);
 }
