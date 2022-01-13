@@ -11,8 +11,12 @@ function App() {
 
 	const calculate = (value) => {
 		value = value.toString();
-		// using useState with Previous State
-		setResult(preValue => preValue + value);
+		if (value === 'AC') {
+			setResult('');
+		} else {
+			// using useState with Previous State
+			setResult(preValue => preValue + value);
+		}
 		return result;
 	}
 
