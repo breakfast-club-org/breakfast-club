@@ -4,13 +4,13 @@ import Button from "../button/Button";
 const operationData = [
 	{
 		type: 'operation',
-		value: '÷',
+		value: '/',
 		markup: '÷',
 		cornerType: null
 	},
 	{
 		type: 'operation',
-		value: '×',
+		value: '*',
 		markup: '×',
 		cornerType: null
 	},

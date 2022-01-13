@@ -13,6 +13,8 @@ function App() {
 		value = value.toString();
 		if (value === 'AC') {
 			setResult('');
+		} else if (value === '=' ) {
+			setResult(preValue => eval(preValue));
 		} else {
 			// using useState with Previous State
 			setResult(preValue => preValue + value);
