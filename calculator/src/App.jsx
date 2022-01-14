@@ -8,16 +8,26 @@ import Results from "./components/results/Results";
 
 function App() {
 	const [result, setResult] = useState('');
+	const [lastButton, setLastButton] = useState(null);
 
 	const calculate = (value) => {
+		setLastButton(value);
 		value = value.toString();
 		if (value === 'AC') {
 			setResult('');
-		} else if (value === '=' ) {
+		} else if (value === '=') {
 			setResult(preValue => eval(preValue));
 		} else {
-			// using useState with Previous State
-			setResult(preValue => preValue + value);
+			// consolidate values of buttons pressed
+			setResult(preValue => {
+				// or in case of last button pressed was
+				// the equal button, start with new value
+				if (lastButton === '=') {
+					return value;
+				} else {
+					return preValue + value;
+				}
+			});
 		}
 		return result;
 	}
