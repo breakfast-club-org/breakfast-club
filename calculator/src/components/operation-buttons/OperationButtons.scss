@@ -19,5 +19,9 @@
 		&.is-pressed {
 			background-color: var(--dk-orange);
 		}
+
+		&.is-active {
+			border: 1px solid var(--dk-grey);
+		}
 	}
 }

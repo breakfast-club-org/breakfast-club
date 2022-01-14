@@ -22,10 +22,19 @@ function Button(props) {
 		btn.cornerType ? buttonClasses += ` ${btn.cornerType}` : buttonClasses;
 		return buttonClasses;
 	};
-	
+
+	// styles the current Operation Button with a dark border
+	function isActiveStyle(activeClass) {
+		if (activeClass) {
+			return ' is-active';
+		} else {
+			return '';
+		}
+	}
+
   return (
-		<button 
-			className={`${getButtonClasses(props.btn)}${isPressed}` }
+		<button
+			className={`${getButtonClasses(props.btn)}${isPressed}${isActiveStyle(props.isActive)}`}
 			onClick={() => props.resultHandler(props.btn.value)}
 			onMouseDown={onMouseDownHandler}
 			onMouseUp={onMouseUpHandler}

@@ -42,6 +42,7 @@ function OperationButtons(props) {
 					<Button
 						key={idx}
 						btn={btn}
+						isActive={props.isActive[idx].isActive}
 						resultHandler={props.resultHandler}
 					/>
 				))}
