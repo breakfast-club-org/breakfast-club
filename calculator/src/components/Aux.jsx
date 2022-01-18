@@ -2,7 +2,7 @@ import React from 'react';
 import Button from './Button';
 import '../styles/aux.css';
 
-export default function Aux({ data, handleClick }) {
+export default function Aux({ data, handleClick, allClear }) {
 	return (
 		<div className="aux">
 			{data.map((button, i) => {
@@ -13,6 +13,7 @@ export default function Aux({ data, handleClick }) {
 							value={button.value}
 							className={button.className}
 							handleClick={handleClick}
+							allClear={allClear}
 						/>
 					);
 				})}

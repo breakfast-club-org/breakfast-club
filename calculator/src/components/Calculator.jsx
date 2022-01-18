@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import Display from './Display';
 import Controls from './Controls';
 import Numbers from './Numbers';
@@ -18,7 +18,17 @@ import '../styles/calculator.css';
 export default function Calculator() {
 	const [result, setResult] = useState(0);
 	const [isExpanded, setIsExpanded] = useState(false);
+	const [allClear, setAllClear] = useState('AC');
 	const calculator = useRef(null);
+
+	// Toggle All Clear btn copy
+	useEffect(() => {
+		if (result !== 0) {
+			setAllClear('C');
+		} else {
+			setAllClear('AC');
+		}
+	}, [result]);
 
 	const handleControlClick = (e) => {
 		const expandBtn = e.target.dataset.buttonType === 'expand';
@@ -64,7 +74,7 @@ export default function Calculator() {
 			<div className="buttons">
 				<Controls data={controls} handleClick={handleControlClick} />
 				<Scientific data={scientific} />
-				<Aux data={aux} handleClick={handleAuxClick} />
+				<Aux data={aux} handleClick={handleAuxClick} allClear={allClear} />
 				<Numbers data={numbers} handleClick={handleNumberClick} />
 				<Math data={math} handleClick={handleMathClick} />
 			</div>

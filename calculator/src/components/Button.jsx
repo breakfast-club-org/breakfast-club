@@ -1,7 +1,7 @@
 import React from 'react';
 import '../styles/button.css';
 
-export default function Button({ value, buttonType, className, handleClick }) {
+export default function Button({ value, buttonType, className, handleClick, allClear }) {
 	return (
 		<button
 			type="button"
@@ -10,7 +10,7 @@ export default function Button({ value, buttonType, className, handleClick }) {
 			className={`button ` + className}
 			onClick={handleClick}
 		>
-			{value}
+			{buttonType === 'all-clear' ? allClear : value}
 		</button>
 	);
 }
