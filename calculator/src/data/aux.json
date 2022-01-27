@@ -1,0 +1,17 @@
+[
+	{
+		"buttonType": "all-clear",
+	  	"value": "AC",
+	  	"className": "button-dark-gray"
+	},
+	{
+		"buttonType": "positive-negative",
+	  	"value": "+/-",
+	  	"className": "button-dark-gray"
+	},
+	{
+		"buttonType": "percentage",
+	  	"value": "%",
+	  	"className": "button-dark-gray"
+	}
+]

@@ -1,6 +1,6 @@
 .scientific {
 	display: grid;
-	grid-gap: 1px;
+	grid-area: scientific;
+	grid-gap: var(--calculator-grid-gap);
 	grid-template-columns: repeat(6, 1fr);
-	grid-template-rows: repeat(5, 1fr);
 }

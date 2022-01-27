@@ -1,17 +1,17 @@
 [
 	{
-		"hideValue": true,
+		"buttonType": "close",
 	  	"value": "×",
 	  	"className": "button-close"
 	},
 	{
-		"hideValue": true,
+		"buttonType": "minimize",
 	  	"value": "-",
 	  	"className": "button-minimize"
 	},
 	{
-		"hideValue": true,
+		"buttonType": "expand",
 	  	"value": "+",
 	  	"className": "button-expand"
 	}
-  ]
+]

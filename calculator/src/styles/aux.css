@@ -1,10 +1,6 @@
-.numbers {
+.aux {
 	display: grid;
-	grid-area: numbers;
+	grid-area: aux;
 	grid-gap: var(--calculator-grid-gap);
 	grid-template-columns: repeat(3, 1fr);
-}
-
-.numbers .button-number {
-	--button-font-size: 22px;
 }

@@ -3,6 +3,7 @@
 	--calculator-width-expanded: 575px;
 	--calculator-height: 325px;
 	--calculator-bg-color: rgba(85, 85, 85, 1);
+	--calculator-grid-gap: 1px;
 }
 
 .calculator {
@@ -18,7 +19,14 @@
 }
 
 .calculator.is-expanded .buttons {
-	grid-template-columns: 6fr 3fr 1fr;
+	grid-template-columns: repeat(10, 1fr);
+	grid-template-areas:
+	"scientific scientific scientific scientific scientific scientific aux aux aux math"
+	"scientific scientific scientific scientific scientific scientific numbers numbers numbers math"
+	"scientific scientific scientific scientific scientific scientific numbers numbers numbers math"
+	"scientific scientific scientific scientific scientific scientific numbers numbers numbers math"
+	"scientific scientific scientific scientific scientific scientific numbers numbers numbers math"
+	"scientific scientific scientific scientific scientific scientific numbers numbers numbers math";
 }
 
 .calculator.is-expanded .scientific {
@@ -27,8 +35,16 @@
 
 .calculator .buttons {
 	display: grid;
-	grid-gap: 1px;
-	grid-template-columns: 3fr 1fr;
+	grid-gap: var(--calculator-grid-gap);
+	grid-template-columns: repeat(4, 1fr);
+	grid-template-rows: 1fr 4fr;
+	grid-template-areas:
+	"aux aux aux math"
+	"numbers numbers numbers math"
+	"numbers numbers numbers math"
+	"numbers numbers numbers math"
+	"numbers numbers numbers math"
+	"numbers numbers numbers math";
 	height: calc(325px - 84px);
 }
 

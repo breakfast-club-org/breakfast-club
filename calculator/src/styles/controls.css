@@ -25,25 +25,12 @@
 	border-radius: var(--button-border-radius);
 }
 
-.controls button,
-.controls span {
+.controls button{
 	--button-font-size: 10px;
 	--button-line-height: 1;
 	--button-width: 12px;
 	--button-height: 12px;
 	--button-color: #000;
-}
-
-.controls span {
-	pointer-events: none;
-}
-
-.controls .is-hidden {
-	display: none;
-}
-
-.controls .button:hover .is-hidden {
-	display: block;
 }
 
 .controls .button-close {

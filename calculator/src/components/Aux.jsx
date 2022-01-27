@@ -1,10 +1,10 @@
 import React from 'react';
 import Button from './Button';
-import '../styles/scientific.css';
+import '../styles/aux.css';
 
-export default function Scientific({ data, handleClick }) {
+export default function Aux({ data, handleClick, allClear }) {
 	return (
-		<div className="scientific">
+		<div className="aux">
 			{data.map((button, i) => {
 					return (
 						<Button
@@ -13,6 +13,7 @@ export default function Scientific({ data, handleClick }) {
 							value={button.value}
 							className={button.className}
 							handleClick={handleClick}
+							allClear={allClear}
 						/>
 					);
 				})}
