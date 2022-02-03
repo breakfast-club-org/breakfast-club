@@ -11,6 +11,7 @@ import NumericData from "./components/numeric-buttons/NumericData.json";
 import OperationData from './components/operation-buttons/OperationData.json';
 
 function App() {
+	const [display, setDisplay] = useState('');
 	const [result, setResult] = useState('');
 	const [lastButton, setLastButton] = useState(null);
 	const [isActive, setIsActive] = useState(OperationData);
@@ -39,23 +40,36 @@ function App() {
 	}
 
 	const calculate = (value) => {
+		const operations = '/*-+';
 		value = value.toString();
 		setLastButton(value);
 		setActiveOperatorClass(value);
 		if (value === 'AC') {
 			setResult('');
+			setDisplay('');
 			clearActiveOperatorClass();
 		} else if (value === '=') {
 			setResult(preValue => eval(preValue));
+			let newResult = [...result];
+			newResult = newResult.join('');
+			newResult = eval(newResult);
+			setDisplay(eval(newResult));
 			clearActiveOperatorClass();
+		} else if (operations.includes(value)) {
+			setResult(preValue => preValue + value);
 		} else {
-			// consolidate values of buttons pressed
 			setResult(preValue => {
 				// or in case of last button pressed was
 				// the equal button, start with new value
 				if (lastButton === '=') {
+					setDisplay(value);
 					return value;
+				} else if (operations.includes(lastButton)) {
+					setDisplay(value);
+					return preValue + value;
+					// consolidate values of buttons pressed
 				} else {
+					setDisplay(preValue => preValue + value);
 					return preValue + value;
 				}
 			});
@@ -66,7 +80,8 @@ function App() {
   return (
     <div className="App">
       <main className="calc-container">
-        <Results result={result}/>
+        {/* <Results result={result}/> */}
+        <Results result={display}/>
         <div className="calc-btns-container">
           <AdvancedButtons btn={AdvancedData} resultHandler={value => calculate(value)}/>
           <OperationButtons btn={OperationData} resultHandler={value => calculate(value)} isActive={isActive}/>
