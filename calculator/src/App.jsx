@@ -44,10 +44,20 @@ function App() {
 		value = value.toString();
 		setLastButton(value);
 		setActiveOperatorClass(value);
+		// AC button
 		if (value === 'AC') {
 			setResult('');
 			setDisplay('');
 			clearActiveOperatorClass();
+			// Percentage button
+		} else if (value === '%') {
+			setResult(preValue => preValue * .01);
+			setDisplay(preValue => preValue * .01);
+			// Plus/minus button
+		} else if (value === '+/-') {
+			setResult(preValue => preValue * -1);
+			setDisplay(preValue => preValue * -1);
+		// Equal button (=)
 		} else if (value === '=') {
 			setResult(preValue => eval(preValue));
 			let newResult = [...result];
@@ -55,12 +65,12 @@ function App() {
 			newResult = eval(newResult);
 			setDisplay(eval(newResult));
 			clearActiveOperatorClass();
+		// Operation button (/, *, -, +)
 		} else if (operations.includes(value)) {
 			setResult(preValue => preValue + value);
 		} else {
+			// Digits button (1,2,3,4,5,6,7,8,9,0,.)
 			setResult(preValue => {
-				// or in case of last button pressed was
-				// the equal button, start with new value
 				if (lastButton === '=') {
 					setDisplay(value);
 					return value;
