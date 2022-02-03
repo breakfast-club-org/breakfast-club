@@ -1,0 +1,14 @@
+[
+	{
+		"type": "advanced",
+		"value": "AC"
+	},
+	{
+		"type": "advanced",
+		"value": "+/-"
+	},
+	{
+		"type": "advanced",
+		"value": "%"
+	}
+]

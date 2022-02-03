@@ -6,17 +6,14 @@ import NumericButtons from './components/numeric-buttons/NumericButtons';
 import OperationButtons from './components/operation-buttons/OperationButtons';
 import Results from "./components/results/Results";
 
+import AdvancedData from "./components/advanced-buttons/AdvancedData.json";
+import NumericData from "./components/numeric-buttons/NumericData.json";
+import OperationData from './components/operation-buttons/OperationData.json';
+
 function App() {
 	const [result, setResult] = useState('');
 	const [lastButton, setLastButton] = useState(null);
-	const [isActive, setIsActive] = useState([
-		{value: '/', isActive: false},
-		{value: '*', isActive: false},
-		{value: '-', isActive: false},
-		{value: '+', isActive: false},
-		{value: '=', isActive: false}
-	]);
-
+	const [isActive, setIsActive] = useState(OperationData);
 
 	function setActiveOperatorClass(value) {
 		const operations = '/*-+';
@@ -71,9 +68,9 @@ function App() {
       <main className="calc-container">
         <Results result={result}/>
         <div className="calc-btns-container">
-          <AdvancedButtons resultHandler={value => calculate(value)} />
-          <OperationButtons resultHandler={value => calculate(value)} isActive={isActive} />
-          <NumericButtons resultHandler={value => calculate(value)} />
+          <AdvancedButtons btn={AdvancedData} resultHandler={value => calculate(value)}/>
+          <OperationButtons btn={OperationData} resultHandler={value => calculate(value)} isActive={isActive}/>
+          <NumericButtons btn={NumericData} resultHandler={value => calculate(value)}/>
         </div>
       </main>
     </div>
