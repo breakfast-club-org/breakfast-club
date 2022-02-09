@@ -17,7 +17,10 @@ import '../styles/calculator.css';
 
 export default function Calculator() {
 	const [result, setResult] = useState(0);
+	const [prevResult, setPrevResult] = useState(0);
+	const [operator, setOperator] = useState(0);
 	const [isExpanded, setIsExpanded] = useState(false);
+	const [isCalculating, setIsCalculating] = useState(false);
 	const [allClear, setAllClear] = useState('AC');
 	const calculator = useRef(null);
 
@@ -29,6 +32,13 @@ export default function Calculator() {
 			setAllClear('AC');
 		}
 	}, [result]);
+
+	// reset state
+	const reset = () => {
+		setResult(0);
+		setPrevResult(0);
+		setOperator(0);
+	}
 
 	const handleControlClick = (e) => {
 		const expandBtn = e.target.dataset.buttonType === 'expand';
@@ -45,7 +55,7 @@ export default function Calculator() {
 		const percentageBtn = e.target.dataset.buttonType === 'percentage';
 
 		if (allClearBtn) {
-			return setResult(0);
+			return reset();
 		}
 
 		if (positiveNegativeBtn) {
@@ -60,12 +70,25 @@ export default function Calculator() {
 	}
 
 	const handleNumberClick = (e) => {
+		if (isCalculating) {
+			setResult(0);
+			setIsCalculating(false);
+		}
 		// combine result with prevState
-		setResult(prevState => prevState !== 0 ? prevState + e.target.dataset.value : e.target.dataset.value);
+		setResult(prevState => prevState !== 0 ? parseInt(prevState + e.target.dataset.value) : parseInt(e.target.dataset.value));
 	}
 
 	const handleMathClick = (e) => {
-		console.log('you clicked a math button');
+		const notEqualBtn = e.target.dataset.operator !== '=';
+
+		if (notEqualBtn) {
+			setPrevResult(result)
+			setOperator(e.target.dataset.operator);
+			setIsCalculating(true);
+		} else {
+			let total = eval(prevResult + operator + result);
+			setResult(total);
+		}
 	}
 
 	return (
