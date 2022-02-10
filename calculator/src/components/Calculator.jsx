@@ -20,7 +20,7 @@ export default function Calculator() {
 	const [prevResult, setPrevResult] = useState(0);
 	const [operator, setOperator] = useState(0);
 	const [isExpanded, setIsExpanded] = useState(false);
-	const [isCalculating, setIsCalculating] = useState(false);
+	const [isCalculatingReady, setIsCalculatingReady] = useState(false);
 	const [allClear, setAllClear] = useState('AC');
 	const calculator = useRef(null);
 
@@ -70,9 +70,9 @@ export default function Calculator() {
 	}
 
 	const handleNumberClick = (e) => {
-		if (isCalculating) {
+		if (isCalculatingReady) {
 			setResult(0);
-			setIsCalculating(false);
+			setIsCalculatingReady(false);
 		}
 		// combine result with prevState
 		setResult(prevState => prevState !== 0 ? parseInt(prevState + e.target.dataset.value) : parseInt(e.target.dataset.value));
@@ -84,7 +84,7 @@ export default function Calculator() {
 		if (notEqualBtn) {
 			setPrevResult(result)
 			setOperator(e.target.dataset.operator);
-			setIsCalculating(true);
+			setIsCalculatingReady(true);
 		} else {
 			let total = eval(prevResult + operator + result);
 			setResult(total);
