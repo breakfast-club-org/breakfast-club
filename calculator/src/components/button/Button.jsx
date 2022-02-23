@@ -12,8 +12,16 @@ function Button(props) {
 		setIsPressed('');
 	}
 
-	function createMarkup(value) {
+	function createMarkup(value, ac) {
+		value = checkAllClear(value, ac);
 		return {__html: value};
+	}
+
+	function checkAllClear(value, ac) {
+		if (value === "AC" && ac) {
+			return ac;
+		}
+		return value
 	}
 
 	const getButtonClasses = (btn) => {
@@ -39,7 +47,7 @@ function Button(props) {
 			onMouseDown={onMouseDownHandler}
 			onMouseUp={onMouseUpHandler}
 			value={props.btn.value}
-			dangerouslySetInnerHTML={props.btn.markup ? createMarkup(props.btn.markup) : createMarkup(props.btn.value)}>
+			dangerouslySetInnerHTML={props.btn.markup ? createMarkup(props.btn.markup) : createMarkup(props.btn.value, props.allClear)}>
 		</button>
 	)
 }

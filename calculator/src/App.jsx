@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 // import './App.css'
 import './App.scss';
 import AdvancedButtons from "./components/advanced-buttons/AdvancedButtons";
@@ -15,6 +15,16 @@ function App() {
 	const [result, setResult] = useState('');
 	const [lastButton, setLastButton] = useState(null);
 	const [isActive, setIsActive] = useState(OperationData);
+	const [allClear, setAllClear] = useState('AC');
+
+	// update AC button
+	useEffect(() => {
+		if (result === '') {
+			setAllClear('AC');
+		} else {
+			setAllClear('C');
+		}
+	}, [result]);
 
 	function setActiveOperatorClass(value) {
 		const operations = '/*-+';
@@ -94,7 +104,7 @@ function App() {
         {/* <Results result={result}/> */}
         <Results result={display}/>
         <div className="calc-btns-container">
-          <AdvancedButtons btn={AdvancedData} clickHandler={clickHandler}/>
+          <AdvancedButtons btn={AdvancedData} clickHandler={clickHandler} allClear={allClear}/>
           <OperationButtons btn={OperationData} clickHandler={clickHandler} isActive={isActive}/>
           <NumericButtons btn={NumericData} clickHandler={clickHandler}/>
         </div>
