@@ -10,7 +10,7 @@ function OperationButtons(props) {
 						key={idx}
 						btn={btn}
 						isActive={props.isActive[idx].isActive}
-						resultHandler={props.resultHandler}
+						clickHandler={props.clickHandler}
 					/>
 				))}
 			</div>

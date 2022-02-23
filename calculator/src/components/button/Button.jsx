@@ -35,9 +35,10 @@ function Button(props) {
   return (
 		<button
 			className={`${getButtonClasses(props.btn)}${isPressed}${isActiveStyle(props.isActive)}`}
-			onClick={() => props.resultHandler(props.btn.value)}
+			onClick={props.clickHandler}
 			onMouseDown={onMouseDownHandler}
 			onMouseUp={onMouseUpHandler}
+			value={props.btn.value}
 			dangerouslySetInnerHTML={props.btn.markup ? createMarkup(props.btn.markup) : createMarkup(props.btn.value)}>
 		</button>
 	)

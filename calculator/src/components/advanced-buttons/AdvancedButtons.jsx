@@ -9,7 +9,7 @@ function AdvancedButtons(props) {
 					<Button
 						key={idx}
 						btn={btn}
-						resultHandler={props.resultHandler}
+						clickHandler={props.clickHandler}
 					/>
 				))}
 			</div>

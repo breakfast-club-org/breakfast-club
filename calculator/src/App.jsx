@@ -39,8 +39,9 @@ function App() {
 		setIsActive(updateIsActive);
 	}
 
-	const calculate = (value) => {
+	const clickHandler = (e) => {
 		const operations = '/*-+';
+		let value = e.target.value;
 		value = value.toString();
 		setLastButton(value);
 		setActiveOperatorClass(value);
@@ -93,9 +94,9 @@ function App() {
         {/* <Results result={result}/> */}
         <Results result={display}/>
         <div className="calc-btns-container">
-          <AdvancedButtons btn={AdvancedData} resultHandler={value => calculate(value)}/>
-          <OperationButtons btn={OperationData} resultHandler={value => calculate(value)} isActive={isActive}/>
-          <NumericButtons btn={NumericData} resultHandler={value => calculate(value)}/>
+          <AdvancedButtons btn={AdvancedData} clickHandler={clickHandler}/>
+          <OperationButtons btn={OperationData} clickHandler={clickHandler} isActive={isActive}/>
+          <NumericButtons btn={NumericData} clickHandler={clickHandler}/>
         </div>
       </main>
     </div>
