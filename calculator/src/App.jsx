@@ -52,29 +52,27 @@ function App() {
 	const advClickHandler = (e) => {
 		let value = e.target.value;
 		setLastButton(value);
-		// AC button
+		// AC button (AC || C)
 		if (value === 'AC') {
 			setResult('');
 			setDisplay('');
 			clearActiveOperatorClass();
-			// Percentage button
+			// Percentage button (%)
 		} else if (value === '%') {
 			setResult(preValue => preValue * .01);
 			setDisplay(preValue => preValue * .01);
-			// Plus/minus button
+			// Plus/minus button (+/-)
 		} else if (value === '+/-') {
 			setResult(preValue => preValue * -1);
 			setDisplay(preValue => preValue * -1);
 		} 
 	}
 
-	const clickHandler = (e) => {
-		const operations = '/*-+';
+	const operClickHandler = (e) => {
 		let value = e.target.value;
-		value = value.toString();
 		setLastButton(value);
 		setActiveOperatorClass(value);
-		// Equal button (=)
+		// Equal (=)
 		if (value === '=') {
 			setResult(preValue => eval(preValue));
 			let newResult = [...result];
@@ -82,26 +80,30 @@ function App() {
 			newResult = eval(newResult);
 			setDisplay(eval(newResult));
 			clearActiveOperatorClass();
-		// Operation button (/, *, -, +)
-		} else if (operations.includes(value)) {
-			setResult(preValue => preValue + value);
 		} else {
-			// Digits button (1,2,3,4,5,6,7,8,9,0,.)
-			setResult(preValue => {
-				if (lastButton === '=') {
-					setDisplay(value);
-					return value;
-				} else if (operations.includes(lastButton)) {
-					setDisplay(value);
-					return preValue + value;
-					// consolidate values of buttons pressed
-				} else {
-					setDisplay(preValue => preValue + value);
-					return preValue + value;
-				}
-			});
+			// Operators (+, - , *, /)
+			setResult(preValue => preValue + value);
 		}
-		return result;
+	}
+
+	const numClickHandler = (e) => {
+		const operations = '/*-+';
+		let value = e.target.value;
+		value = value.toString();
+		setLastButton(value);
+		// if last button pressed was (=)
+		if (lastButton === '=') {
+			setDisplay(value);
+			setResult(value);
+		// if last button pressed was (+, - , *, /)
+		} else if (operations.includes(lastButton)) {
+			setDisplay(value);
+			setResult(preValue => preValue + value);
+			// if last button pressed was a number
+		} else {
+			setDisplay(preValue => preValue + value);
+			setResult(preValue => preValue + value);
+		}
 	}
 
   return (
@@ -111,8 +113,8 @@ function App() {
         <Results result={display}/>
         <div className="calc-btns-container">
           <AdvancedButtons btn={AdvancedData} clickHandler={advClickHandler} allClear={allClear}/>
-          <OperationButtons btn={OperationData} clickHandler={clickHandler} isActive={isActive}/>
-          <NumericButtons btn={NumericData} clickHandler={clickHandler}/>
+          <OperationButtons btn={OperationData} clickHandler={operClickHandler} isActive={isActive}/>
+          <NumericButtons btn={NumericData} clickHandler={numClickHandler}/>
         </div>
       </main>
     </div>
