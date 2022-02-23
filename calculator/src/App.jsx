@@ -49,12 +49,9 @@ function App() {
 		setIsActive(updateIsActive);
 	}
 
-	const clickHandler = (e) => {
-		const operations = '/*-+';
+	const advClickHandler = (e) => {
 		let value = e.target.value;
-		value = value.toString();
 		setLastButton(value);
-		setActiveOperatorClass(value);
 		// AC button
 		if (value === 'AC') {
 			setResult('');
@@ -68,8 +65,17 @@ function App() {
 		} else if (value === '+/-') {
 			setResult(preValue => preValue * -1);
 			setDisplay(preValue => preValue * -1);
+		} 
+	}
+
+	const clickHandler = (e) => {
+		const operations = '/*-+';
+		let value = e.target.value;
+		value = value.toString();
+		setLastButton(value);
+		setActiveOperatorClass(value);
 		// Equal button (=)
-		} else if (value === '=') {
+		if (value === '=') {
 			setResult(preValue => eval(preValue));
 			let newResult = [...result];
 			newResult = newResult.join('');
@@ -104,7 +110,7 @@ function App() {
         {/* <Results result={result}/> */}
         <Results result={display}/>
         <div className="calc-btns-container">
-          <AdvancedButtons btn={AdvancedData} clickHandler={clickHandler} allClear={allClear}/>
+          <AdvancedButtons btn={AdvancedData} clickHandler={advClickHandler} allClear={allClear}/>
           <OperationButtons btn={OperationData} clickHandler={clickHandler} isActive={isActive}/>
           <NumericButtons btn={NumericData} clickHandler={clickHandler}/>
         </div>
