@@ -32,8 +32,8 @@ function Button(props) {
 	};
 
 	// styles the current Operation Button with a dark border
-	function isActiveStyle(activeClass) {
-		if (activeClass) {
+	function operationStyle(isActive) {
+		if (isActive) {
 			return ' is-active';
 		} else {
 			return '';
@@ -42,7 +42,7 @@ function Button(props) {
 
   return (
 		<button
-			className={`${getButtonClasses(props.btn)}${isPressed}${isActiveStyle(props.isActive)}`}
+			className={`${getButtonClasses(props.btn)}${isPressed}${operationStyle(props.isActive)}`}
 			onClick={props.clickHandler}
 			onMouseDown={onMouseDownHandler}
 			onMouseUp={onMouseUpHandler}

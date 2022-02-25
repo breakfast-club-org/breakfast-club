@@ -3,35 +3,30 @@
 		"type": "operation",
 		"value": "/",
 		"markup": "÷",
-		"isActive": false,
 		"cornerType": null
 	},
 	{
 		"type": "operation",
 		"value": "*",
 		"markup": "×",
-		"isActive": false,
 		"cornerType": null
 	},
 	{
 		"type": "operation",
 		"value": "-",
 		"markup": "&minus;",
-		"isActive": false,
 		"cornerType": null
 	},
 	{
 		"type": "operation",
 		"value": "+",
 		"markup": "&plus;",
-		"isActive": false,
 		"cornerType": null
 	},
 	{
 		"type": "operation",
 		"value": "=",
 		"markup": "=",
-		"isActive": false,
 		"cornerType": "rounded-right-corner"
 	}
 ]

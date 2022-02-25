@@ -14,7 +14,28 @@ function App() {
 	const [display, setDisplay] = useState('');
 	const [result, setResult] = useState('');
 	const [lastButton, setLastButton] = useState(null);
-	const [isActive, setIsActive] = useState(OperationData);
+	const [isOperActive, setIsOperActive] = useState([
+		{
+			value: "/",
+			isActive: false,
+		},
+		{
+			value: "*",
+			isActive: false,
+		},
+		{
+			value: "-",
+			isActive: false,
+		},
+		{
+			value: "+",
+			isActive: false,
+		},
+		{
+			value: "=",
+			isActive: false,
+		}
+	]);
 	const [allClear, setAllClear] = useState('AC');
 
 	// update AC button
@@ -28,25 +49,25 @@ function App() {
 
 	function setActiveOperatorClass(value) {
 		const operations = '/*-+';
-		const updateIsActive = [...isActive];
 		if (operations.includes(value)) {
-			updateIsActive.map(btn => {
+			const updateIsOperActive = [...isOperActive];
+			updateIsOperActive.map(btn => {
 				if (btn.value === value) {
 					btn.isActive = true;
 				} else {
 					btn.isActive = false;
 				}
-				setIsActive(updateIsActive);
+				setIsOperActive(updateIsOperActive);
 			});
 		}
 	}
 
 	function clearActiveOperatorClass() {
-		const updateIsActive = [...isActive];
-		updateIsActive.map(btn => {
+		const updateIsOperActive = [...isOperActive];
+		updateIsOperActive.map(btn => {
 			btn.isActive = false;
 		});
-		setIsActive(updateIsActive);
+		setIsOperActive(updateIsOperActive);
 	}
 
 	const advClickHandler = (e) => {
@@ -71,7 +92,6 @@ function App() {
 	const operClickHandler = (e) => {
 		let value = e.target.value;
 		setLastButton(value);
-		setActiveOperatorClass(value);
 		// Equal (=)
 		if (value === '=') {
 			setResult(preValue => eval(preValue));
@@ -83,6 +103,7 @@ function App() {
 		} else {
 			// Operators (+, - , *, /)
 			setResult(preValue => preValue + value);
+			setActiveOperatorClass(value);
 		}
 	}
 
@@ -113,7 +134,7 @@ function App() {
         <Results result={display}/>
         <div className="calc-btns-container">
           <AdvancedButtons btn={AdvancedData} clickHandler={advClickHandler} allClear={allClear}/>
-          <OperationButtons btn={OperationData} clickHandler={operClickHandler} isActive={isActive}/>
+          <OperationButtons btn={OperationData} clickHandler={operClickHandler} isActive={isOperActive}/>
           <NumericButtons btn={NumericData} clickHandler={numClickHandler}/>
         </div>
       </main>
