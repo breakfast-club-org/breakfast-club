@@ -70,13 +70,70 @@ function App() {
 		setIsOperActive(updateIsOperActive);
 	}
 
+	function resetAll() {
+		setResult('');
+		setDisplay('');
+	}
+
+	function calcTest() {
+		// JS - Operator precedence
+		// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Operator_Precedence
+		console.log("Test: Order of operation: 12 + (3 * 4) = 24", 12 + (3 * 4));
+		console.log("Test: by First appearance: (12 + 3) * 4 = 60", (12 + 3) * 4);
+		console.log("Test: No paranthesis: 12 + 3 * 4 = ", 12 + 3 * 4);
+	}
+
+	function calcEval() {
+		setResult(preValue => eval(preValue));
+		let newResult = [...result];
+		newResult = newResult.join('');
+		newResult = eval(newResult);
+		console.log('Buttons Pressed :', result);
+		console.log('CalcEval: ', newResult);
+		setDisplay(newResult);
+	}
+
+	function splitNums(operator) {
+		let numbers = result.split(operator);
+		let nums = {};
+		nums.first = parseInt(numbers[0]);
+		nums.second = parseInt(numbers[1]);
+		// console.log('Inputs for CalcLongHand: ', nums);
+		return nums;
+	}
+
+	// so far only works with 2 inputs
+	function calcLongHand() {
+		let updateResult = result;
+		if (updateResult.includes("*")) {
+			let nums = splitNums("*");
+			updateResult = nums.first * nums.second;
+		} else if (updateResult.includes("/")) {
+			let nums = splitNums("/");
+			updateResult = nums.first / nums.second;
+		} else if (updateResult.includes("+")) {
+			let nums = splitNums("+");
+			updateResult = nums.first + nums.second;
+		} else if (updateResult.includes("-")) {
+			let nums = splitNums("-");
+			updateResult = nums.first - nums.second;
+		}
+		console.log('CalcLongHand (only works with 2 inputs): ', updateResult);
+		console.log('============================');
+		// setDisplay(updateResult);
+	}
+
+
+	// ================================
+	// CLICK HANDLERS
+	// ================================
+
 	const advClickHandler = (e) => {
 		let value = e.target.value;
 		setLastButton(value);
 		// AC button (AC || C)
 		if (value === 'AC') {
-			setResult('');
-			setDisplay('');
+			resetAll();
 			clearActiveOperatorClass();
 			// Percentage button (%)
 		} else if (value === '%') {
@@ -94,11 +151,9 @@ function App() {
 		setLastButton(value);
 		// Equal (=)
 		if (value === '=') {
-			setResult(preValue => eval(preValue));
-			let newResult = [...result];
-			newResult = newResult.join('');
-			newResult = eval(newResult);
-			setDisplay(eval(newResult));
+			calcTest();
+			calcEval();
+			calcLongHand();
 			clearActiveOperatorClass();
 		} else {
 			// Operators (+, - , *, /)
@@ -110,7 +165,6 @@ function App() {
 	const numClickHandler = (e) => {
 		const operations = '/*-+';
 		let value = e.target.value;
-		value = value.toString();
 		setLastButton(value);
 		// if last button pressed was (=)
 		if (lastButton === '=') {
@@ -126,6 +180,7 @@ function App() {
 			setResult(preValue => preValue + value);
 		}
 	}
+
 
   return (
     <div className="App">
