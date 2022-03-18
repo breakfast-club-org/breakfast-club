@@ -1,0 +1,25 @@
+.button {
+	background-color: orange;
+	background-color: $button;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+
+	&.btn-orange {
+		background-color: $btn-orange;
+	}
+
+	&.btn-alt {
+		background-color: $btn-alt;
+	}
+
+	&.zero {
+		grid-column: 1 / 3;
+	}
+
+	&:active {
+		background: lighten($button, 20%);
+		transition: 100ms ease-in;
+	}
+}

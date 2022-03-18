@@ -1,0 +1,38 @@
+.calculator {
+	display: grid;
+	grid-template-rows: 25px 1fr 300px;
+	width: 300px;
+	border-radius: 10px;
+	overflow: hidden;
+	font-size: 1.95em;
+	
+	.circles {
+		display: flex;
+		background-color: $result-bg;
+		padding: 8px;
+	
+		.circle-wrapper {
+			display: flex;
+			justify-content: space-between;
+			min-width:  60px;
+		}
+	
+		.circle-wrapper div {
+			width: 15px;
+			height: 15px;
+			border-radius: 50%;
+		}
+	
+		.red {
+			background-color: $circle-red;
+		}
+	
+		.yellow {
+			background-color: $circle-yellow;
+		}
+	
+		.green {
+			background-color: $circle-green;
+		}
+	}
+}

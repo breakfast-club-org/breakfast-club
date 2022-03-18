@@ -1,0 +1,37 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+// Colors
+$circle-red: #ff5a52;
+$circle-yellow: #e6c029;
+$circle-green: #52c22b;
+$result-bg: #535048;
+$btn-orange: #fe9e0e;
+$btn-alt: #67645c;
+$button: #827c73;
+$text: #ffefde;
+
+// Font
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Mono&display=swap');
+
+// Imports
+@import './components/button/button';
+@import './components/buttons/buttons';
+@import './components/calculator/calculator';
+@import './components/result/result';
+
+// Main styles
+.wrapper {
+	display: flex;
+	justify-content: center;
+	padding: 2.5em 0;
+	font-family: 'Noto Sans Mono', monospace;
+	color: $text;
+}
+
+
+
+
+

@@ -1,0 +1,7 @@
+.buttons {
+	display: grid;
+	background-color: $result-bg;
+	grid-template-columns: repeat(4, 1fr);
+	grid-gap: 1px 1px;
+	height: 100%;
+}
