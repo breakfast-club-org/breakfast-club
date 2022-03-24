@@ -13,6 +13,10 @@ I would encourage you to try to do the tasks without the youtube reousrce but if
 - https://developer.mozilla.org/en-US/docs/Web/HTML/Element/audio
 - https://www.youtube.com/watch?v=sqpg1qzJCGQ
 
+**Comp:** 
+
+<img src="https://github.com/breakfast-club-org/breakfast-club/blob/main/music%20progress/basic-audio-player.png" width="50%">
+
 ### Env
 
 1. make sure you are on node-14.11.0 and up
