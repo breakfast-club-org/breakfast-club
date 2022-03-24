@@ -1,6 +1,7 @@
 ## Basic Audio Player
 
 Implement a very basic Audio Player
+
 ![Basic UI](./basic-audio-player.png)
 
 ### Env
