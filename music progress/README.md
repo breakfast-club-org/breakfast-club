@@ -1,8 +1,16 @@
 ## music progress bar
 
-Implement a basic music progress bar. While the guide below won't be a 100% 1:1 guide to what we currently have set up if you choose to blast away the current folder and run it exactly the way the guide presents the music progress bar, feel free to do so! If you run into any problems feel free to bring them up to the group!
+Implement a basic music progress bar.
 
-Guide:
+Tasks:
+1. Support play/pause/replay
+2. Show timeline
+3. Support timeline seek
+
+I would encourage you to try to do the tasks without the youtube reousrce but if you get stuck or need inspiration, feel free to watch it!
+
+Resources:
+https://developer.mozilla.org/en-US/docs/Web/HTML/Element/audio
 https://www.youtube.com/watch?v=sqpg1qzJCGQ
 
 ### Env
