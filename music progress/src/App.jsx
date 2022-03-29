@@ -18,6 +18,11 @@ function App() {
 		}
 	}
 
+	const endedHandler = () => {
+		setIsPlaying(false);
+		setButtonIcon('replay');
+	}
+
   return (
     <div className="App">
 			<div className="audio-player">
@@ -27,7 +32,8 @@ function App() {
 						<button onClick={clickHandler} className={buttonIcon}></button>
 					</div>
 					<audio id="audio"
-								src="./src/audio/mah-na-mah-na.m4r">
+								src="./src/audio/mah-na-mah-na.m4r"
+								onEnded={endedHandler}>
 									Your browser does not support the <code>audio</code> element.
 					</audio>
 				</div>
