@@ -23,10 +23,14 @@ function MusicPlayer({id, title, audio}) {
 		setButtonIcon('replay');
 	}
 
+	const createMarkup = (text) => {
+		return {__html: text};
+	}
+
   return (
 		<div className="music-player">
 			<div className="title-controls">
-				<h2 className="title">{title}</h2>
+				<h2 className="title" dangerouslySetInnerHTML={createMarkup(title)}></h2>
 				<div className="controls">
 					<button onClick={clickHandler} className={`btn btn-${buttonIcon}`}></button>
 				</div>

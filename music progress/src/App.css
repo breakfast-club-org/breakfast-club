@@ -8,13 +8,3 @@ body {
 	justify-content: center;
 	align-items: center;
 }
-
-.App {
-	background-color: #222;
-	width: 100vw;
-	height: 100vh;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-}

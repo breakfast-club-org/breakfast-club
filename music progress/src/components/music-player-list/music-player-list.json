@@ -1,0 +1,10 @@
+[
+	{
+		"title": "Piano key",
+		"audioUrl": "src/assets/audio/piano-note.mp3"
+	},
+	{
+		"title": "Mah N&agrave; Mah N&agrave;",
+		"audioUrl": "src/assets/audio/mah-na-mah-na.m4r"
+	}
+]
