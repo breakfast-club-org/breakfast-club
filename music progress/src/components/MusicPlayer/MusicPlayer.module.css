@@ -1,0 +1,15 @@
+.musicPlayer {
+    background-color: gray;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    padding: 20px;
+    padding-bottom: 0;
+    border-radius: 8px;
+}
+
+.controlsContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}

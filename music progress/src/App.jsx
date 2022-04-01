@@ -1,13 +1,18 @@
 // import { useState } from 'react'
-import './App.css'
+import "./App.css";
+import { MusicPlayer } from "./components/MusicPlayer/MusicPlayer";
 
-function App() {
-
-  return (
-    <div className="App">
-
-    </div>
-  )
+const data = {
+  src: "src/assets/t-rex-roar.mp3",
+  title: "roar"
 }
 
-export default App
+function App() {
+  return (
+    <div className="App">
+      <MusicPlayer { ...data }/>
+    </div>
+  );
+}
+
+export default App;
