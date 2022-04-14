@@ -86,12 +86,3 @@
 	transform: rotate(120deg)
 						translate(-4px, -3px);
 }
-
-
-/* ==================== */
-/* Progress Bar */
-/* ==================== */
-
-.progress-bar {
-	border-bottom: 8px solid tomato;
-}

@@ -1,0 +1,12 @@
+
+/* ==================== */
+/* Progress Bar */
+/* ==================== */
+
+.progress-bar {
+	/* border-bottom: 8px solid tomato; */
+	transition: width 100ms ease-in-out;
+	height: 8px;
+	width: 0%;
+	background-color: tomato;
+}
