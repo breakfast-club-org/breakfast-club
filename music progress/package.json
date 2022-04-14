@@ -1,5 +1,5 @@
 {
-  "name": "calc",
+  "name": "music-progress",
   "version": "0.0.0",
   "engines": {
     "node": ">=14.11.0"
@@ -10,7 +10,6 @@
     "serve": "vite preview"
   },
   "dependencies": {
-    "prop-types": "^15.7.2",
     "react": "^17.0.0",
     "react-dom": "^17.0.0"
   },
