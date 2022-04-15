@@ -1,0 +1,12 @@
+.music-player {
+	display: flex;
+	align-items: center;
+	width: 500px;
+	padding: 10px 25px;
+	background: #ccc;
+}
+
+.music-player .title {
+	padding-left: 25px;
+	margin: 0;
+}

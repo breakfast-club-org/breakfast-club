@@ -1,10 +1,32 @@
-import React from "react";
+import React, { useState, useRef, useEffect } from "react";
 
-export default function MusicPlayer() {
+import Controls from './Controls'
+import '../styles/MusicPlayer.css'
+
+export default function MusicPlayer({ src, title }) {
+	const [isPlaying, setIsPlaying] = useState(false);
+	const audioRef = useRef(new Audio(src));
+
+	useEffect(() => {
+		// play or pause audio
+		if (isPlaying) {
+			audioRef.current.play()
+		} else {
+			audioRef.current.pause()
+		}
+
+		// watch for ended event from audio element
+		audioRef.current.addEventListener('ended', () => {
+			setIsPlaying(false);
+		})
+
+	}, [isPlaying]);
+
 
 	return (
 		<div className="music-player">
-			<audio controls src="https://interactive-examples.mdn.mozilla.net/media/cc0-audio/t-rex-roar.mp3"></audio>
+			<Controls isPlaying={isPlaying} setIsPlaying={setIsPlaying} />
+			<h3 className="title">{title}</h3>
 		</div>
 	)
 }
