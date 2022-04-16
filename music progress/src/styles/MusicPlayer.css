@@ -1,12 +1,15 @@
 .music-player {
-	display: flex;
-	align-items: center;
-	width: 500px;
+	display: grid;
+	grid-template-columns: 1fr 2fr;
+	width: 75%;
 	padding: 10px 25px;
 	background: #ccc;
 }
 
 .music-player .title {
-	padding-left: 25px;
 	margin: 0;
+}
+
+.music-player .progress-bar {
+	grid-column: 1 / span 2;
 }

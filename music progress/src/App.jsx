@@ -1,16 +1,21 @@
 import MusicPlayer from './components/MusicPlayer'
 import './App.css'
 
-const data = {
-  src: 'https://interactive-examples.mdn.mozilla.net/media/cc0-audio/t-rex-roar.mp3',
-  title: 'ROAR'
-}
+import playlist from './data/playlist.json'
+
+// const playlist = [
+//   {
+//     src: '/src/assets/spongebob-two-hours-later.mp3',
+//     title: 'Spongebob - Two Hours Later',
+//     artists: ''
+//   }
+// ]
 
 function App() {
 
   return (
     <div className="App">
-      <MusicPlayer { ...data } />
+      <MusicPlayer playlist={playlist} />
     </div>
   )
 }

@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function Controls({ isPlaying, setIsPlaying }) {
+export default function Controls({ isPlaying, setIsPlaying, handleClick }) {
 
 	function handleClick() {
 		setIsPlaying(!isPlaying)
