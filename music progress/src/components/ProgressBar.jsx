@@ -1,7 +1,7 @@
 import React from "react";
 import '../styles/ProgressBar.css';
 
-export default function ProgressBar({ isPlaying, duration, currentTime }) {
+export default function ProgressBar({ duration, currentTime }) {
 
 	return (
 		<>

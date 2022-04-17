@@ -11,12 +11,15 @@ export default function MusicPlayer({ playlist }) {
 	const [audioSrc, setAudioSrc] = useState('');
 	const [audioDuration, setAudioDuration] = useState(0);
 	const [audioCurrentTime, setAudioCurrentTime] = useState(0);
-	let [playlistCounter, setPlaylistCounter] = useState(0);
+	const [playlistCounter, setPlaylistCounter] = useState(0);
+	const [playlistTotal, setPlaylistTotal] = useState(0);
 	const audioRef = useRef(null);
 
 	useEffect(() => {
-		// set player to first song in playlist
+		// set player to first song in playlist once mounted
 		setFirstSong();
+		// set playlist total
+		setPlaylistTotal(playlist.length);
 	}, []);
 
 	useEffect(() => {
@@ -26,18 +29,19 @@ export default function MusicPlayer({ playlist }) {
 		} else {
 			audioRef.current.pause()
 		}
-
-		// Listen for audio events when playing
+		// listen for events when isPlaying state changes
 		audioEvents();
 
 	}, [isPlaying]);
 
 	useEffect(() => {
+		// when playlistCounter updates, update the audioSrc
 		setAudioSrc(playlist[playlistCounter].src);
 	}, [playlistCounter]);
 
 	const audioEvents = () => {
 		audioRef.current.addEventListener('canplaythrough', () => {
+			// set duration when we can play through
 			setAudioDuration(audioRef.current.duration);
 		})
 
@@ -45,6 +49,7 @@ export default function MusicPlayer({ playlist }) {
 			setIsPlaying(false);
 		})
 		audioRef.current.addEventListener('timeupdate', () => {
+			// update currentTime which is used for progressBar
 			setAudioCurrentTime(audioRef.current.currentTime)
 		})
 	}
@@ -66,7 +71,7 @@ export default function MusicPlayer({ playlist }) {
 
 	const handleNextClick = () => {
 		// subtract 1 from length because we start at 0
-		if (playlistCounter < playlist.length - 1) {
+		if (playlistCounter < playlistTotal - 1) {
 			setPlaylistCounter(prevState => prevState + 1);
 			setIsPlaying(false);
 		}
@@ -80,6 +85,8 @@ export default function MusicPlayer({ playlist }) {
 				handlePlayPauseClick={handlePlayPauseClick}
 				handlePrevClick={handlePrevClick}
 				handleNextClick={handleNextClick}
+				playlistCounter={playlistCounter}
+				playlistTotal={playlistTotal}
 			/>
 			<SongDetails
 				details={playlist[playlistCounter]}
