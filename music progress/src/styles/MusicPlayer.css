@@ -1,9 +1,31 @@
 .music-player {
 	display: grid;
+	grid-template-rows: 2fr auto auto auto;
 	grid-template-columns: 1fr 2fr;
-	width: 75%;
-	padding: 10px 25px;
+	width: 100%;
+	/* max-height: 500px; */
+	max-width: 500px;
 	background: #ccc;
+}
+
+.music-player .album-artwork-wrapper {
+	grid-row: 1;
+	grid-column: 1 / span 2;
+	margin-left: auto;
+	margin-right: auto;
+	width: 100%;
+	min-height: 500px;
+	overflow: hidden;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.music-player .album-artwork {
+	width: auto;
+	height: 100%;
+	max-height: 500px;
 }
 
 .music-player .title {

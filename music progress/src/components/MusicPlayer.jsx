@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
 
+import AlbumArtwork from "./AlbumArtwork";
 import Controls from './Controls';
 import SongDetails from "./SongDetails";
 import ProgressBar from "./ProgressBar";
@@ -9,6 +10,7 @@ import '../styles/MusicPlayer.css';
 export default function MusicPlayer({ playlist }) {
 	const [isPlaying, setIsPlaying] = useState(false);
 	const [audioSrc, setAudioSrc] = useState('');
+	const [albumArtwork, setAlbumArtwork] = useState('');
 	const [audioDuration, setAudioDuration] = useState(0);
 	const [audioCurrentTime, setAudioCurrentTime] = useState(0);
 	const [playlistCounter, setPlaylistCounter] = useState(0);
@@ -37,6 +39,7 @@ export default function MusicPlayer({ playlist }) {
 	useEffect(() => {
 		// when playlistCounter updates, update the audioSrc
 		setAudioSrc(playlist[playlistCounter].src);
+		setAlbumArtwork(playlist[playlistCounter].albumArtwork);
 	}, [playlistCounter]);
 
 	const audioEvents = () => {
@@ -56,6 +59,7 @@ export default function MusicPlayer({ playlist }) {
 
 	const setFirstSong = () => {
 		setAudioSrc(playlist[playlistCounter].src);
+		setAlbumArtwork(playlist[playlistCounter].albumArtwork);
 	}
 
 	const handlePlayPauseClick = () => {
@@ -80,6 +84,7 @@ export default function MusicPlayer({ playlist }) {
 	return (
 		<div className="music-player">
 			<audio ref={audioRef} src={audioSrc}></audio>
+			<AlbumArtwork src={albumArtwork} />
 			<Controls
 				isPlaying={isPlaying}
 				handlePlayPauseClick={handlePlayPauseClick}
