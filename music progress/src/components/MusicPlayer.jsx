@@ -19,7 +19,7 @@ export default function MusicPlayer({ playlist }) {
 
 	useEffect(() => {
 		// set player to first song in playlist once mounted
-		setFirstSong();
+		setSong();
 		// set playlist total
 		setPlaylistTotal(playlist.length);
 	}, []);
@@ -27,9 +27,9 @@ export default function MusicPlayer({ playlist }) {
 	useEffect(() => {
 		// play or pause audio
 		if (isPlaying) {
-			audioRef.current.play()
+			playAudio();
 		} else {
-			audioRef.current.pause()
+			pauseAudio();
 		}
 		// listen for events when isPlaying state changes
 		audioEvents();
@@ -37,10 +37,16 @@ export default function MusicPlayer({ playlist }) {
 	}, [isPlaying]);
 
 	useEffect(() => {
-		// when playlistCounter updates, update the audioSrc
-		setAudioSrc(playlist[playlistCounter].src);
-		setAlbumArtwork(playlist[playlistCounter].albumArtwork);
+		setSong();
 	}, [playlistCounter]);
+
+	const playAudio = () => {
+		audioRef.current.play();
+	}
+
+	const pauseAudio = () => {
+		audioRef.current.pause();
+	}
 
 	const audioEvents = () => {
 		audioRef.current.addEventListener('canplaythrough', () => {
@@ -57,7 +63,7 @@ export default function MusicPlayer({ playlist }) {
 		})
 	}
 
-	const setFirstSong = () => {
+	const setSong = () => {
 		setAudioSrc(playlist[playlistCounter].src);
 		setAlbumArtwork(playlist[playlistCounter].albumArtwork);
 	}
