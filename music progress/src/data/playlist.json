@@ -1,0 +1,32 @@
+[
+  {
+    "src": "/src/assets/spongebob-two-hours-later.mp3",
+    "title": "Spongebob - Two Hours Later",
+    "artists": "Spongebob",
+    "albumArtwork": "/src/assets/spongebob-two-hours-later.jpg"
+  },
+  {
+    "src": "/src/assets/wah-wah-wah-waaaaah!.mp3",
+    "title": "Wah Wah Wah Waaaaah!",
+    "artists": "2020",
+    "albumArtwork": "/src/assets/wah-wah-wah.jpg"
+  },
+  {
+    "src": "/src/assets/western-music.mp3",
+    "title": "Western Music",
+    "artists": "Clint Eastwood",
+    "albumArtwork": "/src/assets/western-music.jpg"
+  },
+  {
+    "src": "/src/assets/yeah-boy.mp3",
+    "title": "Yeah Boy",
+    "artists": "Flavor Flav",
+    "albumArtwork": "/src/assets/yeah-boy.jpg"
+  },
+  {
+    "src": "/src/assets/you-what-spongebob.mp3",
+    "title": "Spongebob - You What?",
+    "artists": "Spongebob",
+    "albumArtwork": "/src/assets/you-what-spongebob.jpg"
+  }
+]
