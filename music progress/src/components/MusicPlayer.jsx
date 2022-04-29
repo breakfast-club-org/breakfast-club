@@ -84,7 +84,9 @@ export default function MusicPlayer({ playlist }) {
 	const handlePrevClick = () => {
 		if (playlistCounter > 0) {
 			setPlaylistCounter(prevState => prevState - 1);
-			setIsPlaying(false);
+			if (!isPlaying) {
+				setIsPlaying(false);
+			}
 		}
 	}
 
