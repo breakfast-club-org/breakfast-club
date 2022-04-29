@@ -31,6 +31,15 @@ export default function MusicPlayer({ playlist }) {
 		} else {
 			pauseAudio();
 		}
+	}, [audioSrc]);
+
+	useEffect(() => {
+		// play or pause audio
+		if (isPlaying) {
+			playAudio();
+		} else {
+			pauseAudio();
+		}
 		// listen for events when isPlaying state changes
 		audioEvents();
 
@@ -75,7 +84,9 @@ export default function MusicPlayer({ playlist }) {
 	const handlePrevClick = () => {
 		if (playlistCounter > 0) {
 			setPlaylistCounter(prevState => prevState - 1);
-			setIsPlaying(false);
+			if (!isPlaying) {
+				setIsPlaying(false);
+			}
 		}
 	}
 
@@ -83,7 +94,9 @@ export default function MusicPlayer({ playlist }) {
 		// subtract 1 from length because we start at 0
 		if (playlistCounter < playlistTotal - 1) {
 			setPlaylistCounter(prevState => prevState + 1);
-			setIsPlaying(false);
+			if (!isPlaying) {
+				setIsPlaying(false);
+			}
 		}
 	}
 
