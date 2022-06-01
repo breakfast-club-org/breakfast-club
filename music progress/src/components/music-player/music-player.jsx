@@ -35,8 +35,15 @@ function MusicPlayer({id, title, audio}) {
 		let currentTime = audio.currentTime;
 		let progressPercentage = Math.ceil(currentTime / duration * 100);
 		progressPercentage = progressPercentage + '%';
-		console.log("progressPercentage: ", progressPercentage);
 		setProgressStatus(progressPercentage);
+	}
+
+	const sliderHandler = (event) => {
+		const audio = document.getElementById(`audio-${id}`);
+		let duration = audio.duration;
+		let sliderValue = event.target.value;
+		let updatePlayTime = duration / 100 * sliderValue;
+		audio.currentTime = updatePlayTime;
 	}
 
   return (
@@ -53,7 +60,7 @@ function MusicPlayer({id, title, audio}) {
 								Your browser does not support the <code>audio</code> element.
 				</audio>
 			</div>
-			<ProgressBar status={progressStatus} />
+			<ProgressBar status={progressStatus} sliderHandler={sliderHandler} />
 		</div>
   )
 }

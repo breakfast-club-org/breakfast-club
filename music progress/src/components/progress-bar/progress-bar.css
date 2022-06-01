@@ -4,9 +4,12 @@
 /* ==================== */
 
 .progress-bar {
-	/* border-bottom: 8px solid tomato; */
 	transition: width 100ms ease-in-out;
-	height: 8px;
+	height: 16px;
 	width: 0%;
 	background-color: tomato;
+}
+
+input[type="range"] {
+  width: 100%;
 }
